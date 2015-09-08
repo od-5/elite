@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ setup.title|default:'Название сайта' }}</title>
+  <script src="{{ STATIC_URL }}js/jquery-1.11.2.min.js"></script>
+  <script src="{{ STATIC_URL }}js/jquery.form.js"></script>
+  <script src="{{ STATIC_URL }}js/jquery.validate.js"></script>
+  <script src="{{ STATIC_URL }}js/jquery.flexslider-min.js"></script>
+  <script src="{{ STATIC_URL }}js/notify-combined.min.js"></script>
+{#  <script src="{{ STATIC_URL }}js/scrollup.js"></script>#}
+  <script src="{{ STATIC_URL }}js/common.js"></script>
+  {% if setup.top_js %}
+    {{ setup.top_js }}
+  {% endif %}
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Ubuntu+Condensed" />
+  <link href="{{ STATIC_URL }}css/style.css" rel="stylesheet">
+</head>
+<body>
+{% block content %}
+{% endblock %}
+{% if setup.bottom_js %}
+  {{ setup.bottom_js }}
+{% endif %}
+{% include '__modal/form.html' %}
+{#<div class="overlay"></div>#}
+</body>
+</html>

@@ -1,0 +1,68 @@
+<header class="header">
+  <div class="header-row-1">
+    <div class="container_12">
+      <div class="grid_3">
+        <a href="{% url 'home' %}" title="" class="header-logotype">
+          <img src="{{ STATIC_URL }}img/logotype.png" alt="Логотип">
+        </a>
+      </div>
+      <div class="grid_6">
+        <nav class="nav">
+          <ul class="nav-list">
+            <li class="nav-list-item">
+              <a href="" class="nav-list-item__link nav-list-item__link_active">видео о нас</a>
+            </li>
+            <li class="nav-list-item">
+              <a href="" class="nav-list-item__link">наши преимущества</a>
+            </li>
+            <li class="nav-list-item">
+              <a href="" class="nav-list-item__link">адресная программа</a>
+            </li>
+            <li class="nav-list-item">
+              <a href="" class="nav-list-item__link">как вы работаем</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="grid_3">
+        <span class="header-phone header-phone__number">8 800 775 18 45</span>
+        <span class="header-phone header-phone__text">звонок бесплатный</span>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+  <div class="container_12">
+    <div class="grid_7">
+      <div class="header-slider">
+        <p class="header-slider__title">
+          Примеры работ
+        </p>
+
+        <div class="flexslider">
+          <ul class="slides">
+            {% for slider in slider %}
+            <li>
+              <img src="{{ slider.image.url }}" />
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="grid_4 prefix_1">
+      <p class="header-ticket__title">
+        Реклама в лифтах домов повышенной комфортности.
+      </p>
+      <p class="header-ticket__title header-ticket__title_small">
+        Найди <span class="strong">нужного</span> клиента в <span class="strong">нужном</span> месте!
+      </p>
+      <div class="header-ticket-block">
+        <span class="header-ticket-block__title">Оставьте заявку</span>
+        <p class="header-ticket-block__text">и наши менеджеры свяжуться с вами <br> в ближайшее время для уточнения <br>
+          деталей</p>
+        {% include '__includes/ticket_form.html' %}
+      </div>
+    </div>
+    <div class="clear"></div>
+  </div>
+</header>

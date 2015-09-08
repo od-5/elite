@@ -1,0 +1,26 @@
+.nav {
+  &-list {
+    list-style-type: none;
+    &-item {
+      display: inline-block;
+      &__link {
+        display: block;
+        line-height: 96px;
+        padding: 0 10px;
+        text-align: center;
+        color: #fff;
+        font-size: 13px;
+        font-weight: bold;
+        text-transform: uppercase;
+        text-decoration: none;
+        border: 2px solid transparent;
+        &:hover, &_active {
+          border-top: 2px solid #4bcaff;
+          border-bottom: 2px solid #4bcaff;
+          background: rgba(255, 255, 255, 0.02);
+          color: #f1f1f1;
+        }
+      }
+    }
+  }
+}

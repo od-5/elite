@@ -1,0 +1,121 @@
+{% extends 'base.html' %}
+{% block content %}
+  {% include '__includes/header.html' %}
+  <section class="section-video">
+    <div class="container_12">
+      <p class="title">Видео о нас</p>
+      <div class="grid_10 suffix_1 prefix_1">
+        <div class="section-video-container">
+          {{ setup.video|safe|default:'' }}
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </section>
+  <!--[if gte IE 9]>
+    <style type="text/css">
+      .section-advantage, .section-work {
+         filter: none;
+      }
+    </style>
+  <![endif]-->
+  <section class="section-advantage">
+    <div class="container_12">
+      <div class="grid_12">
+        <p class="title">Наши преимущества</p>
+        <p class="title_small">5 причин почему Вам стоит обратиться именно к нам</p>
+      </div>
+      <div class="clear"></div>
+      <div class="section-advantage-container">
+        <div class="grid_9 suffix_3">
+          <ul class="section-advantage-list">
+            <li class="section-advantage-list-item icon icon-money">
+              <span>Активная и платежеспособная аудитория (реклама в домах повышенной комфортности).</span>
+            </li>
+            <li class="section-advantage-list-item icon icon-design">
+              <span>Дизайн индивидуально под Ваши идеи от опытных дизайнеров.</span>
+            </li>
+            <li class="section-advantage-list-item icon icon-profy">
+              <span>Качество работ (уникальная конструкция стенда, четкие сроки, оперативность ответа и предоставления отчетов).</span>
+            </li>
+            <li class="section-advantage-list-item icon icon-const">
+              <span>Постоянство клиентов.</span>
+            </li>
+            <li class="section-advantage-list-item icon icon-manager">
+              <span>Персональный менеджер (индивидуальный подбор программ на любой бюджет).</span>
+            </li>
+          </ul>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div class="grid_12 text-center">
+        <button class="button section-advantage-button">Уточнить детали</button>
+{#        <a href="#pop" class="button section-advantage-button popupbutton">Уточнить детали</a>#}
+      </div>
+    </div>
+  </section>
+  <section class="section-address">
+    <div class="container_12">
+      <div class="grid_12">
+        <p class="title">Адресная программа</p>
+        <p class="title_small">дома в которых мы размещаем Вашу рекламу</p>
+      </div>
+      <div class="section-address-container">
+        {% for address in address_list %}
+        <div class="grid_3">
+          <div class="section-address-container-item">
+            <a href="" class="section-address-container-item-link">
+              <div class="section-address-container-item-link-back">+</div>
+              <img src="{{ address.image.url }}" alt="{{ address.address }}" class="section-address-container-item-link__image">
+              <span class="section-address-container-item-link__title">район: {{ address.area }}, {{ address.address }}</span>
+            </a>
+          </div>
+        </div>
+        {% endfor %}
+        <div class="clear"></div>
+      </div>
+      <div class="section-address-ticket">
+        <div class="grid_5 prefix_1 suffix_3">
+          <p  class="section-address-ticket__title">Закажите обратный звонок для уточнения деталей прямо сейчас</p>
+        </div>
+        <div class="grid_3">
+          <button class="button section-address-ticket-button">Оставить заявку</button>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </section>
+  <section class="section-work">
+    <div class="container_12">
+      <grid_12>
+        <p class="title">Как мы работаем</p>
+      </grid_12>
+      <div class="section-work-list">
+        <div class="grid_6 section-work-list-item work-icon work-icon__man">
+          <p class="section-work-list-item__text">1. От Вас запрос.</p>
+        </div>
+        <div class="grid_6 section-work-list-item work-icon work-icon__woman">
+          <p class="section-work-list-item__text">2. Мы задаём несколько вопросов.</p>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div class="section-work-list">
+        <div class="grid_6 section-work-list-item work-icon work-icon__designer">
+          <p class="section-work-list-item__text">3. Формируем индивидуальный медиа план.</p>
+        </div>
+        <div class="grid_6 section-work-list-item work-icon work-icon__contract">
+          <p class="section-work-list-item__text">4.Заключаем договор</p>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div class="section-work-list">
+        <div class="grid_10 suffix_1 prefix_1 section-work-list-item work-icon work-icon__finish">
+          <p class="section-work-list-item__text">5. Обоюдно выполняем достигнутые договорённости (вы по оплате, мы по размещению). Контроль по фотоотчёту</p>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+  </section>
+  {% include '__includes/footer.html' %}
+{% endblock %}
