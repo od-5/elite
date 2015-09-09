@@ -64,7 +64,7 @@
         {% for address in address_list %}
         <div class="grid_3">
           <div class="section-address-container-item">
-            <a href="" class="section-address-container-item-link">
+            <a class="section-address-container-item-link" data-address="{{ address.id }}" data-url="{% url 'address' %}">
               <div class="section-address-container-item-link-back">+</div>
               <img src="{{ address.image.url }}" alt="{{ address.address }}" class="section-address-container-item-link__image">
               <span class="section-address-container-item-link__title">{{ address.address }}</span>
@@ -110,8 +110,8 @@
         <div class="clear"></div>
       </div>
       <div class="section-work-list">
-        <div class="grid_10 suffix_1 prefix_1 section-work-list-item work-icon work-icon__finish">
-          <p class="section-work-list-item__text">5. Обоюдно выполняем достигнутые договорённости (вы по оплате, мы по размещению). Контроль по фотоотчёту</p>
+        <div class="grid_6 suffix_3 prefix_3 section-work-list-item work-icon work-icon__finish">
+          <p class="section-work-list-item__text">5. Обоюдно выполняем достигнутые договорённости.</p>
         </div>
         <div class="clear"></div>
       </div>

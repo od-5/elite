@@ -1,12 +1,18 @@
-from .models import Setup
+from .models import Setup, Contacts
+
 __author__ = 'alexy'
 
 
 def site_setup(request):
     try:
-        qs = Setup.objects.all().first()
+        qss = Setup.objects.all().first()
     except:
-        qs = None
+        qss = None
+    try:
+        qsc = Contacts.objects.all().first()
+    except:
+        qsc = None
     return {
-        'setup': qs,
+        'setup': qss,
+        'contacts': qsc,
     }

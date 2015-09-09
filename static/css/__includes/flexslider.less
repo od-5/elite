@@ -84,3 +84,110 @@
     }
   }
 }
+
+.pop {
+  &-gallery {
+    display: none;
+    width: 880px;
+    background: #666;
+    height: 525px;
+    padding-top: 25px;
+    z-index: 9999;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-left: -440px;
+    margin-top: -262.5px;
+    -webkit-box-shadow: 0 0 10px #f1f1f1;
+    -moz-box-shadow: 0 0 10px #f1f1f1;
+    box-shadow: 0 0 10px #f1f1f1;
+  }
+}
+.gallery {
+  width: 700px;
+  height: 468px;
+  background: #666;
+  margin: 0 auto;
+  position: relative;
+  .slides {
+    width: 700px;
+    height: 468px;
+    overflow: hidden;
+  }
+  .flex {
+    &-control {
+      &-nav {
+        list-style: none;
+        text-align: center;
+        padding-left: 0;
+        margin-bottom: -40px;
+        li {
+          display: inline-block;
+          margin: 0 5px;
+          a {
+            width: 10px;
+            height: 10px;
+            border: 2px solid #fff;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 10px;
+            display: block;
+            text-indent: -99999px;
+            &.flex {
+              &-active, &:hover {
+                background: #4bcaff;
+                border: 2px solid #4bcaff;
+                display: block;
+              }
+            }
+          }
+        }
+      }
+    }
+    &-direction {
+      &-nav {
+        list-style: none;
+        .flex {
+          &-nav {
+            li {
+            }
+            &-prev, &-next {
+              position: absolute;
+              top: 50%;
+              margin-top: -30px;
+
+              display: block;
+            }
+            &-prev {
+              left: -70px;
+            }
+            &-next {
+              right: -70px;
+            }
+          }
+          &-prev, &-next {
+            display: block;
+            width: 55px;
+            height: 55px;
+            text-indent: -9999px;
+            -webkit-border-radius: 55px;
+            -moz-border-radius: 55px;
+            border-radius: 55px;
+            &:hover {
+              opacity: 0.6;
+              -webkit-box-shadow: 0 0 5px #000d;
+                -moz-box-shadow: 0 0 5px #000;
+              box-shadow: 0 0 5px #000;
+            }
+          }
+          &-prev {
+              background: url('../img/slider/prev.png') no-repeat;
+            }
+          &-next {
+            background: url('../img/slider/next.png') no-repeat;
+          }
+        }
+      }
+    }
+  }
+}

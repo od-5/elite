@@ -3,10 +3,10 @@
  */
 $(function() {
 
-  $(document).on('click', 'a[href^=#]', function () {
-      $('html, body').animate({ scrollTop:  $('a[name="'+this.hash.slice(1)+'"]').offset().top }, 300 );
-      return false;
-  });
+  //$(document).on('click', 'a[href^=#]', function () {
+  //    $('html, body').animate({ scrollTop:  $('a[name="'+this.hash.slice(1)+'"]').offset().top }, 300 );
+  //    return false;
+  //});
 
   $('section').addClass("hidden").viewportChecker({
     classToAdd: 'visible animated fadeIn',
@@ -112,13 +112,43 @@ $(function() {
     animation: "slide"
   });
 
+
   $('.section-advantage-button, .section-address-ticket-button').on('click', function(e){
     $('#pop').fadeIn();
     $('body').append('<div class="overlay"></div>');
   });
+  $('.section-address-container-item-link').on('click', function(e){
+    $.ajax({
+      type: "POST",
+      url: $(this).data('url'),
+      data: {
+        'address': $(this).data('address')
+      },
+      success: function(msg){
+        //alert( "Прибыли данные: " + msg.success[0] );
+        var address_list = msg.success;
+        $('.pop-gallery').append('<div class="gallery"><ul class="slides"></ul></div>');
+        for (var i = 0; i < address_list.length; i++) {
+          console.log(address_list[i]);
+          $('.gallery .slides').append('<li><img src=' + address_list[i] + '></li>');
+        }
+        $('.gallery').flexslider({
+          animation: "slide"
+        });
+      }
+    });
+    $('.pop-gallery').fadeIn();
+    $('body').append('<div class="overlay"></div>');
+
+  });
+
   $('.modal-close').on('click', function(e){
     //alert('ok');
     $('#pop').fadeOut();
+    $('.pop-gallery').fadeOut();
+    if ($('.gallery .slides li').length) {
+      $('.gallery').detach();
+    }
     $('.overlay').remove();
   });
 

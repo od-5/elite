@@ -43,6 +43,26 @@ class Ticket(Common):
     comment = models.TextField(verbose_name=u'Комментарий', blank=True, null=True)
 
 
+class Contacts(models.Model):
+    class Meta:
+        verbose_name = u'Контакты'
+        verbose_name_plural = u'Контакты'
+        app_label = 'core'
+
+    def __unicode__(self):
+        if self.phone:
+            return self.phone
+        elif self.email:
+            return self.email
+        elif self.address:
+            return self.address
+        else:
+            return u'Контакты'
+
+    phone = models.CharField(max_length=30, verbose_name=u'Телефон', blank=True, null=True)
+    email = models.EmailField(max_length=50, verbose_name=u'e-mail', blank=True, null=True)
+    address = models.TextField(verbose_name=u'Адрес', blank=True, null=True)
+
 
 class Setup(models.Model):
     class Meta:

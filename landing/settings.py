@@ -131,6 +131,7 @@ SUIT_CONFIG = {
         'sites',
         # {'app': 'auth', 'icon':'icon-lock', 'models': ('user', 'group')},
         {'label': u'Настройки', 'icon': 'icon-cog', 'models': ('auth.user', 'auth.group', 'core.setup')},
+        {'label': u'Контакты', 'icon': 'icon-cog', 'models': ('core.contacts',)},
         {'label': u'Заявки', 'icon': 'icon-user', 'models': ('core.ticket',)},
         {'label': u'Районы', 'models': ('core.area',)},
         {'label': u'Слайдер', 'app': 'slider',},

@@ -1,6 +1,6 @@
 # coding=utf-8
 from django.contrib import admin
-from .models import Ticket, Setup, Area
+from .models import Ticket, Setup, Area, Contacts
 from django.forms import ModelForm
 from suit.widgets import EnclosedInput, AutosizedTextarea
 
@@ -34,6 +34,10 @@ class SetupAdmin(admin.ModelAdmin):
     list_display = ('__unicode__', 'email')
 
 
+class ContactsAdmin(admin.ModelAdmin):
+    list_display = ('phone', 'email', 'address')
+
 admin.site.register(Ticket, TicketAdmin)
 admin.site.register(Setup, SetupAdmin)
 admin.site.register(Area)
+admin.site.register(Contacts, ContactsAdmin)

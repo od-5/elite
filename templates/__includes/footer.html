@@ -6,9 +6,9 @@
       </a>
       <p class="footer__heading">Контакты:</p>
       <ul class="footer-address">
-        <li>г.Волгоград, ул.Мира 99</li>
-        <li>8 800 775 18 45</li>
-        <li><a href="mailto:test@example.com" class="foter-address__mail">test@example.com</a></li>
+        <li>{{ contacts.address|linebreaksbr }}</li>
+        <li>{{ contacts.phone }}</li>
+        <li><a href="mailto:{{ contacts.email }}" class="foter-address__mail">{{ contacts.email }}</a></li>
       </ul>
     </div>
     <div class="grid_3">

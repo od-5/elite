@@ -9,6 +9,7 @@ urlpatterns = patterns('',
     # Examples:
     url(r'^$', 'core.views.index', name='home'),
     url(r'^ticket/$', 'core.ajax.ticket_form', name='ticket'),
+    url(r'^address/$', 'apps.address.ajax.address_item_list', name='address'),
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
