@@ -5,7 +5,7 @@ __author__ = 'alexy'
 
 
 class AddressAdmin(admin.ModelAdmin):
-    list_display = ('address', 'area', 'pic', )
+    list_display = ('address', 'pic', )
 
 
 admin.site.register(Address, AddressAdmin)

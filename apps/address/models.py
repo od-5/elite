@@ -7,7 +7,6 @@ __author__ = 'alexy'
 
 class Address(models.Model):
     address = models.CharField(max_length=255, verbose_name=u'Адрес')
-    area = models.ForeignKey(to=Area, verbose_name=u'Адрес')
     image = models.ImageField(upload_to='address', verbose_name=u'Изображение')
 
     def __unicode__(self):
