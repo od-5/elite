@@ -6,6 +6,10 @@
 .flexslider .slides li {
   height: 350px !important;
   overflow: hidden;
+  text-align: center;
+}
+.flexslider .slides li img {
+  height: 100%;
 }
 .flexslider .flex-control-nav {
   list-style: none;
