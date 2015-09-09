@@ -2,6 +2,21 @@
  * Created by alexy on 28.05.15.
  */
 $(function() {
+
+  $(document).on('click', 'a[href^=#]', function () {
+      $('html, body').animate({ scrollTop:  $('a[name="'+this.hash.slice(1)+'"]').offset().top }, 300 );
+      return false;
+  });
+
+  $('section').addClass("hidden").viewportChecker({
+    classToAdd: 'visible animated fadeIn',
+    offset: 100
+  });
+  $('.section-video-container, .section-advantage-list').addClass("hidden").viewportChecker({
+    classToAdd: 'visible animated fadeIn',
+    offset: 200
+  });
+
   //$('.popupbutton').fancybox({
   //  'padding': 37,
   //  'overlayOpacity': 0.87,
