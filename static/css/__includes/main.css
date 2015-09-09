@@ -153,9 +153,12 @@ input[type=text]:-ms-input-placeholder, select:-ms-input-placeholder {
   text-transform: uppercase;
 }
 .header-phone__number {
-  font-size: 24px;
+  font-size: 30px;
+  text-shadow: 1px 1px 0 #000;
+  font-weight: bold;
   line-height: 62px;
-  color: #4bcaff;
+  color: #FFE169;
+  font-family: Arial, Helvetica, sans-serif;
 }
 .header-phone__text {
   font-size: 14px;
@@ -260,6 +263,10 @@ input[type=text]:-ms-input-placeholder, select:-ms-input-placeholder {
 }
 .icon span {
   display: block;
+}
+.icon span strong {
+  font-weight: normal;
+  color: #ff5454;
 }
 .icon-money {
   background-image: url("../img/icon-money.png");

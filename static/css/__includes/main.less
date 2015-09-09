@@ -154,9 +154,12 @@ input[type=text], select {
     font-weight: bold;
     text-transform: uppercase;
     &__number {
-      font-size: 24px;
+      font-size: 30px;
+      text-shadow: 1px 1px 0 #000;
+      font-weight: bold;
       line-height: 62px;
-      color: #4bcaff;
+      color: #FFE169;
+      font-family: Arial, Helvetica, sans-serif;
     }
     &__text {
       font-size: 14px;
@@ -268,6 +271,10 @@ input[type=text], select {
   padding-left: 200px;
   span {
     display: block;
+    strong {
+      font-weight: normal;
+      color: rgb(255, 84, 84);
+      }
   }
   &-money {
     background-image: url("../img/icon-money.png");
