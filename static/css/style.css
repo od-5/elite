@@ -3905,15 +3905,17 @@ input[type=text]:-ms-input-placeholder, select:-ms-input-placeholder {
   padding-top: 27px;
 }
 .work-icon {
-  padding-top: 300px;
+  padding-top: 175px;
   background-position: 50% 0;
   background-repeat: no-repeat;
+  background-size: 250px;
 }
 .work-icon__man {
   background-image: url('../img/work__man.png');
 }
 .work-icon__woman {
   background-image: url('../img/work__woman.png');
+  background-size: 130px;
 }
 .work-icon__designer {
   background-image: url('../img/work__designer.png');

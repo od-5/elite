@@ -14,20 +14,13 @@ DEBUG = True
 
 TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*',]
 
-# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-# DEFAULT_FROM_EMAIL = 'admin@enjoy-africa.ru'
-# EMAIL_HOST = 'smtp.fullspace.ru'
-# EMAIL_HOST_USER = 'admin@enjoy-africa.ru'
-# EMAIL_HOST_PASSWORD = 'alena2010'
-
-EMAIL_HOST = 'smtp.yandex.ru'
-EMAIL_HOST_USER = 'od-5@yandex.ru'
-EMAIL_HOST_PASSWORD = 'gladiator1'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+DEFAULT_FROM_EMAIL = 'admin@elitkadom.ru'
+EMAIL_HOST = 'smtp.fullspace.ru'
+EMAIL_HOST_USER = 'admin@elitkadom.ru'
+EMAIL_HOST_PASSWORD = '123456'
 
 
 # Application definition
@@ -76,11 +69,22 @@ DEBUG_TOOLBAR_PATCH_SETTINGS = False
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+     'default': {
+         'ENGINE': 'django.db.backends.mysql',
+         'NAME': 'elitkadoru',
+         'USER': 'elitkadoru',
+         'PASSWORD': 'd9310cfa',
+         'HOST': 'localhost',
+         'PORT': '',
+     }
 }
 
 # Internationalization
