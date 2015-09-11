@@ -14,7 +14,7 @@ DEBUG = False
 
 TEMPLATE_DEBUG = DEBUG
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['elitkadom.ru', 'арт-лифт.рф']
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
@@ -144,3 +144,5 @@ SUIT_CONFIG = {
 }
 
 SLIDER_SIZE = [525, 350]
+ADDRESS_SIZE = [280, 189]
+ADDRESS_ITEM_SIZE = [700, 525]

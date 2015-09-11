@@ -1,6 +1,10 @@
 # coding=utf-8
 from django.db import models
 from core.models import Area
+from imagekit.models import ImageSpecField
+from pilkit.processors import SmartResize
+from django.conf import settings
+
 
 __author__ = 'alexy'
 
@@ -13,6 +17,9 @@ class Address(models.Model):
 
     address = models.CharField(max_length=255, verbose_name=u'Адрес')
     image = models.ImageField(upload_to='address', verbose_name=u'Изображение')
+    image_resize = ImageSpecField(
+        [SmartResize(*settings.ADDRESS_SIZE)], source='image', format='JPEG', options={'quality': 94}
+    )
 
     def __unicode__(self):
         return self.address
@@ -33,6 +40,9 @@ class AddressItem(models.Model):
 
     address = models.ForeignKey(to=Address, verbose_name=u'Адрес')
     image = models.ImageField(upload_to='addressitem', verbose_name=u'Изображение')
+    image_resize = ImageSpecField(
+        [SmartResize(*settings.ADDRESS_ITEM_SIZE)], source='image', format='JPEG', options={'quality': 94}
+    )
 
     def __unicode__(self):
         return self.address.address
