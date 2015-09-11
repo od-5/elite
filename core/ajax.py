@@ -21,7 +21,7 @@ def ticket_form(request):
             ticket = form.save(commit=False)
             ticket.status = 1
             ticket.save()
-            message = u'Имя: %s\nE-mail: %s\n' % (ticket.name, ticket.phone)
+            message = u'Имя: %s\nТелефон: %s\nРайон: %s\n' % (ticket.name, ticket.phone, ticket.area)
             print settings.EMAIL_HOST_USER
             send_mail(
                 u'Реклама в лифтах - Заявка с сайта',

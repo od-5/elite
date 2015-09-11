@@ -10,9 +10,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = '_tpd9(a+n4i20i$5j6$cw^%09q=i6_r1e-j8ur-e@uw91#g@hd'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-TEMPLATE_DEBUG = True
+TEMPLATE_DEBUG = False
 
 ALLOWED_HOSTS = ['*',]
 
@@ -20,8 +20,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 DEFAULT_FROM_EMAIL = 'admin@elitkadom.ru'
 EMAIL_HOST = 'smtp.fullspace.ru'
 EMAIL_HOST_USER = 'admin@elitkadom.ru'
-EMAIL_HOST_PASSWORD = '123456'
-
+EMAIL_HOST_PASSWORD = 'alena2010'
 
 # Application definition
 
