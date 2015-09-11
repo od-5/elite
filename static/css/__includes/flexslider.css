@@ -99,6 +99,9 @@
   height: 468px;
   overflow: hidden;
 }
+.gallery .slides li img {
+  height: 100%;
+}
 .gallery .flex-control-nav {
   list-style: none;
   text-align: center;
