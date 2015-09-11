@@ -14,13 +14,15 @@ DEBUG = True
 
 TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = ['*',]
+ALLOWED_HOSTS = ['*']
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-DEFAULT_FROM_EMAIL = 'admin@elitkadom.ru'
-EMAIL_HOST = 'smtp.fullspace.ru'
-EMAIL_HOST_USER = 'admin@elitkadom.ru'
-EMAIL_HOST_PASSWORD = '123456'
+DEFAULT_FROM_EMAIL = 'od-5@yandex.ru'
+EMAIL_HOST = 'smtp.yandex.ru'
+EMAIL_HOST_USER = 'od-5@yandex.ru'
+EMAIL_HOST_PASSWORD = 'gladiator1'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
 
 
 # Application definition
@@ -34,6 +36,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # 'debug_toolbar',
+    'imagekit',
     'widget_tweaks',
     'annoying',
     'core',
@@ -68,24 +71,24 @@ DEBUG_TOOLBAR_PATCH_SETTINGS = False
 
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
-
-DATABASES = {
-     'default': {
-         'ENGINE': 'django.db.backends.mysql',
-         'NAME': 'elitkadoru',
-         'USER': 'elitkadoru',
-         'PASSWORD': 'd9310cfa',
-         'HOST': 'localhost',
-         'PORT': '',
-     }
-}
+if DEBUG:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
+else:
+    DATABASES = {
+         'default': {
+             'ENGINE': 'django.db.backends.mysql',
+             'NAME': 'elitkadoru',
+             'USER': 'elitkadoru',
+             'PASSWORD': 'd9310cfa',
+             'HOST': 'localhost',
+             'PORT': '',
+         }
+    }
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
@@ -142,3 +145,5 @@ SUIT_CONFIG = {
         {'label': u'Адресная программа', 'app': 'address',},
     ),
 }
+
+SLIDER_SIZE = [525, 350]

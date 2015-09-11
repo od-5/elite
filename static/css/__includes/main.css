@@ -153,16 +153,17 @@ input[type=text]:-ms-input-placeholder, select:-ms-input-placeholder {
   text-transform: uppercase;
 }
 .header-phone__number {
-  font-size: 30px;
+  font-size: 36px;
   text-shadow: 1px 1px 0 #000;
   font-weight: bold;
   line-height: 62px;
-  color: #FFE169;
+  color: #F80000;
   font-family: Arial, Helvetica, sans-serif;
 }
 .header-phone__text {
   font-size: 14px;
   color: #fff;
+  text-align: center;
 }
 .header-slider__title {
   text-align: center;
@@ -322,4 +323,17 @@ input[type=text]:-ms-input-placeholder, select:-ms-input-placeholder {
 }
 .work-icon__finish {
   background-image: url('../img/work__finish.png');
+}
+#scrollup {
+  position: fixed;
+  opacity: 0.8;
+  padding: 15px 10px 10px;
+  background: #aaa;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  right: 10px;
+  bottom: 10px;
+  display: none;
+  cursor: pointer;
 }

@@ -11,7 +11,7 @@
   <script src="{{ STATIC_URL }}js/jquery.flexslider-min.js"></script>
   <script src="{{ STATIC_URL }}js/notify-combined.min.js"></script>
   <script src="{{ STATIC_URL }}js/jquery.viewportchecker.js"></script>
-{#  <script src="{{ STATIC_URL }}js/scrollup.js"></script>#}
+  <script src="{{ STATIC_URL }}js/scrollup.js"></script>
   <script src="{{ STATIC_URL }}js/common.js"></script>
   {% if setup.top_js %}
     {{ setup.top_js }}
@@ -22,11 +22,12 @@
 <body>
 {% block content %}
 {% endblock %}
-{% if setup.bottom_js %}
-  {{ setup.bottom_js }}
-{% endif %}
 {% include '__modal/form.html' %}
 {% include '__modal/gallery.html' %}
 {#<div class="overlay"></div>#}
+<div id="scrollup"><img alt="Прокрутить вверх" src="{{ STATIC_URL }}img/up.png"></div>
+{% if setup.bottom_js %}
+  {{ setup.bottom_js }}
+{% endif %}
 </body>
 </html>
