@@ -4041,6 +4041,10 @@ input[type=text]:-ms-input-placeholder, select:-ms-input-placeholder {
   height: 468px;
   overflow: hidden;
 }
+.gallery .slides li {
+  height: 468px;
+  text-align: center;
+}
 .gallery .slides li img {
   height: 100%;
 }
