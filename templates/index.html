@@ -66,7 +66,7 @@
           <div class="section-address-container-item">
             <a class="section-address-container-item-link" data-address="{{ address.id }}" data-url="{% url 'address' %}">
               <div class="section-address-container-item-link-back">+</div>
-              <img src="{{ address.image.url }}" alt="{{ address.address }}" class="section-address-container-item-link__image">
+              <img src="{{ address.image_resize.url }}" alt="{{ address.address }}" class="section-address-container-item-link__image">
               <span class="section-address-container-item-link__title">{{ address.address }}</span>
             </a>
           </div>

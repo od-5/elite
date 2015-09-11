@@ -14,7 +14,7 @@ def address_item_list(request):
         address_qs = AddressItem.objects.filter(address=int(address))
         address_list = []
         for i in address_qs:
-            address_list.append(i.image.url)
+            address_list.append(i.image_resize.url)
         return {
             'success': address_list
         }

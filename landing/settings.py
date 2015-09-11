@@ -68,8 +68,6 @@ WSGI_APPLICATION = 'landing.wsgi.application'
 
 DEBUG_TOOLBAR_PATCH_SETTINGS = False
 
-# Database
-# https://docs.djangoproject.com/en/1.7/ref/settings/#databases
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3',
