@@ -4164,6 +4164,25 @@ input[type=text]:-ms-input-placeholder, select:-ms-input-placeholder {
   text-shadow: 1px 1px 0 #333;
   color: #999;
 }
+.section-advantage-list-item__icon {
+  display: inline-block;
+  width: 200px;
+  vertical-align: top;
+  text-align: center;
+}
+.section-advantage-list-item__icon img {
+  height: 100px;
+}
+.section-advantage-list-item span {
+  padding-top: 10px;
+  display: inline-block;
+}
+.section-advantage-list-item span strong, .section-advantage-list-item span a {
+  font-weight: normal;
+  color: #ff5454;
+  text-transform: none;
+  text-decoration: none;
+}
 .section-advantage-button {
   padding: 24px 50px;
   margin: 50px 0;

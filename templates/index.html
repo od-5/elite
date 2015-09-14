@@ -29,21 +29,35 @@
       <div class="section-advantage-container">
         <div class="grid_9 suffix_3">
           <ul class="section-advantage-list">
-            <li class="section-advantage-list-item icon icon-money">
-              <span><strong>Активная и платежеспособная аудитория</strong> <br>(реклама в домах повышенной комфортности).</span>
+          {% for advantage in advantage_list %}
+            <li class="section-advantage-list-item">
+              <div class="section-advantage-list-item__icon"><img src="{{ advantage.image.url }}" alt=""></div>
+              <span>
+                {% if advantage.link %}
+                  <a href="{{ advantage.link }}">{{ advantage.title }}</a>
+                {% else %}
+                <strong>{{ advantage.title }}</strong>
+                {% endif %}
+                <br>
+                {{ advantage.text|default:'' }}
+              </span>
             </li>
-            <li class="section-advantage-list-item icon icon-design">
-              <span><strong>Дизайн индивидуально</strong><br> под Ваши идеи от опытных дизайнеров.</span>
-            </li>
-            <li class="section-advantage-list-item icon icon-profy">
-              <span><strong>Качество работ</strong><br> (уникальная конструкция стенда, четкие сроки, оперативность ответа и предоставления отчетов).</span>
-            </li>
-            <li class="section-advantage-list-item icon icon-const">
-              <span><strong>Постоянство клиентов.</strong></span>
-            </li>
-            <li class="section-advantage-list-item icon icon-manager">
-              <span><strong>Персональный менеджер</strong><br> (индивидуальный подбор программ на любой бюджет).</span>
-            </li>
+          {% endfor %}
+{#            <li class="section-advantage-list-item icon icon-money">#}
+{#              <span><strong>Активная и платежеспособная аудитория</strong> <br>(реклама в домах повышенной комфортности).</span>#}
+{#            </li>#}
+{#            <li class="section-advantage-list-item icon icon-design">#}
+{#              <span><strong>Дизайн индивидуально</strong><br> под Ваши идеи от опытных дизайнеров.</span>#}
+{#            </li>#}
+{#            <li class="section-advantage-list-item icon icon-profy">#}
+{#              <span><strong>Качество работ</strong><br> (уникальная конструкция стенда, четкие сроки, оперативность ответа и предоставления отчетов).</span>#}
+{#            </li>#}
+{#            <li class="section-advantage-list-item icon icon-const">#}
+{#              <span><strong>Постоянство клиентов.</strong></span>#}
+{#            </li>#}
+{#            <li class="section-advantage-list-item icon icon-manager">#}
+{#              <span><strong>Персональный менеджер</strong><br> (индивидуальный подбор программ на любой бюджет).</span>#}
+{#            </li>#}
           </ul>
         </div>
         <div class="clear"></div>
