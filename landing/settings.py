@@ -10,7 +10,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = '_tpd9(a+n4i20i$5j6$cw^%09q=i6_r1e-j8ur-e@uw91#g@hd'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 TEMPLATE_DEBUG = DEBUG
 
@@ -68,22 +68,22 @@ WSGI_APPLICATION = 'landing.wsgi.application'
 
 DEBUG_TOOLBAR_PATCH_SETTINGS = False
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
 DATABASES = {
-     'default': {
-         'ENGINE': 'django.db.backends.mysql',
-         'NAME': 'elitkadoru',
-         'USER': 'elitkadoru',
-         'PASSWORD': 'd9310cfa',
-         'HOST': 'localhost',
-         'PORT': '',
-     }
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
 }
+# DATABASES = {
+#      'default': {
+#          'ENGINE': 'django.db.backends.mysql',
+#          'NAME': 'elitkadoru',
+#          'USER': 'elitkadoru',
+#          'PASSWORD': 'd9310cfa',
+#          'HOST': 'localhost',
+#          'PORT': '',
+#      }
+# }
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
