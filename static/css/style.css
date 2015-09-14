@@ -4262,3 +4262,56 @@ input[type=text]:-ms-input-placeholder, select:-ms-input-placeholder {
   text-align: center;
   margin: 0;
 }
+.article {
+  margin-top: -70px;
+  position: relative;
+  z-index: 2;
+  background: #fff;
+  font-family: Helvetica, Arial, sans-serif;
+  -webkit-box-shadow: 0 0 15px #000;
+  -moz-box-shadow: 0 0 15px #000;
+  box-shadow: 0 0 15px #000;
+}
+.article a {
+  font-family: Helvetica, Arial, sans-serif;
+  color: #007ac2;
+}
+.article__title {
+  text-align: center;
+}
+.article-list-item {
+  margin-bottom: 30px;
+}
+.article-list-item__created {
+  margin: 0 0 0.3em 0;
+  font-size: 0.7em;
+  color: #828282;
+}
+.article-list-item__title {
+  margin-bottom: 10px;
+}
+.article-list-item__link {
+  font-size: 24px;
+  border-color: rgba(0, 122, 194, 0.298039);
+  border-bottom: 1px solid;
+  cursor: auto;
+  display: inline;
+  text-decoration: none;
+}
+.article-list-item__description {
+  line-height: 1.5em;
+  margin-bottom: 10px;
+}
+.article-list-item__description__link {
+  padding-bottom: 20px;
+}
+.article-menu {
+  padding-top: 20px;
+  text-decoration: underline;
+}
+.article-menu-list {
+  list-style: none;
+}
+.article-menu-list-item {
+  padding: 5px 0;
+}

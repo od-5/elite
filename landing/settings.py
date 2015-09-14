@@ -1,5 +1,6 @@
 # coding=utf-8
 import os
+
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 
@@ -10,7 +11,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = '_tpd9(a+n4i20i$5j6$cw^%09q=i6_r1e-j8ur-e@uw91#g@hd'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 TEMPLATE_DEBUG = DEBUG
 
@@ -36,11 +37,13 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'debug_toolbar',
     'imagekit',
+    'suit_redactor',
     'widget_tweaks',
     'annoying',
     'core',
     'apps.slider',
     'apps.address',
+    'apps.article',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -59,6 +62,7 @@ from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS as TCP
 TEMPLATE_CONTEXT_PROCESSORS = TCP + (
     'django.core.context_processors.request',
     'core.context.site_setup',
+    'apps.article.context.article_list',
 )
 
 INTERNAL_IPS = '127.0.0.1'
@@ -68,22 +72,22 @@ WSGI_APPLICATION = 'landing.wsgi.application'
 
 DEBUG_TOOLBAR_PATCH_SETTINGS = False
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
 # DATABASES = {
-#      'default': {
-#          'ENGINE': 'django.db.backends.mysql',
-#          'NAME': 'elitkadoru',
-#          'USER': 'elitkadoru',
-#          'PASSWORD': 'd9310cfa',
-#          'HOST': 'localhost',
-#          'PORT': '',
-#      }
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
 # }
+DATABASES = {
+     'default': {
+         'ENGINE': 'django.db.backends.mysql',
+         'NAME': 'elitkadoru',
+         'USER': 'elitkadoru',
+         'PASSWORD': 'd9310cfa',
+         'HOST': 'localhost',
+         'PORT': '',
+     }
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
@@ -136,8 +140,9 @@ SUIT_CONFIG = {
         {'label': u'Контакты', 'icon': 'icon-cog', 'models': ('core.contacts',)},
         {'label': u'Заявки', 'icon': 'icon-user', 'models': ('core.ticket',)},
         {'label': u'Районы', 'models': ('core.area',)},
-        {'label': u'Слайдер', 'app': 'slider',},
-        {'label': u'Адресная программа', 'app': 'address',},
+        {'label': u'Слайдер', 'app': 'slider', },
+        {'label': u'Адресная программа', 'app': 'address', },
+        {'label': u'Статьи', 'app': 'article', },
     ),
 }
 

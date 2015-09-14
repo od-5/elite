@@ -1,0 +1,9 @@
+{% extends 'page.html' %}
+{% block main %}
+  <h1 class="article__title">{{ object.title }}</h1>
+  <div class="article-list-item__description">
+    {{ article.text|safe }}<br>
+  </div>
+  <div class="article-list-item__created"><span>{{ article.created }}</span></div>
+  <hr>
+{% endblock %}

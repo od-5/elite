@@ -6,3 +6,5 @@ pillow==2.8.1
 django-annoying==0.8.3
 mysql-python
 django-imagekit==3.2.7
+django-suit-redactor==0.0.2
+pytils==0.3

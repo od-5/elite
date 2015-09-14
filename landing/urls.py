@@ -4,15 +4,16 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.conf import settings
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, ListView, DetailView
+from apps.article.models import Article
 
-urlpatterns = patterns('',
-    # Examples:
+urlpatterns = patterns(
+    '',
     url(r'^$', 'core.views.index', name='home'),
+    url(r'^article/$', ListView.as_view(model=Article), name='article-list'),
+    url(r'^article/(?P<slug>[\w-]+)$', DetailView.as_view(model=Article), name='article-detail'),
     url(r'^ticket/$', 'core.ajax.ticket_form', name='ticket'),
     url(r'^address/$', 'apps.address.ajax.address_item_list', name='address'),
-    # url(r'^blog/', include('blog.urls')),
-
     url(r'^admin/', include(admin.site.urls)),
 )
 

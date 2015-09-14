@@ -1,0 +1,19 @@
+{% extends 'page.html' %}
+{% block main %}
+  <h1 class="article__title">Статьи</h1>
+  <div class="article-list">
+  {% for article in object_list %}
+    <div class="article-list-item">
+      <div class="article-list-item__created"><span>{{ article.created }}</span></div>
+      <div class="article-list-item__title">
+        <a href="{{ article.get_absolute_url }}" class="article-list-item__link">{{ article.title }}</a>
+      </div>
+      <div class="article-list-item__description">
+        {{ article.text|striptags|truncatewords:50 }}<br>
+        <a href="{{ article.get_absolute_url }}" class="article-list-item__description__link">Читать полностью >></a>
+      </div>
+      <hr>
+    </div>
+  {% endfor %}
+  </div>
+{% endblock %}
