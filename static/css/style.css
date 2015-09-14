@@ -4262,6 +4262,21 @@ input[type=text]:-ms-input-placeholder, select:-ms-input-placeholder {
   text-align: center;
   margin: 0;
 }
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+#wrapper {
+  min-height: 100%;
+  margin-bottom: -50px;
+}
+* html #wrapper {
+  height: 100%;
+}
+.page-buffer {
+  height: 50px;
+}
 .article {
   margin-top: -70px;
   position: relative;
