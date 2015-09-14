@@ -4163,6 +4163,7 @@ input[type=text]:-ms-input-placeholder, select:-ms-input-placeholder {
   font-size: 30px;
   text-shadow: 1px 1px 0 #333;
   color: #999;
+  margin-bottom: 20px;
 }
 .section-advantage-list-item__icon {
   display: inline-block;
