@@ -21,7 +21,8 @@ class ArticleAdmin(admin.ModelAdmin):
         (None, {'classes': ('full-width'),
                 'fields': ('title', 'text')}
          ),
-        ('SEO', {'fields': ('slug', 'meta_key', 'meta_desc')})
+        ('SEO', {'classes': ('collapse'),
+                'fields': ('slug', 'meta_key', 'meta_desc')})
     ]
 
 

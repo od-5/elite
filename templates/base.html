@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>{% block title %}{{ setup.title|default:'Название сайта' }}{% endblock %}</title>
   {% block meta %}
-    <meta name="description" content="{{ setup.meta_desc|default:'' }}">
+  <meta name="description" content="{{ setup.meta_desc|default:'' }}">
   <meta name="keywords" content="{{ setup.meta_key|default:'' }}">
 {% endblock %}
   <script src="{{ STATIC_URL }}js/jquery-1.11.2.min.js"></script>

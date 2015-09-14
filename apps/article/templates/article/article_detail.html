@@ -1,4 +1,11 @@
 {% extends 'page.html' %}
+{% block title %}
+  {{ object.tite }}
+{% endblock %}
+{% block meta %}
+  <meta name="description" content="{{ object.meta_desc|default:'' }}">
+  <meta name="keywords" content="{{ object.meta_key|default:'' }}">
+{% endblock %}
 {% block main %}
   <h1 class="article__title">{{ object.title }}</h1>
   <div class="article-list-item__description">
