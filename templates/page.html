@@ -3,51 +3,54 @@
   Статьи на тему рекламы в лифтах домов повышенной комфортности
 {% endblock %}
 {% block content %}
-<header class="header"><a name="top"></a>
-  <div class="header-row-1">
+<div id="wrapper">
+  <header class="header"><a name="top"></a>
+    <div class="header-row-1">
+      <div class="container_12">
+        <div class="grid_3">
+          <a href="{% url 'home' %}" title="" class="header-logotype">
+            <img src="{{ STATIC_URL }}img/logotype.png" alt="Логотип">
+          </a>
+        </div>
+        <div class="grid_6">
+          <nav class="nav">
+            <ul class="nav-list">
+              <li class="nav-list-item">
+                <a href="{% url 'home' %}" class="nav-list-item__link">Главная страница</a>
+              </li>
+              <li class="nav-list-item">
+                <a href="{% url 'article-list' %}" class="nav-list-item__link">Список статей</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="grid_3">
+          <span class="header-phone header-phone__number">{{ contacts.phone }}</span>
+          <span class="header-phone header-phone__text">звонок бесплатный</span>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+  </header>
+  <main class="article">
     <div class="container_12">
-      <div class="grid_3">
-        <a href="{% url 'home' %}" title="" class="header-logotype">
-          <img src="{{ STATIC_URL }}img/logotype.png" alt="Логотип">
-        </a>
-      </div>
-      <div class="grid_6">
-        <nav class="nav">
-          <ul class="nav-list">
-            <li class="nav-list-item">
-              <a href="{% url 'home' %}" class="nav-list-item__link">Главная страница</a>
-            </li>
-            <li class="nav-list-item">
-              <a href="#advantage" class="nav-list-item__link">Список статей</a>
-            </li>
-          </ul>
-        </nav>
+      <div class="grid_9">
+      {% block main %}
+      {% endblock %}
       </div>
       <div class="grid_3">
-        <span class="header-phone header-phone__number">{{ contacts.phone }}</span>
-        <span class="header-phone header-phone__text">звонок бесплатный</span>
+        <p class="article-menu">Список статей:</p>
+        <ul class="article-menu-list">
+          {% for article in ARTICLE_MENU %}
+          <li class="article-menu-list-item"><a href="{{ article.get_absolute_url }}" class="article-menu__link">{{ article.title|default:'' }}</a></li>
+          {% endfor %}
+        </ul>
       </div>
       <div class="clear"></div>
     </div>
-  </div>
-</header>
-<main class="article">
-  <div class="container_12">
-    <div class="grid_9">
-    {% block main %}
-    {% endblock %}
-    </div>
-    <div class="grid_3">
-      <p class="article-menu">Список статей:</p>
-      <ul class="article-menu-list">
-        {% for article in ARTICLE_MENU %}
-        <li class="article-menu-list-item"><a href="{{ article.get_absolute_url }}" class="article-menu__link">{{ article.title|default:'' }}</a></li>
-        {% endfor %}
-      </ul>
-    </div>
-    <div class="clear"></div>
-  </div>
-</main>
+  </main>
+  <div class="page-buffer"></div>
+</div>
 <footer class="footer">
   <div class="container_12">
     <div class="grid_3">
