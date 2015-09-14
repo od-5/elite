@@ -64,6 +64,7 @@
 }
 .section-advantage-list-item span {
   padding-top: 10px;
+  width: 610px;
   display: inline-block;
 }
 .section-advantage-list-item span strong, .section-advantage-list-item span a {
