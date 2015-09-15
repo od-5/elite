@@ -17,7 +17,7 @@ class Slider(models.Model):
         return u'Изображение #%s' % self.id
 
     def pic(self):
-        return '<img src="%s" width="170"/>' % self.image.url
+        return '<img src="%s" width="170"/>' % self.image_resize.url
     pic.short_description = u"Миниатюра"
     pic.allow_tags = True
 
