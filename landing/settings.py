@@ -15,7 +15,13 @@ DEBUG = False
 
 TEMPLATE_DEBUG = DEBUG
 
-ALLOWED_HOSTS = ['elitkadom.ru', u'арт-лифт.рф', 'www.elitkadom.ru', u'www.арт-лифт.рф']
+ALLOWED_HOSTS = [
+    'elitkadom.ru',
+    u'арт-лифт.рф',
+    'www.elitkadom.ru',
+    u'www.арт-лифт.рф',
+    'http://xn----7sbzlxmdp.xn--p1ai/',
+]
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
