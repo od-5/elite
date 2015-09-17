@@ -16,7 +16,7 @@
   <script src="{{ STATIC_URL }}js/scrollup.js"></script>
   <script src="{{ STATIC_URL }}js/common.js"></script>
   {% if setup.top_js %}
-    {{ setup.top_js }}
+    {{ setup.top_js|safe }}
   {% endif %}
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Ubuntu+Condensed" />
   <link href="{{ STATIC_URL }}css/style.css" rel="stylesheet">
@@ -29,7 +29,7 @@
 {#<div class="overlay"></div>#}
 <div id="scrollup"><img alt="Прокрутить вверх" src="{{ STATIC_URL }}img/up.png"></div>
 {% if setup.bottom_js %}
-  {{ setup.bottom_js }}
+  {{ setup.bottom_js|safe }}
 {% endif %}
 </body>
 </html>
