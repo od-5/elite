@@ -1,6 +1,10 @@
 .section-video {
   background: url('../img/section-video__bg.jpg') 50% 0 no-repeat;
   background-size: cover;
+  text-align: center;
+}
+.section-video .button {
+  margin: 10px 0 30px !important;
 }
 .section-video-container {
   background: url("../img/tv.png") 0 0 no-repeat;
@@ -82,6 +86,9 @@
 .section-address {
   background: url('../img/section-advantage__bg.jpg') 50% 0 no-repeat;
   background-size: cover;
+}
+.section-address__title {
+  font-size: 36px;
 }
 .section-address-container-item {
   margin-bottom: 20px;
