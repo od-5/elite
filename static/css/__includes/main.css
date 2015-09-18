@@ -182,21 +182,22 @@ input[type=text]:-ms-input-placeholder, select:-ms-input-placeholder {
 .header-advantage__title {
   color: #fff9d6;
   font-size: 24px;
-  padding-top: 18px;
+  text-align: center;
 }
 .header-advantage-list {
   margin-left: 42px;
+  padding-top: 10px;
   padding-bottom: 20px;
   text-align: left;
   list-style-image: url('../img/list-style-image.png');
 }
 .header-advantage-list-item {
-  padding-bottom: 20px;
+  padding-bottom: 10px;
 }
 .header-advantage-list-item span {
   color: #fff9d6;
   text-shadow: 1px 1px 0 #ffaaaa;
-  font-size: 24px;
+  font-size: 18px;
 }
 .header-advantage-list-item a {
   color: #fff;
@@ -337,10 +338,4 @@ input[type=text]:-ms-input-placeholder, select:-ms-input-placeholder {
   left: 10px;
   display: none;
   cursor: pointer;
-}
-* {
-  -webkit-animation-delay: time;
-  -moz-animation-delay: time;
-  -o-animation-delay: time;
-  animation-delay: time;
 }

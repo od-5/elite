@@ -6,7 +6,7 @@
           <img src="{{ STATIC_URL }}img/logotype.png" alt="Логотип">
         </a>
       </div>
-      <div class="grid_6">
+      <div class="grid_5">
         <nav class="nav">
           <ul class="nav-list">
             <li class="nav-list-item">
@@ -24,7 +24,7 @@
           </ul>
         </nav>
       </div>
-      <div class="grid_3">
+      <div class="grid_4">
         <span class="header-phone header-phone__number">{{ contacts.phone }}</span>
         <span class="header-phone header-phone__text">звонок бесплатный</span>
       </div>
@@ -49,12 +49,12 @@
         </div>
       </div>
     </div>
-    <div class="grid_5">
-{#      <p class="header-advantage__title">#}
-{#        Наши преимущества#}
-{#      </p>#}
+    <div class="grid_4 prefix_1">
+      <p class="header-advantage__title">
+        Реклама в лифтах домов повышенной комфортности
+      </p>
       <div class="header-advantage animated zoomIn">
-        <p class="header-advantage__title">Наши преимущества</p>
+{#        <p class="header-advantage__title">Наши преимущества</p>#}
         <ul class="header-advantage-list">
           {% for advantage in advantage_list  %}
             <li class="header-advantage-list-item animated bounceInRight" style="-webkit-animation-delay: .{{ forloop.counter }}00s;-moz-animation-delay:  {{ forloop.counter }}s;-o-animation-delay:  {{ forloop.counter }}s;animation-delay:  {{ forloop.counter }}s;">
