@@ -8,7 +8,7 @@
 {#  </select>#}
   {% load widget_tweaks %}
   {{ form.name|attr:'placeholder:Ваше имя' }}
-  {{ form.phone|attr:'placeholder:Ваш телефон' }}
+  {{ form.phone|attr:'placeholder:Ваш телефон или e-mail' }}
   <label for="area">Выберите район</label>
   {{ form.area }}
   <input type="submit" value="Оставить заявку" class="button">

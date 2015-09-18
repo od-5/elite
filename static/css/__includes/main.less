@@ -176,34 +176,33 @@ input[type=text], select {
       padding: 18px 0;
     }
   }
-  &-ticket {
+  &-advantage {
+    margin-top: 20px;
+    background: rgba(97, 108, 115, 0.6);
+    padding: 0 10px 20px 10px;
+    text-align: center;
+    color: #fff;
     &__title {
-      color: #fff;
+      color: #fff9d6;
       font-size: 24px;
-      text-align: center;
-      margin: 0;
-      padding-top: 20px;
-      &_small {
-        font-size: 18px;
-        padding-top: 0;
-        padding-bottom: 15px;
-      }
-      .strong {
-        color: #fff66d;
-      }
+      padding-top: 18px;
     }
-    &-block {
-      background: rgba(97, 108, 115, 0.6);
-      padding: 20px;
-      text-align: center;
-      color: #fff;
-      &__title {
-        color: #fff9d6;
-        font-size: 24px;
-        padding-bottom: 35px;
-      }
-      &__text {
-        font-size: 18px;
+    &-list {
+      margin-left: 42px;
+      padding-bottom: 20px;
+      text-align: left;
+      list-style-image: url('../img/list-style-image.png');
+      &-item {
+        padding-bottom: 20px;
+        span {
+          color: #fff9d6;
+          text-shadow: 1px 1px 0 #ffaaaa;
+          font-size: 24px;
+        }
+        a {
+          color: #fff;
+
+        }
       }
     }
   }
@@ -350,4 +349,10 @@ input[type=text], select {
   left: 10px;
   display: none;
   cursor: pointer;
+}
+* {
+  -webkit-animation-delay: time;
+  -moz-animation-delay: time;
+  -o-animation-delay: time;
+  animation-delay: time;
 }

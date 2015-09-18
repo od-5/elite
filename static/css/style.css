@@ -3775,34 +3775,34 @@ input[type=text]:-ms-input-placeholder, select:-ms-input-placeholder {
   font-size: 24px;
   padding: 18px 0;
 }
-.header-ticket__title {
-  color: #fff;
-  font-size: 24px;
-  text-align: center;
-  margin: 0;
-  padding-top: 20px;
-}
-.header-ticket__title_small {
-  font-size: 18px;
-  padding-top: 0;
-  padding-bottom: 15px;
-}
-.header-ticket__title .strong {
-  color: #fff66d;
-}
-.header-ticket-block {
+.header-advantage {
+  margin-top: 20px;
   background: rgba(97, 108, 115, 0.6);
-  padding: 20px;
+  padding: 0 10px 20px 10px;
   text-align: center;
   color: #fff;
 }
-.header-ticket-block__title {
+.header-advantage__title {
   color: #fff9d6;
   font-size: 24px;
-  padding-bottom: 35px;
+  padding-top: 18px;
 }
-.header-ticket-block__text {
-  font-size: 18px;
+.header-advantage-list {
+  margin-left: 42px;
+  padding-bottom: 20px;
+  text-align: left;
+  list-style-image: url('../img/list-style-image.png');
+}
+.header-advantage-list-item {
+  padding-bottom: 20px;
+}
+.header-advantage-list-item span {
+  color: #fff9d6;
+  text-shadow: 1px 1px 0 #ffaaaa;
+  font-size: 24px;
+}
+.header-advantage-list-item a {
+  color: #fff;
 }
 .footer {
   background: #414042;
@@ -3940,6 +3940,12 @@ input[type=text]:-ms-input-placeholder, select:-ms-input-placeholder {
   left: 10px;
   display: none;
   cursor: pointer;
+}
+* {
+  -webkit-animation-delay: time;
+  -moz-animation-delay: time;
+  -o-animation-delay: time;
+  animation-delay: time;
 }
 .flexslider {
   width: 530px;

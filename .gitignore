@@ -1,4 +1,7 @@
 .idea/
 *.pyc
 README.md
+/core/migrations
+/apps/article/migrations
+/apps/address/migrations
 db.sqlite3

@@ -13,7 +13,7 @@
               <a href="#video" class="nav-list-item__link nav-list-item__link_active">Видео</a>
             </li>
             <li class="nav-list-item">
-              <a href="#advantage" class="nav-list-item__link">Преимущества</a>
+              <a href="#advantage" class="nav-list-item__link">Почему мы</a>
             </li>
             <li class="nav-list-item">
               <a href="#address" class="nav-list-item__link">Адреса</a>
@@ -33,7 +33,7 @@
   </div>
   <div class="container_12">
     <div class="grid_7">
-      <div class="header-slider">
+      <div class="header-slider animated bounceInLeft 15s">
         <p class="header-slider__title">
           Примеры работ
         </p>
@@ -49,15 +49,24 @@
         </div>
       </div>
     </div>
-    <div class="grid_4 prefix_1">
-      <p class="header-ticket__title">
-        Реклама в лифтах домов повышенной комфортности.
-      </p>
-      <div class="header-ticket-block">
-        <span class="header-ticket-block__title">Оставьте заявку</span>
-        <p class="header-ticket-block__text">и наши менеджеры свяжутся с вами <br> в ближайшее время для уточнения <br>
-          деталей</p>
-        {% include '__includes/ticket_form.html' %}
+    <div class="grid_5">
+{#      <p class="header-advantage__title">#}
+{#        Наши преимущества#}
+{#      </p>#}
+      <div class="header-advantage animated zoomIn">
+        <p class="header-advantage__title">Наши преимущества</p>
+        <ul class="header-advantage-list">
+          {% for advantage in advantage_list  %}
+            <li class="header-advantage-list-item animated bounceInRight" style="-webkit-animation-delay: .{{ forloop.counter }}00s;-moz-animation-delay:  {{ forloop.counter }}s;-o-animation-delay:  {{ forloop.counter }}s;animation-delay:  {{ forloop.counter }}s;">
+              <span>{{ advantage.title }}</span><br>
+              <a href="#advantage">подробней >></a>
+            </li>
+          {% endfor %}
+        </ul>
+        <button class="button section-address-ticket-button">Оставить заявку</button>
+{#        <p class="header-ticket-block__text">и наши менеджеры свяжутся с вами <br> в ближайшее время для уточнения <br>#}
+{#          деталей</p>#}
+{#        {% include '__includes/ticket_form.html' %}#}
       </div>
     </div>
     <div class="clear"></div>
