@@ -1,4 +1,7 @@
 {% extends 'page.html' %}
+{% block title %}
+  Вопросы и ответы | {{ setup.title|default:'' }}
+{% endblock %}
 {% block main %}
   <h1 class="faq__title">Вопросы и ответы</h1>
   <div class="faq-list">
