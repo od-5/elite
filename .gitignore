@@ -2,6 +2,7 @@
 *.pyc
 README.md
 /core/migrations
+/apps/order/migrations
 /apps/article/migrations
 /apps/address/migrations
 /apps/faq/migrations
