@@ -1,6 +1,6 @@
 {% extends 'page.html' %}
 {% block title %}
-  {{ object.tite }}
+  {{ object.title }}
 {% endblock %}
 {% block meta %}
   <meta name="description" content="{{ object.meta_desc|default:'' }}">
@@ -9,8 +9,16 @@
 {% block main %}
   <h1 class="article__title">{{ object.title }}</h1>
   <div class="article-list-item__description">
-    {{ article.text|safe }}<br>
+    {{ object.text|safe }}<br>
   </div>
-  <div class="article-list-item__created"><span>{{ article.created }}</span></div>
+  <div class="article-list-item__created"><span>{{ object.created }}</span></div>
   <hr>
+{% endblock %}
+{% block sidebar %}
+  <p class="article-menu">Список статей:</p>
+  <ul class="article-menu-list">
+    {% for article in ARTICLE_MENU %}
+    <li class="article-menu-list-item"><a href="{{ article.get_absolute_url }}" class="article-menu__link">{{ article.title|default:'' }}</a></li>
+    {% endfor %}
+  </ul>
 {% endblock %}

@@ -87,33 +87,52 @@
   </section>
   <section class="section-work"><a name="work"></a>
     <div class="container_12">
-      <grid_12>
+      <div class="grid_12">
         <p class="title">Как заказать</p>
-      </grid_12>
+      </div>
+      {% if order_list %}
+        <div class="section-work-list">
+        {% for order in order_list %}
+          <div class="section-work-list-item">
+            <div class="section-work-list-item__image">
+              <img src="{{ order.image.url }}" alt="{{ order.title }}">
+            </div>
+            <div class="section-work-list-item__title">
+            {% if order.link %}
+              <a href="{{ order.link }}" class="section-work-list-item__text" title="{{ order.title }}">{{ forloop.counter }}. {{ order.title }}</a>
+            {% else %}
+              <p class="section-work-list-item__text">{{ forloop.counter }}. {{ order.title }}</p>
+            {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+        </div>
+      {% else %}
       <div class="section-work-list">
-        <div class="grid_6 section-work-list-item work-icon work-icon__man">
+        <div class="section-work-list-item work-icon work-icon__man">
           <p class="section-work-list-item__text">1. От Вас запрос.</p>
         </div>
-        <div class="grid_6 section-work-list-item work-icon work-icon__woman">
+        <div class="section-work-list-item work-icon work-icon__woman">
           <p class="section-work-list-item__text">2. Мы задаём несколько вопросов.</p>
         </div>
         <div class="clear"></div>
       </div>
       <div class="section-work-list">
-        <div class="grid_6 section-work-list-item work-icon work-icon__designer">
+        <div class="section-work-list-item work-icon work-icon__designer">
           <p class="section-work-list-item__text">3. Формируем индивидуальный медиа план.</p>
         </div>
-        <div class="grid_6 section-work-list-item work-icon work-icon__contract">
+        <div class="section-work-list-item work-icon work-icon__contract">
           <p class="section-work-list-item__text">4.Заключаем договор</p>
         </div>
         <div class="clear"></div>
       </div>
       <div class="section-work-list">
-        <div class="grid_6 suffix_3 prefix_3 section-work-list-item work-icon work-icon__finish">
+        <div class="suffix_3 prefix_3 section-work-list-item work-icon work-icon__finish">
           <p class="section-work-list-item__text">5. Обоюдно выполняем достигнутые договорённости.</p>
         </div>
         <div class="clear"></div>
       </div>
+      {% endif %}
     </div>
   </section>
   {% include '__includes/footer.html' %}

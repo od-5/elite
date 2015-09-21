@@ -1,0 +1,27 @@
+{% extends 'page.html' %}
+{% block main %}
+  <h1 class="faq__title">Вопросы и ответы</h1>
+  <div class="faq-list">
+  {% for faq in object_list %}
+    <div class="afaq-list-item">
+      <div class="faq-list-item__created"><span>{{ faq.created }}</span></div>
+      <div class="faq-list-item__title">
+        <a href="{{ faq.get_absolute_url }}" class="faq-list-item__link">{{ faq.question|truncatewords:10 }}</a>
+      </div>
+      <div class="faq-list-item__description">
+        {{ faq.answer|striptags|truncatewords:50 }}<br>
+        <a href="{{ faq.get_absolute_url }}" class="faq-list-item__description__link">Читать полностью >></a>
+      </div>
+      <hr>
+    </div>
+  {% endfor %}
+  </div>
+{% endblock %}
+{% block sidebar %}
+  <p class="faq-menu">Список вопросов:</p>
+  <ul class="faq-menu-list">
+    {% for faq in FAQ_MENU %}
+    <li class="faq-menu-list-item"><a href="{{ faq.get_absolute_url }}" class="faq-menu__link">{{ faq.question|truncatewords:10|default:'' }}</a></li>
+    {% endfor %}
+  </ul>
+{% endblock %}

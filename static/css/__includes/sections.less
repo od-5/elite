@@ -1,3 +1,10 @@
+@tablet: ~"(min-width: 768px)";
+@tablet-area: 750px;
+
+// Mode: Desktop
+@desktop: ~"(min-width: 1024px)";
+@desktop-area: 970px;
+
 .section {
 
   &-video {
@@ -155,18 +162,48 @@
     background: #fdfdfd;
     &-list {
       margin-top: 20px;
+      text-align: center;
       &-item {
         margin-bottom: 40px;
         text-align: center;
+        width: 580px;
+        margin: 0 5px;
+        display: inline-block;
+        vertical-align: top;
+        &__image {
+          height: 200px;
+          img {
+            max-height: 100%;
+          }
+        }
+        &__title {
+          height: 80px;
+        }
         &__text {
           font-size: 36px;
           font-weight: bold;
           color: #333;
           text-align: center;
           margin: 0;
+          text-decoration: none;
         }
       }
     }
   }
 
+}
+
+@media only screen and (max-width: 1366px) {
+  .section {
+    &-work {
+      &-list {
+        &-item {
+          width: 380px !important;
+          &__text {
+            font-size: 24px;
+          }
+        }
+      }
+    }
+  }
 }

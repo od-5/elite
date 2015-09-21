@@ -1,0 +1,27 @@
+{% extends 'page.html' %}
+{% block title %}
+  {{ object.question|truncatewords:10 }}
+{% endblock %}
+{% block meta %}
+  <meta name="description" content="{{ object.meta_desc|default:'' }}">
+  <meta name="keywords" content="{{ object.meta_key|default:'' }}">
+{% endblock %}
+{% block main %}
+  <p class="faq__title">Вопрос #{{ object.id }}</p>
+  <p class="faq__question">{{ object.question }}</p>
+  <br>
+  <hr>
+  <div class="faq-list-item__description">
+    {{ object.answer|safe }}<br>
+  </div>
+  <div class="faq-list-item__created"><span>{{ object.created }}</span></div>
+  <hr>
+{% endblock %}
+{% block sidebar %}
+  <p class="faq-menu">Список вопросов:</p>
+  <ul class="faq-menu-list">
+    {% for faq in FAQ_MENU %}
+    <li class="faq-menu-list-item"><a href="{{ faq.get_absolute_url }}" class="faq-menu__link">{{ faq.question|truncatewords:10|default:'' }}</a></li>
+    {% endfor %}
+  </ul>
+{% endblock %}

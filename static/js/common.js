@@ -3,6 +3,11 @@
  */
 $(function() {
 
+  var current_url = '/'+location.href.split('/')[3]+'/'
+  $('.nav-list-item__link').each(function () {
+    if($(this).attr('href') == current_url) $(this).addClass('nav-list-item__link_active');
+  });
+
   $(document).on('click', 'a[href^=#]', function () {
       $('html, body').animate({ scrollTop:  $('a[name="'+this.hash.slice(1)+'"]').offset().top }, 300 );
       return false;

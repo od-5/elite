@@ -49,6 +49,8 @@ INSTALLED_APPS = (
     'apps.address',
     'apps.article',
     'apps.advantages',
+    'apps.order',
+    'apps.faq',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -68,6 +70,7 @@ TEMPLATE_CONTEXT_PROCESSORS = TCP + (
     'django.core.context_processors.request',
     'core.context.site_setup',
     'apps.article.context.article_list',
+    'apps.faq.context.faq_list',
 )
 
 INTERNAL_IPS = '127.0.0.1'
@@ -149,9 +152,12 @@ SUIT_CONFIG = {
         {'label': u'Адресная программа', 'app': 'address', },
         {'label': u'Статьи', 'app': 'article', },
         {'label': u'Преимущества', 'app': 'advantages', },
+        {'label': u'Как заказать', 'app': 'order', },
+        {'label': u'FAQ', 'app': 'faq', },
     ),
 }
 
 SLIDER_SIZE = [525, 350]
 ADDRESS_SIZE = [280, 280]
 ADDRESS_ITEM_SIZE = [700, 700]
+ORDER_ITEM_SIZE = [300, 300]

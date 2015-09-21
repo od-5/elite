@@ -21,6 +21,9 @@
               <li class="nav-list-item">
                 <a href="{% url 'article-list' %}" class="nav-list-item__link">Список статей</a>
               </li>
+              <li class="nav-list-item">
+                <a href="{% url 'faq-list' %}" class="nav-list-item__link">Вопросы и ответы</a>
+              </li>
             </ul>
           </nav>
         </div>
@@ -39,12 +42,8 @@
       {% endblock %}
       </div>
       <div class="grid_3">
-        <p class="article-menu">Список статей:</p>
-        <ul class="article-menu-list">
-          {% for article in ARTICLE_MENU %}
-          <li class="article-menu-list-item"><a href="{{ article.get_absolute_url }}" class="article-menu__link">{{ article.title|default:'' }}</a></li>
-          {% endfor %}
-        </ul>
+      {% block sidebar %}
+      {% endblock %}
       </div>
       <div class="clear"></div>
     </div>
@@ -62,6 +61,7 @@
       <ul class="footer-nav">
         <li class="footer-nav-item"><a href="{% url 'home' %}" class="footer-nav-item__link">Главная станица</a></li>
         <li class="footer-nav-item"><a href="{% url 'article-list' %}" class="footer-nav-item__link">Статьи</a></li>
+        <li class="footer-nav-item"><a href="{% url 'faq-list' %}" class="footer-nav-item__link">Вопросы и ответы</a></li>
       </ul>
     </div>
     <div class="grid_3">

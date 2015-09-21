@@ -4280,10 +4280,24 @@ input[type=text]:-ms-input-placeholder, select:-ms-input-placeholder {
 }
 .section-work-list {
   margin-top: 20px;
+  text-align: center;
 }
 .section-work-list-item {
   margin-bottom: 40px;
   text-align: center;
+  width: 580px;
+  margin: 0 5px;
+  display: inline-block;
+  vertical-align: top;
+}
+.section-work-list-item__image {
+  height: 200px;
+}
+.section-work-list-item__image img {
+  max-height: 100%;
+}
+.section-work-list-item__title {
+  height: 80px;
 }
 .section-work-list-item__text {
   font-size: 36px;
@@ -4291,6 +4305,15 @@ input[type=text]:-ms-input-placeholder, select:-ms-input-placeholder {
   color: #333;
   text-align: center;
   margin: 0;
+  text-decoration: none;
+}
+@media only screen and (max-width: 1366px) {
+  .section-work-list-item {
+    width: 380px !important;
+  }
+  .section-work-list-item__text {
+    font-size: 24px;
+  }
 }
 html, body {
   height: 100%;
@@ -4355,5 +4378,66 @@ html, body {
   list-style: none;
 }
 .article-menu-list-item {
+  padding: 5px 0;
+}
+.faq {
+  margin-top: -70px;
+  position: relative;
+  z-index: 2;
+  background: #fff;
+  font-family: Helvetica, Arial, sans-serif;
+}
+.faq a {
+  font-family: Helvetica, Arial, sans-serif;
+  color: #007ac2;
+}
+.faq__title {
+  text-align: center;
+}
+.faq__question {
+  padding: 10px;
+  line-height: 1.5em;
+  text-align: justify;
+  background: #f1f1f1;
+  font-size: 1.2em;
+}
+.faq__question:before {
+  content: 'Вопрос:  ';
+  font-weight: bold;
+}
+.faq-list-item {
+  margin-bottom: 30px;
+}
+.faq-list-item__created {
+  margin: 0 0 0.3em 0;
+  font-size: 0.7em;
+  color: #828282;
+}
+.faq-list-item__title {
+  margin-bottom: 10px;
+}
+.faq-list-item__link {
+  font-size: 24px;
+  border-color: rgba(0, 122, 194, 0.298039);
+  border-bottom: 1px solid;
+  cursor: auto;
+  display: inline;
+  text-decoration: none;
+}
+.faq-list-item__description {
+  line-height: 1.5em;
+  margin-bottom: 10px;
+}
+.faq-list-item__description__link {
+  padding-bottom: 20px;
+}
+.faq-menu {
+  padding-top: 20px;
+  text-decoration: underline;
+}
+.faq-menu-list {
+  list-style: none;
+}
+.faq-menu-list-item {
   padding: 5px 0;
 }

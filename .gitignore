@@ -4,4 +4,5 @@ README.md
 /core/migrations
 /apps/article/migrations
 /apps/address/migrations
+/apps/faq/migrations
 db.sqlite3
