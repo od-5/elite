@@ -7,9 +7,7 @@
   <meta name="keywords" content="{{ object.meta_key|default:'' }}">
 {% endblock %}
 {% block main %}
-  <p class="faq__title">Вопрос #{{ object.id }}</p>
-  <p class="faq__question">{{ object.question }}</p>
-  <br>
+  <h1 class="faq__title">{{ object.question }}</h1>
   <hr>
   <div class="faq-list-item__description">
     {{ object.answer|safe }}<br>
