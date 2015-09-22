@@ -48,20 +48,22 @@
         font-size: 30px;
         text-shadow: 1px 1px 0 #333;
         color: #999;
-        margin-bottom: 20px;
+        display: table-row;
         &__icon {
-          display: inline-block;
-          width: 200px;
-          vertical-align: top;
+          display: table-cell;
+          width: 180px;
+          padding: 10px;
+          vertical-align: middle;
           text-align: center;
           img {
-            height: 100px;
+            //height: 100px;
           }
         }
         span {
-          padding-top: 10px;
+          padding: 10px;
           width: 610px;
-          display: inline-block;
+          display: table-cell;
+          vertical-align: middle;
           strong, a {
             font-weight: normal;
             color: #ff5454;
