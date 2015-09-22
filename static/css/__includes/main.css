@@ -5,12 +5,12 @@
   opacity: 1;
 }
 .title {
-  font-size: 48px;
+  font-size: 36px;
   font-weight: bold;
   color: #333;
   text-align: center;
   text-transform: uppercase;
-  line-height: 110px;
+  line-height: 2em;
   margin: 0;
   text-shadow: 2px 2px 0 #f1f1f1;
 }
@@ -131,7 +131,6 @@ input[type=text]:-ms-input-placeholder, select:-ms-input-placeholder {
 .header {
   background: url('../img/header__bg.jpg') 50% 0 no-repeat;
   background-size: cover;
-  padding-bottom: 70px;
   position: relative;
   z-index: 1;
 }
@@ -173,7 +172,7 @@ input[type=text]:-ms-input-placeholder, select:-ms-input-placeholder {
   padding: 18px 0;
 }
 .header-advantage {
-  margin-top: 20px;
+  margin: 20px 0;
   background: rgba(97, 108, 115, 0.6);
   padding: 0 10px 20px 10px;
   text-align: center;

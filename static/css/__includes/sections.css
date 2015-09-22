@@ -4,15 +4,17 @@
   text-align: center;
 }
 .section-video .button {
-  margin: 10px 0 30px !important;
+  margin: 18px 0;
 }
 .section-video-container {
-  background: url("../img/tv.png") 0 0 no-repeat;
-  height: 653px;
-  padding-bottom: 10px;
+  background: url("../img/tv.png") 50% 0 no-repeat;
+  height: 451px;
+  background-size: contain;
 }
 .section-video-container iframe {
-  margin: 39px;
+  width: 565px;
+  height: 318px;
+  margin-top: 27px;
 }
 .section-advantage {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#eeeeee+0,cccccc+100;Gren+3D */
