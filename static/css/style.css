@@ -4285,7 +4285,7 @@ input[type=text]:-ms-input-placeholder, select:-ms-input-placeholder {
 .section-work-list-item {
   margin-bottom: 40px;
   text-align: center;
-  width: 580px;
+  width: 380px;
   margin: 0 5px;
   display: inline-block;
   vertical-align: top;
@@ -4300,20 +4300,12 @@ input[type=text]:-ms-input-placeholder, select:-ms-input-placeholder {
   height: 80px;
 }
 .section-work-list-item__text {
-  font-size: 36px;
+  font-size: 24px;
   font-weight: bold;
   color: #333;
   text-align: center;
   margin: 0;
   text-decoration: none;
-}
-@media only screen and (max-width: 1366px) {
-  .section-work-list-item {
-    width: 380px !important;
-  }
-  .section-work-list-item__text {
-    font-size: 24px;
-  }
 }
 html, body {
   height: 100%;
