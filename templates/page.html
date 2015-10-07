@@ -59,7 +59,7 @@
     </div>
     <div class="grid_3 prefix_2 suffix_1">
       <ul class="footer-nav">
-        <li class="footer-nav-item"><a href="{% url 'home' %}" class="footer-nav-item__link">Главная станица</a></li>
+        <li class="footer-nav-item"><a href="{% url 'home' %}" class="footer-nav-item__link">Главная страница</a></li>
         <li class="footer-nav-item"><a href="{% url 'article-list' %}" class="footer-nav-item__link">Статьи</a></li>
         <li class="footer-nav-item"><a href="{% url 'faq-list' %}" class="footer-nav-item__link">Вопросы и ответы</a></li>
       </ul>
@@ -68,7 +68,7 @@
       <ul class="footer-address">
         <li>{{ contacts.address|linebreaksbr }}</li>
         <li>{{ contacts.phone }}</li>
-        <li><a href="mailto:{{ contacts.email }}" class="foter-address__mail">{{ contacts.email }}</a></li>
+        <li><a href="mailto:{{ contacts.email }}" class="footer-address__mail">{{ contacts.email }}</a></li>
       </ul>
     </div>
     <div class="clear"></div>
