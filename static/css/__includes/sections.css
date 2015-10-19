@@ -16,36 +16,48 @@
   height: 318px;
   margin-top: 27px;
 }
+.section-video-ticket {
+  background-color: #4e4e4e;
+  -webkit-box-shadow: 0 0 2px #f1efde;
+  -moz-box-shadow: 0 0 2px #f1efde;
+  box-shadow: 0 0 2px #f1efde;
+  margin: 40px 0;
+}
+.section-video-ticket:hover {
+  -webkit-box-shadow: 0 0 15px #f1efde;
+  -moz-box-shadow: 0 0 15px #f1efde;
+  box-shadow: 0 0 15px #f1efde;
+}
+.section-video-ticket-button {
+  margin-bottom: 0;
+}
+.section-video-ticket__title {
+  color: #fff;
+  font-size: 20px;
+  text-transform: uppercase;
+  margin: 0;
+  padding-top: 36px;
+}
 .section-advantage {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#eeeeee+0,cccccc+100;Gren+3D */
-
   background: #eeeeee;
   /* Old browsers */
-
   /* IE9 SVG, needs conditional override of 'filter' to 'none' */
-
   background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPHJhZGlhbEdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjUwJSIgY3k9IjUwJSIgcj0iNzUlIj4KICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNlZWVlZWUiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjY2NjY2NjIiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L3JhZGlhbEdyYWRpZW50PgogIDxyZWN0IHg9Ii01MCIgeT0iLTUwIiB3aWR0aD0iMTAxIiBoZWlnaHQ9IjEwMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
   background: -moz-radial-gradient(center, ellipse cover, #eeeeee 0%, #cccccc 100%);
   /* FF3.6+ */
-
   background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #eeeeee), color-stop(100%, #cccccc));
   /* Chrome,Safari4+ */
-
   background: -webkit-radial-gradient(center, ellipse cover, #eeeeee 0%, #cccccc 100%);
   /* Chrome10+,Safari5.1+ */
-
   background: -o-radial-gradient(center, ellipse cover, #eeeeee 0%, #cccccc 100%);
   /* Opera 12+ */
-
   background: -ms-radial-gradient(center, ellipse cover, #eeeeee 0%, #cccccc 100%);
   /* IE10+ */
-
   background: radial-gradient(ellipse at center, #eeeeee 0%, #cccccc 100%);
   /* W3C */
-
-  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#eeeeee', endColorstr='#cccccc', GradientType=1);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee', endColorstr='#cccccc', GradientType=1);
   /* IE6-8 fallback on horizontal gradient */
-
 }
 .section-advantage-container {
   background: url("../img/man.png") 95% 50% no-repeat;
@@ -73,7 +85,8 @@
   display: table-cell;
   vertical-align: middle;
 }
-.section-advantage-list-item span strong, .section-advantage-list-item span a {
+.section-advantage-list-item span strong,
+.section-advantage-list-item span a {
   font-weight: normal;
   color: #ff5454;
   text-transform: none;

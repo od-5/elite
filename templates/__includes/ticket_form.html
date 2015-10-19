@@ -11,5 +11,6 @@
   {{ form.phone|attr:'placeholder:Ваш телефон или e-mail' }}
   <label for="area">Выберите район</label>
   {{ form.area }}
-  <input type="submit" value="Оставить заявку" class="button">
+  {{ form.comment|attr:'placeholder:Текст вопроса' }}
+  <input type="submit" value="Отправить" class="button">
 </form>

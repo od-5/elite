@@ -33,7 +33,6 @@
   z-index: 10;
   background-color: rgba(0, 0, 0, 0.5);
   /*dim the background*/
-
 }
 .modal-close {
   width: 20px;
@@ -57,9 +56,9 @@
   position: fixed;
   left: 50%;
   top: 50%;
-  margin-top: -226px;
-  margin-left: -155px;
-  width: 310px;
+  margin-top: -210px;
+  margin-left: -320px;
+  width: 600px;
   text-align: center;
   background: #666;
   padding: 20px;
@@ -70,13 +69,14 @@
   color: #fff9d6;
 }
 label {
-  float: left;
-  margin-left: 68px;
+  margin-left: 50px;
   margin-bottom: 10px;
   color: #fff;
+  display: block;
+  text-align: left;
 }
 label.error {
-  color: #ff8989;
+  display: none;
 }
 select {
   padding-left: 50px;
@@ -84,11 +84,24 @@ select {
 input[type=text] {
   text-indent: 50px;
 }
-input[type=text], select {
+input[type=text],
+select {
+  height: 40px;
+}
+textarea {
+  text-indent: 10px;
+  height: 190px;
+  position: absolute;
+  top: 95px;
+  right: 20px;
+}
+input[type=text],
+select,
+textarea {
   border: 0;
+  display: block;
   background: #858787;
-  width: 300px;
-  height: 50px;
+  width: 290px;
   color: #fff;
   font-size: 18px;
   margin-bottom: 20px;
@@ -96,21 +109,32 @@ input[type=text], select {
   -moz-box-shadow: 5px 5px 0 #545657;
   box-shadow: 5px 5px 0 #545657;
   /* Firefox 19+ */
-
   /* Firefox 18- */
-
 }
-input[type=text]::-webkit-input-placeholder, select::-webkit-input-placeholder {
+input[type=text]::-webkit-input-placeholder,
+select::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
   color: #fff;
 }
-input[type=text]::-moz-placeholder, select::-moz-placeholder {
+input[type=text]::-moz-placeholder,
+select::-moz-placeholder,
+textarea::-moz-placeholder {
   color: #fff;
 }
-input[type=text]:-moz-placeholder, select:-moz-placeholder {
+input[type=text]:-moz-placeholder,
+select:-moz-placeholder,
+textarea:-moz-placeholder {
   color: #fff;
 }
-input[type=text]:-ms-input-placeholder, select:-ms-input-placeholder {
+input[type=text]:-ms-input-placeholder,
+select:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
   color: #fff;
+}
+input[type=text].error,
+select.error,
+textarea.error {
+  background: #aaa0a0;
 }
 .button {
   color: #fff;
@@ -155,15 +179,20 @@ input[type=text]:-ms-input-placeholder, select:-ms-input-placeholder {
   font-size: 36px;
   text-shadow: 1px 1px 0 #000;
   font-weight: bold;
-  line-height: 62px;
   text-align: center;
   color: #F80000;
   font-family: Arial, Helvetica, sans-serif;
 }
 .header-phone__text {
+  font-weight: normal;
+  text-transform: none;
+}
+.header-phone__text,
+.header-phone__title {
   font-size: 14px;
   color: #fff;
   text-align: center;
+  padding: 5px 0;
 }
 .header-slider__title {
   text-align: center;
@@ -230,7 +259,7 @@ input[type=text]:-ms-input-placeholder, select:-ms-input-placeholder {
   text-decoration: none;
 }
 .footer-address a:hover {
-  color: #eeeeee;
+  color: #eee;
 }
 .footer-nav {
   list-style: none;
@@ -246,7 +275,7 @@ input[type=text]:-ms-input-placeholder, select:-ms-input-placeholder {
   text-decoration: none;
 }
 .footer-nav-item__link:hover {
-  color: #eeeeee;
+  color: #eee;
 }
 .footer-ticket {
   text-align: center;
