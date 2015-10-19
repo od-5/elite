@@ -22,12 +22,13 @@
               <a href="#work" class="nav-list-item__link">Как заказать</a>
             </li>
             <li class="nav-list-item">
-              <a href="{% url 'faq-list' %}" class="nav-list-item__link">FAQ</a>
+              <a href="{% url 'faq-list' %}" class="nav-list-item__link">Типичные впросы</a>
             </li>
           </ul>
         </nav>
       </div>
       <div class="grid_4">
+        <span class="header-phone header-phone__title">Звоните по телефону:</span>
         <span class="header-phone header-phone__number">{{ contacts.phone }}</span>
         <span class="header-phone header-phone__text">звонок бесплатный</span>
       </div>
@@ -66,7 +67,7 @@
             </li>
           {% endfor %}
         </ul>
-        <button class="button section-address-ticket-button">Оставить заявку</button>
+        <button class="button section-address-ticket-button">Задать вопрос</button>
 {#        <p class="header-ticket-block__text">и наши менеджеры свяжутся с вами <br> в ближайшее время для уточнения <br>#}
 {#          деталей</p>#}
 {#        {% include '__includes/ticket_form.html' %}#}

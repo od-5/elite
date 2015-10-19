@@ -118,7 +118,7 @@ $(function() {
   });
 
 
-  $('.section-advantage-button, .section-address-ticket-button').on('click', function(e){
+  $('.section-advantage-button, .section-address-ticket-button, .section-video-ticket-button').on('click', function(e){
     $('#pop').fadeIn();
     $('body').append('<div class="overlay"></div>');
   });
