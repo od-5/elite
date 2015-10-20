@@ -3929,11 +3929,12 @@ textarea.error {
 }
 .footer-ticket {
   text-align: center;
+  width: 300px;
 }
 .footer-ticket__title {
   font-size: 24px;
   color: #fff9d6;
-  padding: 24px 0;
+  padding: 24px 0 10px;
 }
 .icon {
   background-position: 0 50%;
