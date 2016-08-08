@@ -8,3 +8,9 @@ mysql-python
 django-imagekit==3.2.7
 django-suit-redactor==0.0.2
 pytils==0.3
+django-nested-inline==0.3.6
+pyexcel==0.2.1
+pyexcel-xls==0.1.0
+pyexcel-xlsx==0.1.0
+pyexcel-io==0.1.0
+xlwt

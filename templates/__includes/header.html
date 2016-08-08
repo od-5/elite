@@ -1,12 +1,44 @@
-<header class="header"><a name="top"></a>
-  <div class="header-row-1">
+<header class="header">
+  <a name="top"></a>
+  <div class="header-top">
     <div class="container_12">
-      <div class="grid_3">
+{#      <div class="grid_12 fixed_menu hide" style="position: fixed">#}
+{#        <h1>This is menu!</h1>#}
+{#      </div>#}
+      <div class="grid_4">
+        <div class="header-city-select">
+          <div class="header-city-select__text js-select-city">
+            <img src="{{ STATIC_URL }}img/location-icon.png" alt="">{{ current_city.name|default:'Город не выбран' }}
+          </div>
+          <div class="header-city-select__list">
+            <ul>
+              {% for city in CITY_LIST %}
+                <li>
+                  <a href="{% url 'city:view' city.slug %}">{{ city.name }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="grid_8">
+        <div class="header-phone text-right">
+          <span class="header-phone__title">Звоните по телефону:</span>
+          <span class="header-phone__number">{{ contacts.phone }}</span>
+{#          <span class="header-phone__text">(звонок бесплатный) </span>#}
+        </div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+  <div class="header-menu">
+    <div class="container_12">
+      <div class="grid_4">
         <a href="{% url 'home' %}" title="" class="header-logotype">
           <img src="{{ STATIC_URL }}img/logotype.png" alt="Логотип">
         </a>
       </div>
-      <div class="grid_5">
+      <div class="grid_8">
         <nav class="nav">
           <ul class="nav-list">
             <li class="nav-list-item">
@@ -19,6 +51,12 @@
               <a href="#address" class="nav-list-item__link">Адреса</a>
             </li>
             <li class="nav-list-item">
+              <a href="#review" class="nav-list-item__link">Отзывы</a>
+            </li>
+            <li class="nav-list-item">
+              <a href="#city-map" class="nav-list-item__link">География</a>
+            </li>
+            <li class="nav-list-item">
               <a href="#work" class="nav-list-item__link">Как заказать</a>
             </li>
             <li class="nav-list-item">
@@ -27,52 +65,43 @@
           </ul>
         </nav>
       </div>
-      <div class="grid_4">
-        <span class="header-phone header-phone__title">Звоните по телефону:</span>
-        <span class="header-phone header-phone__number">{{ contacts.phone }}</span>
-        <span class="header-phone header-phone__text">звонок бесплатный</span>
-      </div>
       <div class="clear"></div>
     </div>
   </div>
   <div class="container_12">
-    <div class="grid_7">
-      <div class="header-slider animated bounceInLeft 15s">
-        <p class="header-slider__title">
-          Примеры работ
-        </p>
-
-        <div class="flexslider">
-          <ul class="slides">
-            {% for slider in slider %}
-            <li>
-              <img src="{{ slider.image_resize.url }}" />
-            </li>
-            {% endfor %}
-          </ul>
-        </div>
+    <div class="grid_7 suffix_1">
+      <div class="header-video">
+        {{ setup.video|safe|default:'' }}
       </div>
     </div>
-    <div class="grid_4 prefix_1">
-      <p class="header-advantage__title">
-        Реклама в лифтах домов повышенной комфортности
-      </p>
+    <div class="grid_4">
+{#      <p class="header-title">#}
+{#        Реклама в лифтах домов повышенной комфортности#}
+{#      </p>#}
       <div class="header-advantage animated zoomIn">
-{#        <p class="header-advantage__title">Наши преимущества</p>#}
+        <p class="header-advantage__title">Реклама в лифтах домов повышенной комфортности</p>
         <ul class="header-advantage-list">
           {% for advantage in advantage_list  %}
-            <li class="header-advantage-list-item animated bounceInRight" style="-webkit-animation-delay: .{{ forloop.counter }}00s;-moz-animation-delay:  {{ forloop.counter }}s;-o-animation-delay:  {{ forloop.counter }}s;animation-delay:  {{ forloop.counter }}s;">
-              <span>{{ advantage.title }}</span><br>
+{#            <li class="header-advantage-list-item animated bounceInRight" style="-webkit-animation-delay: .{{ forloop.counter }}00s;-moz-animation-delay:  {{ forloop.counter }}s;-o-animation-delay:  {{ forloop.counter }}s;animation-delay:  {{ forloop.counter }}s;">#}
+            <li class="header-advantage-list-item animated bounceInRight">
+              <span>{{ advantage.title }}</span>
               <a href="#advantage">подробней >></a>
             </li>
           {% endfor %}
         </ul>
-        <button class="button section-address-ticket-button">Задать вопрос</button>
+{#        <button class="button section-address-ticket-button">Задать вопрос</button>#}
+      {% if current_city %}
+        <a href="#modal-ticket-form" class="button js-city-ticket-button">Задать вопрос</a>
+      {% else %}
+        <a href="#modal-ticket-form" class="button js-main-ticket-button">Задать вопрос</a>
+      {% endif %}
 {#        <p class="header-ticket-block__text">и наши менеджеры свяжутся с вами <br> в ближайшее время для уточнения <br>#}
 {#          деталей</p>#}
 {#        {% include '__includes/ticket_form.html' %}#}
       </div>
     </div>
+
     <div class="clear"></div>
   </div>
 </header>
+

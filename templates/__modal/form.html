@@ -1,5 +1,8 @@
-<div id="pop">
-  <div class="modal-close">x</div>
-  <p id="pop__title">Задать вопрос</p>
-  {% include '__includes/ticket_form.html' %}
+<div id="modal-ticket-form">
+  <p class="text-center">Оставьте заявку</p>
+  {% if current_city %}
+  {% include '__includes/form_city.html' with class='js-city-ticket-form_modal' %}
+  {% else %}
+  {% include '__includes/form_main.html' with class='js-main-ticket-form_modal' %}
+  {% endif %}
 </div>

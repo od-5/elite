@@ -1,3 +1,6 @@
+/apps/video/migrations
+/apps/slider/migrations
+/apps/city/migrations
 .idea/
 *.pyc
 README.md

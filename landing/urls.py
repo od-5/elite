@@ -16,16 +16,12 @@ urlpatterns = patterns(
     url(r'^faq/$', ListView.as_view(model=FAQ), name='faq-list'),
     url(r'^faq/(?P<slug>[\w-]+)$', DetailView.as_view(model=FAQ), name='faq-detail'),
     url(r'^ticket/$', 'core.ajax.ticket_form', name='ticket'),
-    url(r'^address/$', 'apps.address.ajax.address_item_list', name='address'),
+    url(r'^address/(?P<pk>\d+)/$', 'apps.address.ajax.address_item_list', name='address'),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^data-import/', 'core.data_import.address_list_import', name='data-import'),
+    url(r'^city/', include('apps.city.urls', namespace='city'),),
 )
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
     urlpatterns += staticfiles_urlpatterns()
-
-    import debug_toolbar
-    urlpatterns += patterns(
-        '',
-        url(r'^__debug__/', include(debug_toolbar.urls)),
-    )

@@ -1,0 +1,8 @@
+<form action="{% url 'ticket' %}" class="ticket-form ticket-form_modal {{ class }}" method="post">{% csrf_token %}
+  {% load widget_tweaks %}
+  {{ form.city }}
+    {{ form.name|attr:'placeholder:Ваше имя'|add_class:'input' }}
+    {{ form.phone|attr:'placeholder:Ваш телефон или e-mail'|add_class:'input' }}
+    {{ form.comment|attr:'placeholder:Текст вопроса'|add_class:'input' }}
+    <input type="submit" value="Отправить" class="button">
+</form>
