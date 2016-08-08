@@ -1,27 +1,24 @@
 {% extends 'base.html' %}
 {% block content %}
   {% include '__includes/header.html' %}
+  {% if video_list %}
   <section class="section-video"><a name="video"></a>
     <div class="container_12">
-      <p class="title">Видео о нас</p>
-      <div class="grid_10 suffix_1 prefix_1">
-        <div class="section-video-container">
-          {{ setup.video|safe|default:'' }}
-        </div>
-        <div class="section-video-ticket grid_9">
-          <div class="grid_5">
-            <p  class="section-video-ticket__title">Что бы задать вопрос - нажмите на кнопку</p>
+      <p class="title">Видео галлерея</p>
+      {% for video in video_list %}
+        <div class="grid_3">
+          <div class="section-video__container">
+            {{ video.code|safe }}
+            <p class="section-video__name">
+              {{ video.name|default:'' }}
+            </p>
           </div>
-          <div class="grid_3">
-            <button class="button section-video-ticket-button">Задать вопрос</button>
-          </div>
-          <div class="clear"></div>
         </div>
-        <div class="clear"></div>
-      </div>
+      {% endfor %}
       <div class="clear"></div>
     </div>
   </section>
+  {% endif %}
   <!--[if gte IE 9]>
     <style type="text/css">
       .section-advantage, .section-work {
@@ -32,11 +29,11 @@
   <section class="section-advantage"><a name="advantage"></a>
     <div class="container_12">
       <div class="grid_12">
-        <p class="title">5 причин почему Вам стоит обратиться именно к нам</p>
+        <p class="title title_white">5 причин почему Вам стоит обратиться именно к нам</p>
       </div>
       <div class="clear"></div>
       <div class="section-advantage-container">
-        <div class="grid_9 suffix_3">
+        <div class="grid_12">
           <ul class="section-advantage-list">
           {% for advantage in advantage_list %}
             <li class="section-advantage-list-item">
@@ -57,11 +54,17 @@
         <div class="clear"></div>
       </div>
       <div class="grid_12 text-center">
-        <button class="button section-advantage-button">Уточнить детали</button>
+{#        <button class="button section-advantage-button">Уточнить детали</button>#}
+      {% if current_city %}
+        <a href="#modal-ticket-form" class="button js-city-ticket-button section-advantage-button">Задать вопрос</a>
+      {% else %}
+        <a href="#modal-ticket-form" class="button js-main-ticket-button section-advantage-button">Задать вопрос</a>
+      {% endif %}
 {#        <a href="#pop" class="button section-advantage-button popupbutton">Уточнить детали</a>#}
       </div>
     </div>
   </section>
+  {% if address_list %}
   <section class="section-address"><a name="address"></a>
     <div class="container_12">
       <div class="grid_12">
@@ -71,14 +74,31 @@
         {% for address in address_list %}
         <div class="grid_3">
           <div class="section-address-container-item">
-            <a class="section-address-container-item-link" data-address="{{ address.id }}" data-url="{% url 'address' %}">
+            <a class="section-address-container-item-link js-gallery" href="{{ address.image.url }}" rel="group_{{ address.id }}" title="{{ address }}">
               <div class="section-address-container-item-link-back">+</div>
               <img src="{{ address.image_resize.url }}" alt="{{ address.address }}" class="section-address-container-item-link__image">
               <span class="section-address-container-item-link__title">{{ address.address }}</span>
             </a>
           </div>
+            {% for item in address.addressitem_set.all %}
+              <a href="{{ item.image.url }}" style="display: none" class="js-gallery" rel="group_{{ address.id }}" title="{{ address }}"></a>
+            {% endfor %}
         </div>
         {% endfor %}
+{#            <a href="{{ item.image.url }}" rel="group" class="js-gallery" title="{{ item.address }}, подъезд {{ item.porch.number }}">#}
+{#              <img src="{{ item.image_resize.url }}" alt="{{ item.address }}, подъезд {{ item.porch.number }}">#}
+{#            </a>#}
+{#        {% for address in address_list %}#}
+{#        <div class="grid_3">#}
+{#          <div class="section-address-container-item">#}
+{#            <a class="section-address-container-item-link" data-address="{{ address.id }}" data-url="{% url 'address' %}">#}
+{#              <div class="section-address-container-item-link-back">+</div>#}
+{#              <img src="{{ address.image_resize.url }}" alt="{{ address.address }}" class="section-address-container-item-link__image">#}
+{#              <span class="section-address-container-item-link__title">{{ address.address }}</span>#}
+{#            </a>#}
+{#          </div>#}
+{#        </div>#}
+{#        {% endfor %}#}
         <div class="clear"></div>
       </div>
       <div class="section-address-ticket">
@@ -86,9 +106,81 @@
           <p  class="section-address-ticket__title">Закажите обратный звонок для уточнения деталей прямо сейчас</p>
         </div>
         <div class="grid_3">
-          <button class="button section-address-ticket-button">Оставить заявку</button>
+{#          <button class="button section-address-ticket-button">Оставить заявку</button>#}
+        {% if current_city %}
+          <a href="#modal-ticket-form" class="button js-city-ticket-button">Оставить заявку</a>
+        {% else %}
+          <a href="#modal-ticket-form" class="button js-main-ticket-button">Оставить заявку</a>
+        {% endif %}
         </div>
         <div class="clear"></div>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </section>
+  {% endif %}
+  {% if filereview_list or textreview_list %}
+  <section class="section-review"><a name="review"></a>
+
+    <div class="container_12">
+      <div class="grid_12">
+        <p class="title title_white">Отзывы</p>
+      </div>
+
+      {% if filereview_list %}
+      <div class="grid_12">
+        <div class="js-section-review-slider section-review-slider">
+          <ul class="slides">
+          {% for review in filereview_list%}
+            <li class="slides__item">
+              <a href="{{ review.image.url }}" rel="group" class="section-review-slider__item js-slide" title="{{ review.name|default:''}}">
+                <img src="{{ review.image_resize.url }}" alt="{{ review.name|default:''}}">
+              </a>
+            </li>
+          {% endfor %}
+          </ul>
+          <div class="clear"></div>
+        </div>
+      </div>
+      {% endif %}
+      {% if textreview_list %}
+        <div class="grid_12">
+          <div class="section-review-text">
+            <ul class="section-review-text-list">
+              {% for review in textreview_list %}
+              <li class="section-review-text-list__item">
+                <div class="section-review-text__avatar">
+                  <img src="{{ review.image_resize.url }}" alt="">
+                </div>
+                <p class="section-review-text__content">
+                  {{ review.text|default:'' }}
+                </p>
+                <p class="section-review-text__desc text-right">
+                  {{ review.name|default:'' }} <br>
+                  <span class="small">{{ review.company|default:'' }}</span>
+                </p>
+                <div class="clear"></div>
+              </li>
+              {% endfor %}
+            </ul>
+
+          </div>
+        </div>
+
+      {% endif %}
+    </div>
+  </section>
+  {% endif %}
+  <section class="section-map"><a name="city-map"></a>
+    <div class="container_12">
+      <div class="grid_12">
+        {% if current_city %}
+          <p class="title">Адресные программы</p>
+        {% else %}
+          <p class="title">Города в которых мы работаем</p>
+        {% endif %}
+        <div id="map" data-url="{% url 'city:get_city_list' %}" style="height: 500px; margin-bottom: 40px;"></div>
+        <div id="area-desc"></div>
       </div>
       <div class="clear"></div>
     </div>
@@ -143,5 +235,30 @@
       {% endif %}
     </div>
   </section>
+  <section class="section-ticket">
+    <div class="container_12">
+      <div class="grid_12">
+        <p class="title title_white">Остались вопросы?</p>
+      </div>
+      <div class="grid_12">
+        <p class="section-ticket__text text-center">Оставьте заявку</p>
+        {% if current_city %}
+        {% include '__includes/form_city.html' with class='js-city-ticket-form' %}
+        {% else %}
+        {% include '__includes/form_main.html' with class='js-main-ticket-form' %}
+        {% endif %}
+      </div>
+      <div class="clear"></div>
+    </div>
+  </section>
   {% include '__includes/footer.html' %}
+  {% include '__modal/form.html' %}
+{% endblock %}
+{% block bottom_js %}
+  {% load staticfiles %}
+  {% if current_city %}
+    {% include '__includes/map.html' %}
+  {% else %}
+  <script src="{% static 'city/js/city_map.js' %}"></script>
+  {% endif %}
 {% endblock %}

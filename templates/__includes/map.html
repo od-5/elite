@@ -1,0 +1,54 @@
+<script>
+  var icon_set = [
+      ['islands#invertedBlueClusterIcons', 'islands#blueCircleDotIcon', 'blue'],
+      ['islands#invertedRedClusterIcons', 'islands#redCircleDotIcon', 'red'],
+      ['islands#invertedDarkOrangeClusterIcons', 'islands#darkOrangeCircleDotIcon', 'darkorange'],
+      ['islands#invertedNightClusterIcons', 'islands#nightCircleDotIcon', '#0e4779'],
+      ['islands#invertedDarkBlueClusterIcons', 'islands#darkBlueCircleDotIcon', 'darkblue'],
+      ['islands#invertedPinkClusterIcons', 'islands#pinkCircleDotIcon', 'pink'],
+      ['islands#invertedGrayClusterIcons', 'islands#grayCircleDotIcon', 'gray'],
+      ['islands#invertedBrownClusterIcons', 'islands#brownCircleDotIcon', 'brown'],
+      ['islands#invertedDarkGreenClusterIcons', 'islands#darkGreenCircleDotIcon', 'darkgreen'],
+      ['islands#invertedVioletClusterIcons', 'islands#violetCircleDotIcon', 'violet'],
+      ['islands#invertedBlackClusterIcons', 'islands#blackCircleDotIcon', 'black'],
+      ['islands#invertedYellowClusterIcons', 'islands#yellowCircleDotIcon', 'yellow'],
+      ['islands#invertedGreenClusterIcons', 'islands#greenCircleDotIcon', 'green'],
+      ['islands#invertedOrangeClusterIcons', 'islands#orangeCircleDotIcon', 'orange'],
+      ['islands#invertedLightBlueClusterIcons', 'islands#lightBlueCircleDotIcon', 'lightblue'],
+      ['islands#invertedOliveClusterIcons', 'islands#oliveCircleDotIcon', 'olive']
+  ];
+ymaps.ready(function() {
+  ymaps.geocode('{{ current_city.name }}', {
+      results: 1
+  }).then(function(res) {
+      var firstGeoObject = res.geoObjects.get(0);
+      var myMap = new ymaps.Map("map", {
+          center: firstGeoObject.geometry.getCoordinates(),
+          zoom: 11,
+          behaviors: ['default', 'scrollZoom']
+      });
+      {% for area in current_city.cityarea_set.all %}
+        var clusterer = new ymaps.Clusterer({
+            preset: icon_set[{{ forloop.counter }}][0],
+        });
+        clusterer.options.set({
+            gridSize: 80,
+            clusterDisableClickZoom: true
+        });
+        myMap.geoObjects.add(clusterer);
+        var geoObjects = [];
+        var icon = icon_set[{{ forloop.counter }}][1];
+        {% for house in area.cityhouse_set.all %}
+        geoObjects.push(new ymaps.Placemark([{{ house.coord_x|safe }}, {{ house.coord_y|safe }}], {
+            balloonContentBody: '{{ house.full_address }}',
+            clusterCaption: '{{ house.full_address }}'
+        }, {
+            preset: icon
+        }));
+        {% endfor %}
+        clusterer.add(geoObjects);
+        $('#area-desc').append('<p><span class="circle" style="border-color:' + icon_set[{{ forloop.counter }}][2] + '"></span>  {{ area.name }} (Адресов - {{ area.cityhouse_set.count }})</p>');
+      {% endfor %}
+  });
+});
+</script>

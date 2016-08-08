@@ -3,25 +3,26 @@
 }
 .nav-list {
   list-style-type: none;
+  text-align: right;
 }
 .nav-list-item {
   display: inline-block;
+  padding-left: 20px;
+}
+.nav-list-item:first-child {
+  padding-left: 0;
 }
 .nav-list-item__link {
   display: block;
-  line-height: 96px;
-  padding: 0 10px;
+  line-height: 83px;
   text-align: center;
   color: #fff;
   font-size: 13px;
   font-weight: bold;
   text-transform: uppercase;
   text-decoration: none;
-  border: 2px solid transparent;
 }
-.nav-list-item__link:hover, .nav-list-item__link_active {
-  border-top: 2px solid #4bcaff;
-  border-bottom: 2px solid #4bcaff;
-  background: rgba(255, 255, 255, 0.02);
-  color: #f1f1f1;
+.nav-list-item__link:hover,
+.nav-list-item__link_active {
+  text-shadow: 0 0 6px #4bcaff;
 }

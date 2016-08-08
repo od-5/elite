@@ -1,5 +1,6 @@
 # coding=utf-8
 from django.db import models
+from apps.city.models import City
 
 __author__ = 'alexey'
 
@@ -38,7 +39,8 @@ class Ticket(Common):
 
     name = models.CharField(verbose_name=u'Имя', max_length=256)
     phone = models.CharField(verbose_name=u'Телефон', max_length=256)
-    area = models.ForeignKey(to=Area, verbose_name=u'Район', blank=True, null=True)
+    # area = models.ForeignKey(to=Area, verbose_name=u'Район', blank=True, null=True)
+    city = models.ForeignKey(to=City, verbose_name=u'Город', blank=True, null=True)
     status = models.PositiveSmallIntegerField(verbose_name=u'Статус заявки',  choices=TICKET_STATUS_CHOICE, default=0, blank=True, null=True)
     comment = models.TextField(verbose_name=u'Комментарий', blank=True, null=True)
 

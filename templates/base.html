@@ -3,12 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <title>{% block title %}{{ setup.title|default:'Название сайта' }}{% endblock %}</title>
-  {% block meta %}
+{% block meta %}
   <meta name="description" content="{{ setup.meta_desc|default:'' }}">
   <meta name="keywords" content="{{ setup.meta_key|default:'' }}">
 {% endblock %}
   <script src="{{ STATIC_URL }}js/jquery-1.11.2.min.js"></script>
+  <script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
   <script src="{{ STATIC_URL }}js/jquery.form.js"></script>
+  <script src="{{ STATIC_URL }}js/jquery.fancybox.pack.js"></script>
   <script src="{{ STATIC_URL }}js/jquery.validate.js"></script>
   <script src="{{ STATIC_URL }}js/jquery.flexslider-min.js"></script>
   <script src="{{ STATIC_URL }}js/notify-combined.min.js"></script>
@@ -20,16 +22,18 @@
   {% endif %}
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Ubuntu+Condensed" />
   <link href="{{ STATIC_URL }}css/style.css" rel="stylesheet">
+{% block top_js %}
+{% endblock %}
 </head>
 <body>
 {% block content %}
 {% endblock %}
-{% include '__modal/form.html' %}
-{% include '__modal/gallery.html' %}
-{#<div class="overlay"></div>#}
 <div id="scrollup"><img alt="Прокрутить вверх" src="{{ STATIC_URL }}img/up.png"></div>
+{% block bottom_js %}
+{% endblock %}
 {% if setup.bottom_js %}
   {{ setup.bottom_js|safe }}
 {% endif %}
+
 </body>
 </html>

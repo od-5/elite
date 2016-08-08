@@ -16,8 +16,8 @@ class TicketAdminForm(ModelForm):
 
 
 class TicketAdmin(admin.ModelAdmin):
-    list_display = ('name', 'phone', 'area', 'created', 'status', 'comment')
-    list_filter = ['created', 'status', 'area']
+    list_display = ('name', 'phone', 'city', 'created', 'status', 'comment')
+    list_filter = ['created', 'status', 'city']
     date_hierarchy = 'created'
     form = TicketAdminForm
 
@@ -30,8 +30,15 @@ class TicketAdmin(admin.ModelAdmin):
         if css_class:
             return {'class': css_class, 'data': obj.name}
 
+
 class SetupAdmin(admin.ModelAdmin):
     list_display = ('__unicode__', 'email')
+
+    def has_add_permission(self, request):
+        if Setup.objects.count() > 1:
+            return False
+        else:
+            return True
 
 
 class ContactsAdmin(admin.ModelAdmin):

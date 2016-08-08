@@ -8,21 +8,25 @@
 .section {
 
   &-video {
-    background: url('../img/section-video__bg.jpg') 50% 0 no-repeat;
-    background-size: cover;
+    //background: url('../img/section-video__bg.jpg') 50% 0 no-repeat;
+    //background-size: cover;
     text-align: center;
     .button {
       margin: 18px 0;
     }
-    &-container {
-      background: url("../img/tv.png") 50% 0 no-repeat;
-      height: 451px;
-      background-size: contain;
+    &__container {
       iframe {
-        width: 565px;
-        height: 318px;
-        margin-top: 27px;
+        width: 225px;
+        height: 150px;
+        margin-bottom: 20px;
+        background: #333;
+        box-shadow: 0 0 10px #999;
       }
+    }
+    &__name {
+      margin: 0;
+      //text-align: left;
+      height: 60px;
     }
     &-ticket {
       //padding: 20px 0;
@@ -50,46 +54,60 @@
   }
 
   &-advantage {
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#eeeeee+0,cccccc+100;Gren+3D */
-    background: rgb(238,238,238); /* Old browsers */
-    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
-    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPHJhZGlhbEdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjUwJSIgY3k9IjUwJSIgcj0iNzUlIj4KICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNlZWVlZWUiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjY2NjY2NjIiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L3JhZGlhbEdyYWRpZW50PgogIDxyZWN0IHg9Ii01MCIgeT0iLTUwIiB3aWR0aD0iMTAxIiBoZWlnaHQ9IjEwMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-    background: -moz-radial-gradient(center, ellipse cover, rgba(238,238,238,1) 0%, rgba(204,204,204,1) 100%); /* FF3.6+ */
-    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(238,238,238,1)), color-stop(100%,rgba(204,204,204,1))); /* Chrome,Safari4+ */
-    background: -webkit-radial-gradient(center, ellipse cover, rgba(238,238,238,1) 0%,rgba(204,204,204,1) 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-radial-gradient(center, ellipse cover, rgba(238,238,238,1) 0%,rgba(204,204,204,1) 100%); /* Opera 12+ */
-    background: -ms-radial-gradient(center, ellipse cover, rgba(238,238,238,1) 0%,rgba(204,204,204,1) 100%); /* IE10+ */
-    background: radial-gradient(ellipse at center, rgba(238,238,238,1) 0%,rgba(204,204,204,1) 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#cccccc',GradientType=1 ); /* IE6-8 fallback on horizontal gradient */
+    background-size: cover;
+    background: #34495e url('../img/section-advantage__bg.jpg') no-repeat fixed 50% 0;
+    ///* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#eeeeee+0,cccccc+100;Gren+3D */
+    //background: rgb(238,238,238); /* Old browsers */
+    ///* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    //background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPHJhZGlhbEdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjUwJSIgY3k9IjUwJSIgcj0iNzUlIj4KICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNlZWVlZWUiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjY2NjY2NjIiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L3JhZGlhbEdyYWRpZW50PgogIDxyZWN0IHg9Ii01MCIgeT0iLTUwIiB3aWR0aD0iMTAxIiBoZWlnaHQ9IjEwMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    //background: -moz-radial-gradient(center, ellipse cover, rgba(238,238,238,1) 0%, rgba(204,204,204,1) 100%); /* FF3.6+ */
+    //background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(238,238,238,1)), color-stop(100%,rgba(204,204,204,1))); /* Chrome,Safari4+ */
+    //background: -webkit-radial-gradient(center, ellipse cover, rgba(238,238,238,1) 0%,rgba(204,204,204,1) 100%); /* Chrome10+,Safari5.1+ */
+    //background: -o-radial-gradient(center, ellipse cover, rgba(238,238,238,1) 0%,rgba(204,204,204,1) 100%); /* Opera 12+ */
+    //background: -ms-radial-gradient(center, ellipse cover, rgba(238,238,238,1) 0%,rgba(204,204,204,1) 100%); /* IE10+ */
+    //background: radial-gradient(ellipse at center, rgba(238,238,238,1) 0%,rgba(204,204,204,1) 100%); /* W3C */
+    //filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#cccccc',GradientType=1 ); /* IE6-8 fallback on horizontal gradient */
     &-container {
-      background: url("../img/man.png") 95% 50% no-repeat;
-      background-size: contain;
+      //background: url("../img/man.png") 95% 50% no-repeat;
+      //background-size: contain;
     }
     &-list {
       list-style: none;
+      text-align: center;
       &-item {
-        font-size: 30px;
-        text-shadow: 1px 1px 0 #333;
-        color: #999;
-        display: table-row;
+        font-size: 16px;
+        //text-shadow: 0.1px 0.1px 0.1px #000;
+        color: #333;
+        display: inline-block;
+        width: 320px;
+        height: 380px;
+        vertical-align: top;
+        background: #fff;
+        margin: 20px 10px;
+        -webkit-box-shadow: 3px 3px 10px #333;
+        -moz-box-shadow: 3px 3px 10px #333;
+        box-shadow: 3px 3px 10px #333;
         &__icon {
-          display: table-cell;
-          width: 180px;
-          padding: 10px;
-          vertical-align: middle;
+          vertical-align: top;
           text-align: center;
+          width: 300px;
+          height: 200px;
+          line-height: 200px;
+          margin: 10px auto;
           img {
             //height: 100px;
+            vertical-align: middle;
           }
         }
         span {
-          padding: 10px;
-          width: 610px;
-          display: table-cell;
-          vertical-align: middle;
+          //padding-top: 10px;
+          display: block;
+          padding: 0 10px;
           strong, a {
+            font-size: 18px;
+            line-height: 3em;
             font-weight: normal;
-            color: #ff5454;
+            color: #0099CC;
             text-transform: none;
             text-decoration: none;
           }
@@ -97,15 +115,16 @@
       }
     }
     &-button {
-      padding: 24px 50px;
+      //padding: 24px 50px;
       margin: 50px 0;
       display: inline-block;
     }
   }
 
   &-address {
-    background: url('../img/section-advantage__bg.jpg') 50% 0 no-repeat;
-    background-size: cover;
+    //background: url('../img/section-advantage__bg.jpg') 50% 0 no-repeat;
+    //background-size: cover;
+    //background-color: #34495e;
     &__title {
       font-size: 36px;
     }
@@ -119,8 +138,9 @@
           display: block;
           overflow: hidden;
           -webkit-box-shadow: 0 0 5px #000;
-            -moz-box-shadow: 0 0 5px #000;
-            box-shadow: 0 0 5px #000;
+          -moz-box-shadow: 0 0 5px #000;
+          box-shadow: 0 0 5px #000;
+          cursor: pointer;
           &-back {
             display: none;
             background-color: rgba(75, 202, 255, 0.69);
@@ -172,8 +192,8 @@
         -moz-box-shadow: 0 0 15px #f1efde;
         box-shadow: 0 0 15px #f1efde;
       }
-      &-button {
-        margin-bottom: 0;
+      .button {
+        margin-top: 10px;
       }
       &__title {
         color: #fff;
@@ -184,16 +204,71 @@
       }
     }
   }
+  &-review {
+    background-size: cover;
+    background: #34495e url('../img/section-review__bg.jpg') no-repeat fixed 50% 0;
+    &-slider {
+      margin: 0 auto 40px;
+      width: 750px;
 
+      position: relative;
+      &__item {
+        text-align: center;
+        display: block;
+        width: 90%;
+        margin: 0 auto;
+        height: 100%;
+        //margin-bottom: 20px;
+      }
+    }
+    &-text {
+      margin-bottom: 50px;
+      &-list {
+        list-style: none;
+        &__item {
+          width: 725px;
+          margin-bottom: 20px;
+          &:nth-child(even){
+            float: right;
+          }
+        }
+      }
+      &__avatar {
+        display: inline-block;
+        height: 80px;
+        width: 80px;
+        margin-right: 40px;
+      }
+      &__content {
+        font-size: 14px;
+        display: inline-block;
+        float: right;
+        width: 600px;
+        margin: 0;
+        color: #fff;
+        text-shadow: 1px 1px 0 #333;
+      }
+      &__desc {
+        display: inline-block;
+        float: right;
+        color: #0099CC;
+        text-shadow: 1px 1px 0 #000;
+        margin-top: 0;
+        .small {
+          font-size: 12px;
+          font-style: italic;
+        }
+      }
+    }
+  }
   &-work {
-    background: #fdfdfd;
+    background: #fff;
     &-list {
       margin-top: 20px;
       text-align: center;
       &-item {
-        margin-bottom: 40px;
         text-align: center;
-        width: 380px;
+        width: 32%;
         margin: 0 5px;
         display: inline-block;
         vertical-align: top;
@@ -207,30 +282,27 @@
           height: 80px;
         }
         &__text {
-          font-size: 24px;
+          font-size: 18px;
           font-weight: bold;
           color: #333;
           text-align: center;
-          margin: 0;
           text-decoration: none;
+          width: 80%;
+          margin: 10px auto;
         }
       }
     }
   }
+  &-ticket {
+    background-color: #34495e;
+    background-size: cover;
+    background: #34495e url('../img/section-ticket__bg.jpg') no-repeat fixed 50% 0;
+    padding-bottom: 50px;
+    &__text {
+      color: #fff;
+      font-size: 24px;
+      text-shadow: 2px 2px 0 #333;
+    }
+  }
 
 }
-//
-//@media only screen and (max-width: 1366px) {
-//  .section {
-//    &-work {
-//      &-list {
-//        &-item {
-//          width: 380px !important;
-//          &__text {
-//            font-size: 24px;
-//          }
-//        }
-//      }
-//    }
-//  }
-//}

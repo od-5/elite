@@ -1,5 +1,7 @@
 # coding=utf-8
+from PIL import Image
 from django.db import models
+from apps.city.models import City
 from core.models import Area
 from imagekit.models import ImageSpecField
 from pilkit.processors import SmartResize
@@ -15,6 +17,7 @@ class Address(models.Model):
         verbose_name_plural = u'Адреса'
         app_label = 'address'
 
+    city = models.ForeignKey(to=City, verbose_name=u'Город', blank=True, null=True)
     address = models.CharField(max_length=255, verbose_name=u'Адрес')
     image = models.ImageField(upload_to='address', verbose_name=u'Изображение')
     image_resize = ImageSpecField(
@@ -24,12 +27,21 @@ class Address(models.Model):
     def __unicode__(self):
         return self.address
 
+    def save(self, *args, **kwargs):
+        super(Address, self).save()
+        if self.image:
+            image = Image.open(self.image)
+            (width, height) = image.size
+            size = (800, 800)
+            "Max width and height 200"
+            if width > 800:
+                image.thumbnail(size, Image.ANTIALIAS)
+                image.save(self.image.path, "PNG")
+
     def pic(self):
         return '<img src="%s" width="170"/>' % self.image.url
     pic.short_description = u"Миниатюра"
     pic.allow_tags = True
-
-
 
 
 class AddressItem(models.Model):
@@ -47,7 +59,19 @@ class AddressItem(models.Model):
     def __unicode__(self):
         return self.address.address
 
+    def save(self, *args, **kwargs):
+        super(AddressItem, self).save()
+        if self.image:
+            image = Image.open(self.image)
+            (width, height) = image.size
+            size = (800, 800)
+            "Max width and height 200"
+            if width > 800:
+                image.thumbnail(size, Image.ANTIALIAS)
+                image.save(self.image.path, "PNG")
+
     def pic(self):
         return '<img src="%s" width="170"/>' % self.image.url
+
     pic.short_description = u"Миниатюра"
     pic.allow_tags = True

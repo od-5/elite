@@ -8,60 +8,37 @@ $(function() {
     if($(this).attr('href') == current_url) $(this).addClass('nav-list-item__link_active');
   });
 
-  $(document).on('click', 'a[href^=#]', function () {
-      $('html, body').animate({ scrollTop:  $('a[name="'+this.hash.slice(1)+'"]').offset().top }, 300 );
-      return false;
+  //$(document).on('click', 'a[href^=#]', function () {
+  //    $('html, body').animate({ scrollTop:  $('a[name="'+this.hash.slice(1)+'"]').offset().top }, 300 );
+  //    return false;
+  //});
+  $('.js-select-city').click(function(){
+    $('.header-city-select__list').slideToggle();
   });
 
-  $('section').addClass("hidden").viewportChecker({
-    classToAdd: 'visible animated fadeIn',
-    offset: 100
-  });
-  $('.section-video-container, .section-advantage-list').addClass("hidden").viewportChecker({
-    classToAdd: 'visible animated fadeIn',
-    offset: 200
-  });
+  // Галлерея фотографий
+  $('.js-gallery').fancybox();
+  // Модальное окно открытия формы заявки для главной страницы
 
-  //$('.popupbutton').fancybox({
-  //  'padding': 37,
-  //  'overlayOpacity': 0.87,
-  //  'overlayColor': '#fff',
-  //  'transitionIn': 'none',
-  //  'transitionOut': 'none',
-  //  'titlePosition': 'inside',
-  //  'centerOnScroll': true,
-  //  'width': 600,
-  //  'minHeight': 310,
-  //  afterClose: function(e){
-  //    $('.ticket-form').trigger('reset');
-  //  }
+  $('.js-main-ticket-button').fancybox({
+    afterClose: function (e) {
+      $('.js-main-ticket-form_modal').trigger('reset');
+    }
+  });
+  $('.js-city-ticket-button').fancybox({
+    afterClose: function (e) {
+      $('.js-city-ticket-form_modal').trigger('reset');
+    }
+  });
+  //$('section').addClass("hidden").viewportChecker({
+  //  classToAdd: 'visible animated fadeIn',
+  //  offset: 100
   //});
-  //
-  //$('.popupbutton').on('click', function(e){
-  //  var form = $(this).parent('form');
-  //  var name = form.find('.ticket-form__name').val();
-  //  var email = form.find('.ticket-form__email').val();
-  //  $('.pop-form').find('.ticket-form__name__travel').val(name)
-  //  $('.pop-form').find('.ticket-form__email__travel').val(email)
+  //$('.section-video-container, .section-advantage-list').addClass("hidden").viewportChecker({
+  //  classToAdd: 'visible animated fadeIn',
+  //  offset: 200
   //});
-  //
-  //$( ".pop-form" ).validate({
-  //  rules: {
-  //    name: {
-  //      required: true
-  //    },
-  //    email: {
-  //      required: true
-  //    }
-  //  },
-  //  submitHandler: function(e) {
-  //    $('.pop-form').ajaxSubmit({
-  //        success: function(data){
-  //          $.fancybox.close();
-  //        }
-  //    });
-  //  }
-  //});
+
   $.validator.messages.required = "* поле обязательно для заполнения";
   $( "header form" ).validate({
     rules: {
@@ -86,28 +63,6 @@ $(function() {
     }
   });
 
-  $( "footer form" ).validate({
-    rules: {
-      name: {
-        required: true
-      },
-      phone: {
-        required: true
-      }
-    },
-    submitHandler: function(e) {
-      $('footer form').ajaxSubmit({
-          success: function(data){
-            if (data.success) {
-              $.notify('Ваша заявка принята!', 'success');
-            } else {
-              $.notify('Что то пошло не так', 'error');
-            }
-            $('form').trigger('reset');
-          }
-      });
-    }
-  });
 
   $('.section-address-container-item-link').hover(function(){
     $(this).find('.section-address-container-item-link-back').toggle();
@@ -117,47 +72,8 @@ $(function() {
     animation: "slide"
   });
 
-
-  $('.section-advantage-button, .section-address-ticket-button, .section-video-ticket-button').on('click', function(e){
-    $('#pop').fadeIn();
-    $('body').append('<div class="overlay"></div>');
-  });
-  $('.section-address-container-item-link').on('click', function(e){
-    $.ajax({
-      type: "POST",
-      url: $(this).data('url'),
-      data: {
-        'address': $(this).data('address')
-      },
-      success: function(msg){
-        //alert( "Прибыли данные: " + msg.success[0] );
-        var address_list = msg.success;
-        $('.pop-gallery').append('<div class="gallery"><ul class="slides"></ul></div>');
-        for (var i = 0; i < address_list.length; i++) {
-          console.log(address_list[i]);
-          $('.gallery .slides').append('<li><img src=' + address_list[i] + '></li>');
-        }
-        $('.gallery').flexslider({
-          animation: "slide"
-        });
-      }
-    });
-    $('.pop-gallery').fadeIn();
-    $('body').append('<div class="overlay"></div>');
-
-  });
-
-  $('.modal-close').on('click', function(e){
-    //alert('ok');
-    $('#pop').fadeOut();
-    $('.pop-gallery').fadeOut();
-    if ($('.gallery .slides li').length) {
-      $('.gallery').detach();
-    }
-    $('.overlay').remove();
-  });
-
-  $( "#pop form" ).validate({
+  // Модальная форма отправки заявки с главной страницы
+  $( ".js-main-ticket-form_modal" ).validate({
     rules: {
       name: {
         required: true
@@ -167,19 +83,117 @@ $(function() {
       }
     },
     submitHandler: function(e) {
-      $('#pop form').ajaxSubmit({
+      $('.js-main-ticket-form_modal').ajaxSubmit({
           success: function(data){
+            $.fancybox.close();
             if (data.success) {
               $.notify('Ваша заявка принята!', 'success');
             } else {
               $.notify('Что то пошло не так', 'error');
             }
-            $('#pop form').trigger('reset');
-            $('#pop').fadeOut();
-            $('.overlay').remove();
+          }
+      });
+    }
+  });
+  // Модальная форма отправки заявки со страницы города
+  $(".js-city-ticket-form_modal").validate({
+    rules: {
+      city: {
+        required: true
+      },
+      name: {
+        required: true
+      },
+      phone: {
+        required: true
+      }
+    },
+    submitHandler: function(e) {
+      $('.js-city-ticket-form_modal').ajaxSubmit({
+          success: function(data){
+            $.fancybox.close();
+            if (data.success) {
+              $.notify('Ваша заявка принята!', 'success');
+            } else {
+              $.notify('Что то пошло не так', 'error');
+            }
           }
       });
     }
   });
 
+  // Форма отправки заявки с главной страницы
+  $( ".js-main-ticket-form" ).validate({
+    rules: {
+      name: {
+        required: true
+      },
+      phone: {
+        required: true
+      }
+    },
+    submitHandler: function(e) {
+      $('.js-main-ticket-form').ajaxSubmit({
+          success: function(data){
+            $.fancybox.close();
+            if (data.success) {
+              $.notify('Ваша заявка принята!', 'success');
+            } else {
+              $.notify('Что то пошло не так', 'error');
+            }
+            $('.js-main-ticket-form').trigger('reset')
+          }
+      });
+    }
+  });
+  // Форма отправки заявки со страницы города
+  $( ".js-city-ticket-form" ).validate({
+    rules: {
+      city: {
+        required: true
+      },
+      name: {
+        required: true
+      },
+      phone: {
+        required: true
+      }
+    },
+    submitHandler: function(e) {
+      $('.js-city-ticket-form').ajaxSubmit({
+          success: function(data){
+            $.fancybox.close();
+            if (data.success) {
+              $.notify('Ваша заявка принята!', 'success');
+            } else {
+              $.notify('Что то пошло не так', 'error');
+            }
+            $('.js-main-ticket-form').trigger('reset')
+          }
+      });
+    }
+  });
+
+  $('.js-slide').fancybox();
+
+  $('.js-section-review-slider').flexslider({
+    animation: "slide",
+    animationLoop: true,
+    controlNav: false,
+    itemWidth: 250,
+    itemMargin: 3,
+    prevText: '',
+    nextText: ''
+  });
+  var h_hght = 150;
+  var h_mrg = 0;
+  $(window).scroll(function(){
+    var top = $(this).scrollTop();
+    var elem = $('.fixed_menu');
+    if (top+h_mrg < h_hght) {
+      elem.removeClass('hide');
+    } else {
+      elem.addClass('hide');
+    }
+  });
 });

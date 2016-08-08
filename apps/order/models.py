@@ -1,4 +1,5 @@
 # coding=utf-8
+from PIL import Image
 from django.db import models
 from imagekit.models import ImageSpecField
 from pilkit.processors import SmartResize
@@ -15,6 +16,17 @@ class Order(models.Model):
 
     def __unicode__(self):
         return self.title
+
+    def save(self, *args, **kwargs):
+        super(Order, self).save()
+        if self.image:
+            image = Image.open(self.image)
+            (width, height) = image.size
+            size = (320, 320)
+            "Max width and height 200"
+            if width > 320:
+                image.thumbnail(size, Image.ANTIALIAS)
+                image.save(self.image.path, "PNG")
 
     def pic(self):
         return '<img src="%s" width="170"/>' % self.image.url

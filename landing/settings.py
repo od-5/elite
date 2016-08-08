@@ -11,6 +11,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '_tpd9(a+n4i20i$5j6$cw^%09q=i6_r1e-j8ur-e@uw91#g@hd'
 
+YANDEX_MAPS_API_KEY = 'AO7kF1UBAAAA-akFCwIAR7_VYsSjwJ9g-dDEVHElLxuBQi8AAAAAAAAAAAAQMK4N7NYtvg4ALgMZ8-GRO_cQqQ=='
 # SECURITY WARNING: don't run with debug turned on in production!
 
 if socket.gethostname() == 'r420':
@@ -44,8 +45,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'debug_toolbar',
     'imagekit',
+    'nested_inline',
     'suit_redactor',
     'widget_tweaks',
     'annoying',
@@ -56,6 +57,9 @@ INSTALLED_APPS = (
     'apps.advantages',
     'apps.order',
     'apps.faq',
+    'apps.city',
+    'apps.video',
+    'apps.review',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -66,7 +70,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'debug_toolbar.middleware.DebugToolbarMiddleware',
+    # 'debug_toolbar.middleware.DebugToolbarMiddleware',
 )
 
 from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS as TCP
@@ -76,21 +80,21 @@ TEMPLATE_CONTEXT_PROCESSORS = TCP + (
     'core.context.site_setup',
     'apps.article.context.article_list',
     'apps.faq.context.faq_list',
+    'apps.city.context.city_list',
 )
-
-INTERNAL_IPS = '127.0.0.1'
 ROOT_URLCONF = 'landing.urls'
 
 WSGI_APPLICATION = 'landing.wsgi.application'
 
-DEBUG_TOOLBAR_PATCH_SETTINGS = False
-
-
 if socket.gethostname() == 'r420':
     DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+            'ENGINE': 'django.db.backends.mysql',
+             'NAME': 'elitkadoru',
+             'USER': 'elitkadoru',
+             'PASSWORD': '1111',
+             'HOST': 'localhost',
+             'PORT': '',
         }
     }
 else:
@@ -153,19 +157,24 @@ SUIT_CONFIG = {
         'sites',
         # {'app': 'auth', 'icon':'icon-lock', 'models': ('user', 'group')},
         {'label': u'Настройки', 'icon': 'icon-cog', 'models': ('auth.user', 'auth.group', 'core.setup')},
-        {'label': u'Контакты', 'icon': 'icon-cog', 'models': ('core.contacts',)},
+        {'label': u'Города', 'icon': 'icon-flag', 'app': 'city'},
+        {'label': u'Импорт адресов', 'icon': 'icon-download-alt', 'url': '/data-import/'},
+        {'label': u'Видео', 'icon': 'icon-facetime-video', 'app': 'video'},
+        {'label': u'Контакты', 'icon': 'icon-envelope', 'models': ('core.contacts',)},
         {'label': u'Заявки', 'icon': 'icon-user', 'models': ('core.ticket',)},
         {'label': u'Районы', 'models': ('core.area',)},
-        {'label': u'Слайдер', 'app': 'slider', },
         {'label': u'Адресная программа', 'app': 'address', },
         {'label': u'Статьи', 'app': 'article', },
         {'label': u'Преимущества', 'app': 'advantages', },
         {'label': u'Как заказать', 'app': 'order', },
         {'label': u'FAQ', 'app': 'faq', },
+        {'label': u'Отзывы', 'app': 'review', },
     ),
 }
 
 SLIDER_SIZE = [525, 350]
 ADDRESS_SIZE = [280, 280]
 ADDRESS_ITEM_SIZE = [700, 700]
-ORDER_ITEM_SIZE = [300, 300]
+REVIEW_ITEM_SIZE = [352, 352]
+ORDER_ITEM_SIZE = [315, 315]
+REVIEW_AVATAR_SIZE = [80, 80]

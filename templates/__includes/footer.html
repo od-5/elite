@@ -1,35 +1,53 @@
 <footer class="footer">
   <div class="container_12">
-    <div class="grid_3 suffix_2">
-      <a href="#top" class="footer-logotype">
-        <img src="{{ STATIC_URL }}img/logotype.png" alt="Рекласное агенство Арт-Лифт">
-      </a>
-      <p class="footer__heading">Контакты:</p>
-      <ul class="footer-address">
-        <li>{{ contacts.address|linebreaksbr }}</li>
-        <li>{{ contacts.phone }}</li>
-        <li><a href="mailto:{{ contacts.email }}" class="foter-address__mail">{{ contacts.email }}</a></li>
-      </ul>
-    </div>
-    <div class="grid_3">
-      <p class="footer__heading footer-nav__title">Навигация:</p>
+    <div class="grid_9">
       <ul class="footer-nav">
-        <li class="footer-nav-item"><a href="#top" class="footer-nav-item__link">Примеры работ</a></li>
-        <li class="footer-nav-item"><a href="#video" class="footer-nav-item__link">Видео о нас</a></li>
+        <li class="footer-nav-item"><a href="#top" class="footer-nav-item__link">О нас</a></li>
+        <li class="footer-nav-item"><a href="#video" class="footer-nav-item__link">Видео</a></li>
         <li class="footer-nav-item"><a href="#advantage" class="footer-nav-item__link">Почему мы</a></li>
         <li class="footer-nav-item"><a href="#address" class="footer-nav-item__link">Адреса</a></li>
+        <li class="footer-nav-item"><a href="#review" class="footer-nav-item__link">Отзывы</a></li>
+        <li class="footer-nav-item"><a href="#city-map" class="footer-nav-item__link">География</a></li>
         <li class="footer-nav-item"><a href="#work" class="footer-nav-item__link">Как Заказать</a></li>
         <li class="footer-nav-item"><a href="{% url 'article-list' %}" class="footer-nav-item__link">Статьи</a></li>
         <li class="footer-nav-item"><a href="{% url 'faq-list' %}" class="footer-nav-item__link">Вопросы и ответы</a></li>
       </ul>
+      <p class="copyright">
+        &copy; 2016, РА "Арт-Лифт"
+      </p>
     </div>
-    <div class="grid_4">
-      <a name="footer"></a>
-      <div class="footer-ticket">
-        <p class="footer-ticket__title">Оставьте заявку</p>
-        {% include '__includes/ticket_form.html' %}
-      </div>
+    <div class="grid_3">
+      <address class="footer-address">
+        {{ contacts.address}} <br><br>
+        email: <a href="mailto:{{ contacts.email }}" class="section-ticket__mail">{{ contacts.email }}</a> <br><br>
+        телефон: {{ contacts.phone }}
+      </address>
     </div>
+{#    <div class="grid_3">#}
+{#      <p class="footer__heading footer-nav__title">Навигация:</p>#}
+{#      <ul class="footer-nav">#}
+{#        <li class="footer-nav-item"><a href="#top" class="footer-nav-item__link">Примеры работ</a></li>#}
+{#        <li class="footer-nav-item"><a href="#video" class="footer-nav-item__link">Видео о нас</a></li>#}
+{#        <li class="footer-nav-item"><a href="#advantage" class="footer-nav-item__link">Почему мы</a></li>#}
+{#        <li class="footer-nav-item"><a href="#address" class="footer-nav-item__link">Адреса</a></li>#}
+{#        <li class="footer-nav-item"><a href="#work" class="footer-nav-item__link">Как Заказать</a></li>#}
+{#        <li class="footer-nav-item"><a href="{% url 'article-list' %}" class="footer-nav-item__link">Статьи</a></li>#}
+{#        <li class="footer-nav-item"><a href="{% url 'faq-list' %}" class="footer-nav-item__link">Вопросы и ответы</a></li>#}
+{#      </ul>#}
+{#    </div>#}
+{#    <div class="grid_4">#}
+{#      <a name="footer"></a>#}
+{#      <div class="footer-ticket">#}
+{#        <p class="footer-ticket__title">Оставьте заявку</p>#}
+{#        <form action="{% url 'ticket' %}" class="ticket-form ticket-form_modal js-main-ticket-form" method="post">{% csrf_token %}#}
+{#          {% load widget_tweaks %}#}
+{#            {{ form.name|attr:'placeholder:Ваше имя'|add_class:'input' }}#}
+{#            {{ form.phone|attr:'placeholder:Ваш телефон или e-mail'|add_class:'input' }}#}
+{#            {{ form.comment|attr:'placeholder:Текст вопроса'|add_class:'input' }}#}
+{#            <input type="submit" value="Отправить" class="button">#}
+{#        </form>#}
+{#      </div>#}
+{#    </div>#}
     <div class="clear"></div>
   </div>
 </footer>
