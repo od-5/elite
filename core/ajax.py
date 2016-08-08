@@ -13,8 +13,8 @@ def ticket_form(request):
     # try:
     #     email = Setup.objects.all()[0].email
     # except:
-    email = 'od-5@yandex.ru'
-    print email
+    # email = 'od-5@yandex.ru'
+    # print email
     if request.method == "POST":
         if request.POST.get('city'):
             form = CityTicketForm(data=request.POST)
@@ -30,10 +30,10 @@ def ticket_form(request):
             else:
                 message = u'Имя: %s\nТелефон: %s\n' % (ticket.name, ticket.phone)
                 email = Setup.objects.all()[0].email
-            print settings.EMAIL_HOST_USER
+            # print settings.EMAIL_HOST_USER
             if not email:
                 email = Setup.objects.all()[0].email
-            email = 'od-5@yandex.ru'
+            # email = 'od-5@yandex.ru'
             send_mail(
                 u'Реклама в лифтах - Заявка с сайта',
                 message,
