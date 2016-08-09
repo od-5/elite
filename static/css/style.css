@@ -1191,12 +1191,18 @@ body {
   vertical-align: middle;
   box-sizing: border-box;
 }
-.header {
+.body-page {
   background-size: cover;
   background: url('../img/header__bg.jpg') no-repeat fixed 50% 0;
+}
+.header {
   position: relative;
-  padding-bottom: 50px;
   z-index: 1;
+}
+.header_main {
+  background-size: cover;
+  background: url('../img/header__bg.jpg') no-repeat fixed 50% 0;
+  padding-bottom: 50px;
 }
 .header-top {
   background: rgba(0, 0, 0, 0.2);
@@ -1753,8 +1759,13 @@ body {
 .article {
   position: relative;
   z-index: 2;
-  background: #fff;
   font-family: Helvetica, Arial, sans-serif;
+}
+.article .container_12 {
+  background: rgba(255, 255, 255, 0.8);
+}
+.article li {
+  margin-left: 20px;
 }
 .article a {
   font-family: Helvetica, Arial, sans-serif;

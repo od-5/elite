@@ -33,9 +33,11 @@ class City(models.Model):
         super(City, self).save()
 
     name = models.CharField(max_length=100, verbose_name=u'Город')
+    title = models.CharField(verbose_name=u'Название организации', max_length=256, null=True, blank=True)
     manager = models.ForeignKey(to=User, blank=True, null=True, verbose_name=u'Руководитель филиала')
     email = models.EmailField(max_length=100, blank=True, null=True, verbose_name=u'Email для приёма заявок')
     phone = models.CharField(max_length=20, blank=True, null=True, verbose_name=u'Контактный телефон')
+    legal_address = models.TextField(verbose_name=u'Адрес', blank=True, null=True)
     coord_x = models.DecimalField(max_digits=9, decimal_places=6, blank=True, null=True, verbose_name=u'Широта')
     coord_y = models.DecimalField(max_digits=9, decimal_places=6, blank=True, null=True, verbose_name=u'Долгота')
     slug = models.SlugField(verbose_name=u'url', blank=True, null=True, max_length=50)
