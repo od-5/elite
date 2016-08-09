@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
   padding: 0;
@@ -16,8 +17,13 @@ html, body {
 .article {
   position: relative;
   z-index: 2;
-  background: #fff;
   font-family: Helvetica, Arial, sans-serif;
+}
+.article .container_12 {
+  background: rgba(255, 255, 255, 0.8);
+}
+.article li {
+  margin-left: 20px;
 }
 .article a {
   font-family: Helvetica, Arial, sans-serif;

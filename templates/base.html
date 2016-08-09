@@ -2,10 +2,10 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>{% block title %}{{ setup.title|default:'Название сайта' }}{% endblock %}</title>
+  <title>{% block title %}{% if current_city.title %}{{ current_city.title|default:'Название сайта' }}{% else %}{{ SETUP.title|default:'Название сайта' }}{% endif %}{% endblock %}</title>
 {% block meta %}
-  <meta name="description" content="{{ setup.meta_desc|default:'' }}">
-  <meta name="keywords" content="{{ setup.meta_key|default:'' }}">
+  <meta name="description" content="{{ SETUP.meta_desc|default:'' }}">
+  <meta name="keywords" content="{{ SETUP.meta_key|default:'' }}">
 {% endblock %}
   <script src="{{ STATIC_URL }}js/jquery-1.11.2.min.js"></script>
   <script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
@@ -17,22 +17,79 @@
   <script src="{{ STATIC_URL }}js/jquery.viewportchecker.js"></script>
   <script src="{{ STATIC_URL }}js/scrollup.js"></script>
   <script src="{{ STATIC_URL }}js/common.js"></script>
-  {% if setup.top_js %}
-    {{ setup.top_js|safe }}
+  {% if SETUP.top_js %}
+    {{ SETUP.top_js|safe }}
   {% endif %}
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Ubuntu+Condensed" />
   <link href="{{ STATIC_URL }}css/style.css" rel="stylesheet">
 {% block top_js %}
 {% endblock %}
 </head>
-<body>
+<body {% block body_args %}{% endblock %}>
+{#{% include '__includes/header.html' %}#}
+<header class="header{% block header_class %}{% endblock %}">
+  <a name="top"></a>
+  <div class="header-top">
+    <div class="container_12">
+{#      <div class="grid_12 fixed_menu hide" style="position: fixed">#}
+{#        <h1>This is menu!</h1>#}
+{#      </div>#}
+      <div class="grid_4">
+        <div class="header-city-select">
+          <div class="header-city-select__text js-select-city">
+            <img src="{{ STATIC_URL }}img/location-icon.png" alt="">{{ current_city.name|default:'Город не выбран' }}
+          </div>
+          <div class="header-city-select__list">
+            <ul>
+              {% for city in CITY_LIST %}
+                <li>
+                  <a href="{% url 'city:view' city.slug %}">{{ city.name }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="grid_8">
+        <div class="header-phone text-right">
+          <span class="header-phone__title">Звоните по телефону:</span>
+          <span class="header-phone__number">{{ PHONE|default:'0-000-000-000-00' }}</span>
+{#          <span class="header-phone__text">(звонок бесплатный) </span>#}
+        </div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+  <div class="header-menu">
+    <div class="container_12">
+      <div class="grid_4">
+        <a href="{% url 'home' %}" title="" class="header-logotype">
+          <img src="{{ STATIC_URL }}img/logotype.png" alt="Логотип">
+        </a>
+      </div>
+      <div class="grid_8">
+        <nav class="nav">
+          <ul class="nav-list">
+          {% block header_menu %}
+          {% endblock %}
+          </ul>
+        </nav>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+{% block header_content %}
+{% endblock %}
+</header>
+
+
 {% block content %}
 {% endblock %}
 <div id="scrollup"><img alt="Прокрутить вверх" src="{{ STATIC_URL }}img/up.png"></div>
 {% block bottom_js %}
 {% endblock %}
-{% if setup.bottom_js %}
-  {{ setup.bottom_js|safe }}
+{% if SETUP.bottom_js %}
+  {{ SETUP.bottom_js|safe }}
 {% endif %}
 
 </body>

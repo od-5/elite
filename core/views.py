@@ -18,10 +18,12 @@ def index(request, slug=None):
     else:
         current_city = None
     if current_city:
+        request.session['current_city'] = current_city.id
         address = Address.objects.filter(city=current_city)
         filrereview_qs = FileReview.objects.filter(city=current_city)
         textreview_qs = TextReview.objects.filter(city=current_city)
     else:
+        request.session['current_city'] = False
         address = Address.objects.filter(city__isnull=True)
         filrereview_qs = FileReview.objects.filter(city__isnull=True)
         textreview_qs = TextReview.objects.filter(city__isnull=True)
