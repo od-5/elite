@@ -1255,6 +1255,7 @@ body {
 }
 .header-logotype img {
   vertical-align: middle;
+  max-height: 62px;
 }
 .header-logotype:hover {
   opacity: 0.6;

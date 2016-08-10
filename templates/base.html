@@ -64,7 +64,11 @@
     <div class="container_12">
       <div class="grid_4">
         <a href="{% url 'home' %}" title="" class="header-logotype">
+          {% if current_city.logotype %}
+            <img src="{{ current_city.logotype.url }}" alt="Логотип">
+          {% else %}
           <img src="{{ STATIC_URL }}img/logotype.png" alt="Логотип">
+          {% endif %}
         </a>
       </div>
       <div class="grid_8">
