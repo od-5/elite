@@ -34,45 +34,33 @@ def address_list_import(request):
                             house_number += i
                     else:
                         house_number += i
-                print city
-                print area
-                print street
-                print house_number
 
                 try:
                     # пробуем получить город
                     city_instance = City.objects.get(name__iexact=city)
-                    print 'has city_instance: %s' % city_instance
                     try:
                         # пробуем получить район
                         area_instance = CityArea.objects.get(city=city_instance, name__iexact=area)
-                        print 'has area_instance: %s' % area_instance
                     except:
                         # создаём новый район
                         area_instance = CityArea(city=city_instance, name=area)
                         area_instance.save()
-                        print 'create area_instance: %s' % area_instance
                     try:
                         # пробуем получить улицу
                         street_instance = CityStreet.objects.get(city=city_instance, area=area_instance, name__iexact=street)
-                        print 'has street_instance: %s' % street_instance
                     except:
                         # создаём новую улицу
                         street_instance = CityStreet(city=city_instance, area=area_instance, name=street)
                         street_instance.save()
-                        print 'create street_instance: %s' % street_instance
                     try:
                         # пробуем получить поверхность
                         house_instance = CityHouse.objects.get(city=city_instance, area=area_instance, street=street_instance,
                                                                number=house_number)
-                        print 'has house_instance: %s' % house_instance
                     except:
                         # создаём поверхность
                         house_instance = CityHouse(city=city_instance, area=area_instance, street=street_instance, number=house_number)
                         house_instance.save()
-                        print 'create house_instance: %s' % house_instance
                 except:
                     pass
-                    print u'Город не найден'
                     return HttpResponseRedirect(reverse('admin-index'))
         return HttpResponseRedirect('/admin/city/cityhouse/')
