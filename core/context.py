@@ -12,7 +12,6 @@ def site_setup(request):
     except:
         request.session['current_city'] = False
     current_city = int(request.session['current_city'])
-    print current_city
     setup = Setup.objects.first()
     if current_city == 0:
         contact = Contacts.objects.first()

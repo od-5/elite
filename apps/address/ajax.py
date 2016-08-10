@@ -19,7 +19,6 @@ def address_item_list(request, pk):
     #         'success': address_list
     #     }
     pk = int(pk)
-    print pk
     address_qs = AddressItem.objects.filter(address=int(pk))
     address_list = []
     for i in address_qs:
