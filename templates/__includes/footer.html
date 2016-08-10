@@ -13,7 +13,7 @@
         <li class="footer-nav-item"><a href="{% url 'faq-list' %}" class="footer-nav-item__link">Вопросы и ответы</a></li>
       </ul>
       <p class="copyright">
-        &copy; 2016, РА "Арт-Лифт"
+        &copy; 2016, {{ current_city.title|default:'РА "Арт-Лифт"' }}
       </p>
     </div>
     <div class="grid_3">

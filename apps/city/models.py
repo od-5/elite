@@ -1,5 +1,6 @@
 # coding=utf-8
 import datetime
+from PIL import Image
 from django.conf import settings
 from django.contrib.auth.models import User
 from django.dispatch import receiver
@@ -26,6 +27,14 @@ class City(models.Model):
     #     return reverse('city', args=(self.slug,))
 
     def save(self, *args, **kwargs):
+        if self.logotype:
+            image = Image.open(self.logotype)
+            (width, height) = image.size
+            size = (262, 262)
+            "Max width and height 200"
+            if width > 262:
+                image.thumbnail(size, Image.ANTIALIAS)
+                image.save(self.logotype.path, "PNG")
         address = u'город %s' % self.name
         pos = api.geocode(api_key, address)
         self.coord_y = float(pos[0])
@@ -34,6 +43,7 @@ class City(models.Model):
 
     name = models.CharField(max_length=100, verbose_name=u'Город')
     title = models.CharField(verbose_name=u'Название организации', max_length=256, null=True, blank=True)
+    logotype = models.ImageField(upload_to='logotype', verbose_name=u'Логотип', blank=True, null=True)
     manager = models.ForeignKey(to=User, blank=True, null=True, verbose_name=u'Руководитель филиала')
     email = models.EmailField(max_length=100, blank=True, null=True, verbose_name=u'Email для приёма заявок')
     phone = models.CharField(max_length=20, blank=True, null=True, verbose_name=u'Контактный телефон')
