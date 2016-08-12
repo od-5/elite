@@ -41,6 +41,9 @@
           </div>
           <div class="header-city-select__list">
             <ul>
+                <li>
+                  <a href="{% url 'home' %}">Все города</a>
+                </li>
               {% for city in CITY_LIST %}
                 <li>
                   <a href="{% url 'city:view' city.slug %}">{{ city.name }}</a>
