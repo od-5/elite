@@ -19,9 +19,15 @@
     <a href="#review" class="nav-list-item__link">Отзывы</a>
   </li>
   {% endif %}
+  {% if current_city %}
+  <li class="nav-list-item">
+    <a href="#city-map" class="nav-list-item__link">Карта адресов</a>
+  </li>
+  {% else %}
   <li class="nav-list-item">
     <a href="#city-map" class="nav-list-item__link">Карта городов</a>
   </li>
+  {% endif %}
   <li class="nav-list-item">
     <a href="#work" class="nav-list-item__link">Как заказать</a>
   </li>
