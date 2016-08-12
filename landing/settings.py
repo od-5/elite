@@ -158,7 +158,7 @@ SUIT_CONFIG = {
         # {'app': 'auth', 'icon':'icon-lock', 'models': ('user', 'group')},
         {'label': u'Настройки', 'icon': 'icon-cog', 'models': ('auth.user', 'auth.group', 'core.setup')},
         {'label': u'Города', 'icon': 'icon-flag', 'app': 'city'},
-        {'label': u'Импорт адресов', 'icon': 'icon-download-alt', 'url': '/data-import/'},
+        # {'label': u'Импорт адресов', 'icon': 'icon-download-alt', 'url': '/data-import/'},
         {'label': u'Видео', 'icon': 'icon-facetime-video', 'app': 'video'},
         {'label': u'Контакты', 'icon': 'icon-envelope', 'models': ('core.contacts',)},
         {'label': u'Заявки', 'icon': 'icon-user', 'models': ('core.ticket',)},

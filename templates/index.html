@@ -1,18 +1,24 @@
 {% extends 'base.html' %}
 {% block header_class %} header_main{% endblock %}
 {% block header_menu %}
+  {% if video_list %}
   <li class="nav-list-item">
     <a href="#video" class="nav-list-item__link nav-list-item__link_active">Видео</a>
   </li>
+  {% endif %}
   <li class="nav-list-item">
     <a href="#advantage" class="nav-list-item__link">Почему мы</a>
   </li>
+  {% if address_list %}
   <li class="nav-list-item">
     <a href="#address" class="nav-list-item__link">Адреса</a>
   </li>
+  {% endif %}
+  {% if filereview_list or textreview_list %}
   <li class="nav-list-item">
     <a href="#review" class="nav-list-item__link">Отзывы</a>
   </li>
+  {% endif %}
   <li class="nav-list-item">
     <a href="#city-map" class="nav-list-item__link">Карта городов</a>
   </li>
