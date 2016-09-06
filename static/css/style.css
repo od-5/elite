@@ -2732,9 +2732,8 @@ body {
   display: inline-block;
 }
 .franchise-our-clients-list-item__img {
-  height: 150px;
-  width: 300px;
-  background: red;
+  height: 190px;
+  padding: 10px;
 }
 .franchise-third {
   padding: 40px 0;
