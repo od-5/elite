@@ -34,12 +34,21 @@
   <li class="nav-list-item">
     <a href="{% url 'faq-list' %}" class="nav-list-item__link">Типичные вопросы</a>
   </li>
+{#  <li class="nav-list-item">#}
+{#    <a href="{% url 'faq-list' %}" class="nav-list-item__link nav-list-item__link_franchise">Наша франшиза</a>#}
+{#  </li>#}
 {% endblock %}
 {% block header_content %}
   <div class="container_12">
     <div class="grid_7 suffix_1">
       <div class="header-video">
         {{ SETUP.video|safe|default:'' }}
+      </div>
+      <div class="header-franchise">
+        <a href="{% url 'franchise' %}" class="header-franchise__link"><span class="glyphicon glyphicon-hand-right yellow"></span>
+          Хотите открыть <span class="yellow">свой бизнес</span> и стать <span class="yellow">нашим партнёром?</span>
+          <span class="glyphicon glyphicon-hand-left yellow"></span>
+        </a>
       </div>
     </div>
     <div class="grid_4">
@@ -60,7 +69,6 @@
       {% endif %}
       </div>
     </div>
-
     <div class="clear"></div>
   </div>
 {% endblock %}

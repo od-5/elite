@@ -8,7 +8,7 @@
   <meta name="keywords" content="{{ SETUP.meta_key|default:'' }}">
 {% endblock %}
   <script src="{{ STATIC_URL }}js/jquery-1.11.2.min.js"></script>
-  <script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+{#  <script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>#}
   <script src="{{ STATIC_URL }}js/jquery.form.js"></script>
   <script src="{{ STATIC_URL }}js/jquery.fancybox.pack.js"></script>
   <script src="{{ STATIC_URL }}js/jquery.validate.js"></script>
@@ -20,9 +20,10 @@
   {% if SETUP.top_js %}
     {{ SETUP.top_js|safe }}
   {% endif %}
-  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Ubuntu+Condensed" />
+{#  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Ubuntu+Condensed" />#}
   <link href="{{ STATIC_URL }}css/style.css" rel="stylesheet">
 {% block top_js %}
+  <script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 {% endblock %}
 </head>
 <body {% block body_args %}{% endblock %}>
@@ -65,7 +66,7 @@
   </div>
   <div class="header-menu">
     <div class="container_12">
-      <div class="grid_4">
+      <div class="grid_3">
         <a href="{% url 'home' %}" title="" class="header-logotype">
           {% if current_city.logotype %}
             <img src="{{ current_city.logotype.url }}" alt="Логотип">
@@ -74,7 +75,7 @@
           {% endif %}
         </a>
       </div>
-      <div class="grid_8">
+      <div class="grid_9">
         <nav class="nav">
           <ul class="nav-list">
           {% block header_menu %}

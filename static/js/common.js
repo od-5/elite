@@ -18,6 +18,12 @@ $(function() {
 
   // Галлерея фотографий
   $('.js-gallery').fancybox();
+  $('.js-modal-bp-download-btn').fancybox({
+    afterClose: function (e) {
+      $('.bp-download-form').trigger('reset');
+      $('#js-form-bp-download').find('input').show();
+    }
+  });
   // Модальное окно открытия формы заявки для главной страницы
 
   $('.js-main-ticket-button').fancybox({
@@ -38,7 +44,33 @@ $(function() {
   //  classToAdd: 'visible animated fadeIn',
   //  offset: 200
   //});
-
+  $('#js-form-bp-download').validate({
+    rules: {
+      email: {
+        required: true,
+        email: true
+      }
+    },
+    submitHandler: function(e) {
+      $('#js-form-bp-download').ajaxSubmit({
+          success: function(data){
+            if (data.success) {
+              $('#js-form-bp-download').find('input').hide();
+              $('#js-form-bp-download').append('<a href="http://elitkadom.ru/static/art-lift.pdf" target="_blank" class="button">Скачать файл</a>');
+              $('#js-form-bp-download a').click(function(){
+                $.fancybox.close();
+              });
+            } else {
+              $.notify('Что то пошло не так', 'error');
+            }
+            $('#js-form-bp-download').trigger('reset');
+          }
+      });
+    }
+  });
+  //$('#js-form-bp-download a').click(function(){
+  //  $.fancybox.close();
+  //});
   $.validator.messages.required = "* поле обязательно для заполнения";
   $( "header form" ).validate({
     rules: {

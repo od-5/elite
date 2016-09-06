@@ -1,15 +1,50 @@
 .body-page {
-  background-size: cover;
   background: url('../img/header__bg.jpg') no-repeat fixed 50% 0;
+  background-size: cover;
 }
 .header {
   position: relative;
   z-index: 1;
 }
 .header_main {
-  background-size: cover;
   background: url('../img/header__bg.jpg') no-repeat fixed 50% 0;
+  background-size: cover;
   padding-bottom: 50px;
+}
+.header__link {
+  color: #0099FF;
+  text-transform: none;
+  font-weight: bold;
+}
+.header-franchise {
+  text-align: center;
+}
+.header-franchise__link {
+  margin: 40px auto 0;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  border: 2px solid #ffff66;
+  display: inline-block;
+  padding: 20px;
+  text-decoration: none;
+}
+.header-franchise__link:hover {
+  opacity: 0.8;
+  border-color: #fff;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.header-franchise__link .glyphicon {
+  font-size: 20px;
+}
+.header-franchise__link .glyphicon:first-child {
+  padding-right: 10px;
+}
+.header-franchise__link .glyphicon:last-child {
+  padding-left: 10px;
+}
+.header-franchise__link .yellow {
+  text-transform: uppercase;
 }
 .header-top {
   background: rgba(0, 0, 0, 0.2);

@@ -12,6 +12,9 @@ body {
 .visible {
   opacity: 1;
 }
+.yellow {
+  color: #ffff66;
+}
 .title {
   font-size: 36px;
   color: #333;
@@ -40,6 +43,15 @@ body {
 }
 .text-right {
   text-align: right;
+}
+.text-justify {
+  text-align: justify;
+}
+#bp-modal-download {
+  display: none;
+}
+#bp-modal-download p {
+  color: #fff;
 }
 #modal-ticket-form {
   display: none;

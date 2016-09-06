@@ -60,6 +60,7 @@ INSTALLED_APPS = (
     'apps.city',
     'apps.video',
     'apps.review',
+    'apps.download',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -162,6 +163,7 @@ SUIT_CONFIG = {
         {'label': u'Видео', 'icon': 'icon-facetime-video', 'app': 'video'},
         {'label': u'Контакты', 'icon': 'icon-envelope', 'models': ('core.contacts',)},
         {'label': u'Заявки', 'icon': 'icon-user', 'models': ('core.ticket',)},
+        {'label': u'Оставленные e-mail', 'icon': 'icon-envelope', 'app': 'download'},
         {'label': u'Районы', 'models': ('core.area',)},
         {'label': u'Адресная программа', 'app': 'address', },
         {'label': u'Статьи', 'app': 'article', },
