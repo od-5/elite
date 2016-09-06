@@ -1,15 +1,54 @@
 .body-page {
-  background-size: cover;
   background: url('../img/header__bg.jpg') no-repeat fixed 50% 0;
+  background-size: cover;
 }
 .header {
   &_main {
-    background-size: cover;
     background: url('../img/header__bg.jpg') no-repeat fixed 50% 0;
+    background-size: cover;
     padding-bottom: 50px;
   }
   position: relative;
   z-index: 1;
+  &__link {
+    color: #0099FF;
+    //font-size: 16px;
+    text-transform: none;
+    font-weight: bold;
+  }
+  &-franchise {
+    //background-color: rgba(255, 51, 51, 0.41);
+    //padding: 20px;
+    text-align: center;
+    //box-sizing: border-box;
+    &__link {
+      margin: 40px auto 0;
+      color: #fff;
+      font-size: 16px;
+      font-weight: bold;
+      border: 2px solid #ffff66;
+      display: inline-block;
+      padding: 20px;
+      text-decoration: none;
+      &:hover {
+        opacity: 0.8;
+        border-color: #fff;
+        background-color: rgba(255,255,255,0.2) ;
+      }
+      .glyphicon {
+        font-size: 20px;
+        &:first-child{
+          padding-right: 10px;
+        }
+        &:last-child{
+          padding-left: 10px;
+        }
+      }
+      .yellow {
+        text-transform: uppercase;
+      }
+    }
+  }
   &-top {
     background: rgba(0, 0, 0, 0.2);
     height: 45px;

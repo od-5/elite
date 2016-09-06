@@ -10,6 +10,7 @@
 .input.error {
   border-color: #ff7b79;
   background-color: #FFF3F3;
+  color: red;
 }
 label.error {
   display: block;

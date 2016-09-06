@@ -1,0 +1,473 @@
+{% extends 'index.html' %}
+{% block top_js %}
+{% endblock %}
+{% block header_menu %}
+  <li class="nav-list-item">
+    <a href="{% url 'home' %}" class="nav-list-item__link">Главная страница</a>
+  </li>
+  <li class="nav-list-item">
+    <a href="{% url 'article-list' %}" class="nav-list-item__link">Список статей</a>
+  </li>
+  <li class="nav-list-item">
+    <a href="{% url 'faq-list' %}" class="nav-list-item__link">Вопросы и ответы</a>
+  </li>
+{% endblock %}
+{% block header_content %}
+  <div class="container_12">
+    <div class="grid_5 text-center">
+      <img src="{{ STATIC_URL }}img/franch_1.png" alt="" class="franchise__img">
+    </div>
+    <div class="grid_7">
+      <h1 class="franchise__title franchise__title_bb text-right">
+        <span class="yellow">Высокодоходный</span> бизнес на рекламе в лифте
+      </h1>
+      <p class="franchise__desc text-center">Создайте свой бизнес <br><span class="yellow">на примере компании <br> "Арт-лифт"</span></p>
+      <a href="#bp-modal-download" class="js-modal-bp-download-btn franchise__button">
+        <img src="{{ STATIC_URL }}img/btn_left.png" alt="">Скачать бизнес-план<img src="{{ STATIC_URL }}img/btn_right.png" alt="">
+      </a>
+    </div>
+  </div>
+{% endblock %}
+{% block content %}
+  <section class="franchise-first">
+    <div class="container_12">
+      <div class="franchise-first-container">
+        <div class="grid_12 text-center">
+          <h2 class="franchise__title">НОВАЯ МОДЕЛЬ РАЗМЕЩЕНИЯ РЕКЛАМЫ В ЛИФТЕ!</h2>
+        </div>
+        <div class="grid_8">
+          <p class="franchise-first__text">
+            <span class="yellow">ЗАЩИТА</span> ПОВЕРХНОСТИ ЛИФТА ОТ РАЗЛИЧНЫХ ПОВРЕЖДЕНИЙ, <br>
+            КОТОРАЯ ПОЛНОСТЬЮ МЕНЯЕТ ЕГО <span class="yellow">ОБЛИК</span>, С <span class="yellow">РЕКЛАМОЙ</span><br>
+            ВАШЕГО КЛИЕНТА В ДОМАХ ПОВЫШЕННОГО КОМФОРТА <br>
+            И НОВОСТРОЙКАХ
+          </p>
+          <ul class="franchise-first-list">
+            <li class="franchise-first-list-item">
+              <p class="franchise-first-list-item__text">Вы защищаете лифт от различных повреждений, <br>
+                тем самым удовлетворяя потребности управляющих <br>
+                компаний, ТСЖ и за счёт изящного дизайна оставляем <br>
+                довольными жителей подъезда
+              </p>
+              <span class="franchise-first-list-item__number">1</span>
+            </li>
+            <li class="franchise-first-list-item">
+              <span class="franchise-first-list-item__number">2</span>
+              <p class="franchise-first-list-item__text">Вы размещаете рекламодателя на всей <br>
+                защитной поверхности, используяю современный материал <br>
+              </p>
+            </li>
+            <li class="franchise-first-list-item">
+              <span class="franchise-first-list-item__number">3</span>
+              <p class="franchise-first-list-item__text">Вы устанавливаете современный стенд и ежемесячно <br>
+                обновляете информацию ваших рекламодателей <br>
+              </p>
+            </li>
+          </ul>
+        </div>
+        <div class="grid_4">
+          <img src="{{ STATIC_URL }}img/franchise-first__img.png" alt="" class="franchise-first__img">
+        </div>
+        <div class="grid_12">
+          <p class="franchise-first__subtext text-center">
+            МЫ <span class="yellow">ЗАРАБАТЫВАЕМ</span> НА ВСЕХ ТРЁХ ЭТАПАХ И <span class="yellow">НАУЧИМ ВАС</span>
+          </p>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+  </section>
+  <section class="franchise-second">
+    <div class="container_12">
+      <div class="grid_12 text-center">
+        <h2 class="franchise__title franchise-second__title">
+          <span class="franchise-second__title_left"></span>
+          <span class="yellow">ДОХОДНОСТЬ</span> ТРЕТЬЕГО ЭТАПА
+          <span class="franchise-second__title_right"></span>
+        </h2>
+      </div>
+      <div class="grid_12 text-center">
+        <ul class="franchise-second-list">
+          <li class="franchise-second-list-item">
+            <p class="franchise-second-list-item__name">50 стендов</p>
+            <div class="franchise-second-list-item-block">
+              <span class="franchise-second-list-item-block__price">75 000</span><del><span>P</span></del>
+              <br>
+              <span class="franchise-second-list-item-block__desc">каждый месяц</span>
+              <div class="franchise-second-list-item-block_bg"></div>
+            </div>
+          </li>
+          <li class="franchise-second-list-item">
+            <p class="franchise-second-list-item__name">100 стендов</p>
+            <div class="franchise-second-list-item-block">
+              <span class="franchise-second-list-item-block__price">150 000</span><del><span>P</span></del>
+              <br>
+              <span class="franchise-second-list-item-block__desc">каждый месяц</span>
+              <div class="franchise-second-list-item-block_bg"></div>
+            </div>
+          </li>
+          <li class="franchise-second-list-item">
+            <p class="franchise-second-list-item__name">200 стендов</p>
+            <div class="franchise-second-list-item-block">
+              <span class="franchise-second-list-item-block__price">300 000</span><del><span>P</span></del>
+              <br>
+              <span class="franchise-second-list-item-block__desc">каждый месяц</span>
+              <div class="franchise-second-list-item-block_bg"></div>
+            </div>
+          </li>
+          <li class="franchise-second-list-item">
+            <p class="franchise-second-list-item__name">400 стендов</p>
+            <div class="franchise-second-list-item-block">
+              <span class="franchise-second-list-item-block__price">600 000</span><del><span>P</span></del>
+              <br>
+              <span class="franchise-second-list-item-block__desc">каждый месяц</span>
+              <div class="franchise-second-list-item-block_bg"></div>
+            </div>
+
+          </li>
+        </ul>
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div class="franchise-our-clients">
+      <div class="container_12">
+        <div class="grid_12">
+          <h3 class="franchise__title franchise-our-clients__title text-center">Наши клиенты</h3>
+        </div>
+        <div class="grid_12 text-center">
+          <ul class="franchise-our-clients-list">
+          {% for i in '11111' %}
+            <li class="franchise-our-clients-list-item">
+              <img src="" alt="" class="franchise-our-clients-list-item__img">
+            </li>
+          {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="franchise-third">
+    <div class="container_12">
+      <div class="grid_12">
+        <h2 class="franchise__title text-center">КУПИВ НАШУ ФРАНШИЗУ <span class="yellow">ВЫ ПОЛУЧИТЕ</span></h2>
+      </div>
+      <div class="grid_12">
+        <ul class="franchise-third-list">
+          <li class="franchise-third-list-item">
+            <div class="franchise-third-list-item__icon">
+              <img src="{{ STATIC_URL }}img/icon/lamp.png" alt="">
+            </div>
+            <div class="franchise-third-list-item__text">
+              НОВЕЙШУЮ МОДЕЛЬ <br><span class="yellow">РАЗМЕЩЕНИЯ РЕКЛАМЫ В ЛИФТЕ</span>
+            </div>
+          </li>
+          <li class="franchise-third-list-item">
+            <div class="franchise-third-list-item__icon">
+              <img src="{{ STATIC_URL }}img/icon/servis.png" alt="">
+            </div>
+            <div class="franchise-third-list-item__text">
+              ГОТОВУЮ ТЕХНОЛОГИЮ РАЗМЕЩЕНИЯ РЕКЛАМЫ <br>В ЛИФТАХ <span class="yellow">БЕЗ ОПЛАТЫ АРЕНДЫ ЗА СТЕНД</span><br>
+              МЫ ПРЕВРАЩАЕМ АРЕНДУ В ДОХОД
+            </div>
+          </li>
+          <li class="franchise-third-list-item">
+            <div class="franchise-third-list-item__icon">
+              <img src="{{ STATIC_URL }}img/icon/money.png" alt="">
+            </div>
+            <div class="franchise-third-list-item__text">
+              НОВЫЕ СПОСОБЫ <span class="yellow">ЗАРАБОТКА <br> НА ДОПОЛНИТЕЛЬНЫХ УСЛУГАХ</span><br>
+              ДЛЯ ТСЖ И УПРАВЛЯЮЩИХ КОМПАНИЙ
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section class="franchise-four">
+    <div class="container_12">
+      <div class="grid_12 text-center">
+        <h2 class="franchise__title franchise-four__title">
+          <span class="franchise-four__title_left"></span>
+          <span class="yellow">КОМПЛЕКТАЦИЯ</span> ФРАНШИЗЫ
+          <span class="franchise-four__title_right"></span>
+        </h2>
+      </div>
+      <div class="grid_12">
+        <ul class="franchise-four-list">
+          <li class="franchise-four-list-item">
+            <div class="franchise-four-list-item__left">
+              Размещение на<br> корпоративном сайте
+            </div>
+            <div class="franchise-four-list-item__right">
+              +
+            </div>
+          </li>
+          <li class="franchise-four-list-item">
+            <div class="franchise-four-list-item__left">
+              Обучение и внедрение<br> бизнес-процессов и стандартов
+            </div>
+            <div class="franchise-four-list-item__right">
+              +
+            </div>
+          </li>
+          <li class="franchise-four-list-item">
+            <div class="franchise-four-list-item__left">
+              Онлайн консультация и<br> поддержка
+            </div>
+            <div class="franchise-four-list-item__right">
+              +
+            </div>
+          </li>
+          <li class="franchise-four-list-item">
+            <div class="franchise-four-list-item__left">
+              Бесплатная разработка<br> макетов
+            </div>
+            <div class="franchise-four-list-item__right">
+              +
+            </div>
+          </li>
+          <li class="franchise-four-list-item">
+            <div class="franchise-four-list-item__left">
+              Размещение федеральных<br> клиентов
+            </div>
+            <div class="franchise-four-list-item__right">
+              +
+            </div>
+          </li>
+          <li class="franchise-four-list-item">
+            <div class="franchise-four-list-item__left">
+              Бизнес-бук<br> (эффективный инструмент развития)
+            </div>
+            <div class="franchise-four-list-item__right">
+              +
+            </div>
+          </li>
+        </ul>
+        <div class="franchise-four-price text-center">
+          <div class="franchise-four-price__text">
+            СТОИМОСТЬ ФРАНШИЗЫ
+            <div class="franchise-four-price__text_border"></div>
+          </div>
+          <div class="franchise-four-price__val">
+            100 000<del><span>P</span></del>
+            <div class="franchise-four-price__val_bg"></div>
+          </div>
+        </div>
+      </div>
+      <div class="grid_12">
+        <h2 class="franchise__title text-center">Дополнительные услуги</h2>
+        <ul class="franchise-four-list">
+          <li class="franchise-four-list-item">
+            <div class="franchise-four-list-item__left">
+              Система обучения и<br> подбора кадров
+            </div>
+            <div class="franchise-four-list-item__right">
+              Договорная
+            </div>
+          </li>
+          <li class="franchise-four-list-item">
+            <div class="franchise-four-list-item__left">
+              Подбор персонала<br> (сопровождение 1-2 месяца)
+            </div>
+            <div class="franchise-four-list-item__right">
+              Договорная
+            </div>
+          </li>
+          <li class="franchise-four-list-item">
+            <div class="franchise-four-list-item__left">
+              Готовые рекламные<br> коснтрукции 100шт.
+            </div>
+            <div class="franchise-four-list-item__right">
+              Договорная
+            </div>
+          </li>
+          <li class="franchise-four-list-item">
+            <div class="franchise-four-list-item__left">
+              CRM и программа<br> учёта и контроля
+            </div>
+            <div class="franchise-four-list-item__right">
+              100 000р
+            </div>
+          </li>
+          <li class="franchise-four-list-item">
+            <div class="franchise-four-list-item__left">
+              Удалённый бухгалтер
+            </div>
+            <div class="franchise-four-list-item__right">
+              Договорная
+            </div>
+          </li>
+        </ul>
+        <div class="clear"></div>
+      </div>
+    </div>
+  </section>
+  <section class="franchise-five">
+    <div class="container_12">
+      <div class="grid_12 text-center">
+        <h2 class="franchise__title">С ЧЕГО НАЧАТЬ <span class="yellow">СОТРУДНИЧЕСТВО</span> С НАМИ?</h2>
+      </div>
+      <div class="franchise-five-list text-center">
+        <div class="grid_3">
+          <div class="franchise-five-list-item">
+            <img src="{{ STATIC_URL }}img/icon/phone_icon.png" alt="" class="franchise-five-list-item__icon">
+            <p class="franchise-five-list-item__text">
+              <span class="yellow">ПОЗВОНИТЕ</span> НАМ <br>
+              <span class="yellow">(8 (8442) 243-200, +7 800 <br>
+                775 18 45)</span> ИЛИ <br>
+              ЗАКАЖИТЕ ЗВОНОК <br>
+              НА САЙТЕ <span class="yellow">(АРТ-<br>ЛИФТ.РФ)</span>
+            </p>
+            <img src="{{ STATIC_URL }}img/arrow-1.png" alt="" class="arrow arrow-1">
+          </div>
+        </div>
+        <div class="grid_3">
+          <div class="franchise-five-list-item">
+            <p class="franchise-five-list-item__text">
+              МЫ <span class="yellow">БЕСПЛАТНО</span><br> ПРОКОНСУЛЬТИРУЕМ <br> ВАС
+            </p>
+            <img src="{{ STATIC_URL }}img/icon/call-center-icon.png" alt="" class="franchise-five-list-item__icon">
+            <img src="{{ STATIC_URL }}img/arrow-2.png" alt="" class="arrow arrow-2">
+          </div>
+        </div>
+        <div class="grid_3">
+          <div class="franchise-five-list-item">
+            <img src="{{ STATIC_URL }}img/icon/zajavka-icon.png" alt="" class="franchise-five-list-item__icon">
+            <p class="franchise-five-list-item__text">
+              ЗАКЛЮЧАЕМ <br> С ВАМИ <br> <span class="yellow">ДОГОВОР</span>
+            </p>
+            <img src="{{ STATIC_URL }}img/arrow-3.png" alt="" class="arrow arrow-3">
+          </div>
+        </div>
+        <div class="grid_3">
+          <div class="franchise-five-list-item">
+            <p class="franchise-five-list-item__text">
+              <span class="yellow">ЗАПУСКАЕМ</span> <br> ВАШ БИЗНЕС!
+            </p>
+            <img src="{{ STATIC_URL }}img/icon/hand-icon.png" alt="" class="franchise-five-list-item__icon franchise-five-list-item__icon_last">
+          </div>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+  </section>
+  <section class="franchise-six">
+    <div class="container_12">
+      <div class="grid_12 text-center">
+        <h2 class="franchise__title">НОВАЯ МОДЕЛЬ РАЗМЕЩЕНИЯ РЕКЛАМЫ В ЛИФТЕ!</h2>
+      </div>
+      <div class="grid_8">
+        <ul class="franchise-six-list">
+          <li class="franchise-six-list-item">
+            <span class="franchise-six-list-item__number">1</span>
+            <p class="franchise-six-list-item__text">Мы рассматриваем вас, как партнёров, поэтому вы можете<br>
+              сами приехать(и мы даже рекомендуем вам ) в г. Волгоград, <br>
+              где на примере компании "Арт-Лифт" вы сможете увидеть <br>
+              и "пощупать" модель уже работающего бизнеса.
+            </p>
+          </li>
+          <li class="franchise-six-list-item">
+            <span class="franchise-six-list-item__number">2</span>
+            <p class="franchise-six-list-item__text">Мы размещаем на ваших рекламных носителях, <br>
+              наших федеральных клиентов: Сбербанк, SKODA, SUBWAY,<br>
+              Ростелеком, ЗАО "Тандер" Магнит, "ЭР-Телеком" холдинг,<br>
+              МАН сеть магазинов.
+            </p>
+          </li>
+          <li class="franchise-six-list-item">
+            <span class="franchise-six-list-item__number">3</span>
+            <p class="franchise-six-list-item__text">Ма оставляем за ваши выбор рекламных конструкций <br>
+              не навязывая вам наши стенды (хотя и можем помочь связав <br>
+              вас с производителем)
+            </p>
+          </li>
+          <li class="franchise-six-list-item">
+            <span class="franchise-six-list-item__number">4</span>
+            <p class="franchise-six-list-item__text">Онлайн поддержка и сопровождение будет производится <br>
+              директором по развитию и генеральным директором <br>
+              компании "Арт-Лифт"
+            </p>
+          </li>
+        </ul>
+      </div>
+      <div class="grid_4">
+        <address class="franchise-six-address">
+          <p class="franchise-six-address__title text-center">Контакты</p>
+          <ul class="franchise-six-address-list">
+            <li class="franchise-six-address-list-item">
+              <div class="franchise-six-address-list-item__icon">
+                <span class="glyphicon glyphicon-earphone"></span>
+              </div>
+              <div class="franchise-six-address-list-item__val">
+                <p>8 (4422) 243-200 <br>
+                8 800 775 18 45</p>
+              </div>
+            </li>
+            <li class="franchise-six-address-list-item">
+              <div class="franchise-six-address-list-item__icon">
+                <span class="glyphicon glyphicon-globe"></span>
+              </div>
+              <div class="franchise-six-address-list-item__val">
+                <p>Арт-лифт.рф <br>
+                Art-lift.ru</p>
+              </div>
+            </li>
+            <li class="franchise-six-address-list-item">
+              <div class="franchise-six-address-list-item__icon">
+                <span class="glyphicon glyphicon-envelope"></span>
+              </div>
+              <div class="franchise-six-address-list-item__val">
+                <p>fr@art-lift.ru</p>
+              </div>
+            </li>
+            <li class="franchise-six-address-list-item">
+              <div class="franchise-six-address-list-item__icon">
+                <span class="glyphicon glyphicon-map-marker"></span>
+              </div>
+              <div class="franchise-six-address-list-item__val">
+                <p>Волгоград, <br>
+                ул. 7-я Гвардейская, <br>
+                4а, оф.312
+                </p>
+              </div>
+            </li>
+          </ul>
+        </address>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </section>
+<footer class="footer">
+  <div class="container_12">
+    <div class="grid_9">
+      <ul class="footer-nav">
+        <li class="footer-nav-item"><a href="{% url 'home' %}" class="footer-nav-item__link">Главная страница</a></li>
+        <li class="footer-nav-item"><a href="{% url 'article-list' %}" class="footer-nav-item__link">Список статей</a> </li>
+        <li class="footer-nav-item"><a href="{% url 'faq-list' %}" class="footer-nav-item__link">Вопросы и ответы</a> </li>
+      </ul>
+      <p class="copyright">
+        &copy; 2016, {{ current_city.title|default:'РА "Арт-Лифт"' }}
+      </p>
+    </div>
+    <div class="grid_3">
+      <address class="footer-address">
+        {{ ADDRESS|default:'' }} <br><br>
+        email: <a href="mailto:{{ EMAIL|default:'test@example.com' }}" class="section-ticket__mail">{{ EMAIL|default:'test@example.com' }}</a> <br><br>
+        телефон: {{ PHONE|default:'0-000-000-000-00' }}
+      </address>
+    </div>
+    <div class="clear"></div>
+  </div>
+</footer>
+  <div id="bp-modal-download">
+    <p class="text-center">Оставьте ваш email что бы скачать Бизнес-План</p>
+    <form action="{% url 'download' %}" id="js-form-bp-download" method="post" class="bp-download-form text-center">
+       {% load widget_tweaks %}
+      <input type="email" name="email" id="id_email" class="input" placeholder="Ваш e-mail">
+{#        {{ form.name|attr:'placeholder:Ваше имя'|add_class:'input' }}#}
+{#    {{ form.phone|attr:'placeholder:Ваш телефон или e-mail'|add_class:'input' }}#}
+{#    {{ form.comment|attr:'placeholder:Текст вопроса'|add_class:'input' }}#}
+    <input type="submit" value="Отправить" class="button">
+    </form>
+  </div>
+{% endblock %}

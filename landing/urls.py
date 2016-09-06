@@ -11,6 +11,7 @@ from apps.faq.models import FAQ
 urlpatterns = patterns(
     '',
     url(r'^$', 'core.views.index', name='home'),
+    url(r'^franchise/$', TemplateView.as_view(template_name='franchise.html'), name='franchise'),
     url(r'^article/$', ListView.as_view(model=Article), name='article-list'),
     url(r'^article/(?P<slug>[\w-]+)$', DetailView.as_view(model=Article), name='article-detail'),
     url(r'^faq/$', ListView.as_view(model=FAQ), name='faq-list'),
@@ -20,6 +21,7 @@ urlpatterns = patterns(
     url(r'^admin/', include(admin.site.urls)),
     url(r'^data-import/', 'core.data_import.address_list_import', name='data-import'),
     url(r'^city/', include('apps.city.urls', namespace='city'),),
+    url(r'^download/', 'apps.download.ajax.bp_download', name='download'),
 )
 
 if settings.DEBUG:
