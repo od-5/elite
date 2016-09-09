@@ -7,11 +7,12 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.views.generic import TemplateView, ListView, DetailView
 from apps.article.models import Article
 from apps.faq.models import FAQ
+from apps.franchise.views import FranchiseView
 
 urlpatterns = patterns(
     '',
     url(r'^$', 'core.views.index', name='home'),
-    url(r'^franchise/$', TemplateView.as_view(template_name='franchise.html'), name='franchise'),
+    url(r'^franchise/$', FranchiseView.as_view(), name='franchise'),
     url(r'^article/$', ListView.as_view(model=Article), name='article-list'),
     url(r'^article/(?P<slug>[\w-]+)$', DetailView.as_view(model=Article), name='article-detail'),
     url(r'^faq/$', ListView.as_view(model=FAQ), name='faq-list'),

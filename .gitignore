@@ -1,4 +1,5 @@
 /apps/download/migrations
+/apps/franchise/migrations
 /apps/review/migrations
 /apps/video/migrations
 /apps/slider/migrations

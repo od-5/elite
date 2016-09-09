@@ -43,26 +43,12 @@
             И НОВОСТРОЙКАХ
           </p>
           <ul class="franchise-first-list">
+          {% for item in block1 %}
             <li class="franchise-first-list-item">
-              <p class="franchise-first-list-item__text">Вы защищаете лифт от различных повреждений, <br>
-                тем самым удовлетворяя потребности управляющих <br>
-                компаний, ТСЖ и за счёт изящного дизайна оставляем <br>
-                довольными жителей подъезда
-              </p>
-              <span class="franchise-first-list-item__number">1</span>
+              <p class="franchise-first-list-item__text">{{ item.text|safe|linebreaksbr }}</p>
+              <span class="franchise-first-list-item__number">{{ forloop.counter }}</span>
             </li>
-            <li class="franchise-first-list-item">
-              <span class="franchise-first-list-item__number">2</span>
-              <p class="franchise-first-list-item__text">Вы размещаете рекламодателя на всей <br>
-                защитной поверхности, используяю современный материал <br>
-              </p>
-            </li>
-            <li class="franchise-first-list-item">
-              <span class="franchise-first-list-item__number">3</span>
-              <p class="franchise-first-list-item__text">Вы устанавливаете современный стенд и ежемесячно <br>
-                обновляете информацию ваших рекламодателей <br>
-              </p>
-            </li>
+          {% endfor %}
           </ul>
         </div>
         <div class="grid_4">
@@ -88,43 +74,17 @@
       </div>
       <div class="grid_12 text-center">
         <ul class="franchise-second-list">
+        {% for item in block2 %}
           <li class="franchise-second-list-item">
-            <p class="franchise-second-list-item__name">50 стендов</p>
+            <p class="franchise-second-list-item__name">{{ item.stand|default:'' }} стендов</p>
             <div class="franchise-second-list-item-block">
-              <span class="franchise-second-list-item-block__price">75 000</span><del><span>P</span></del>
+              <span class="franchise-second-list-item-block__price">{{ item.price|default:'' }}</span><del><span>P</span></del>
               <br>
               <span class="franchise-second-list-item-block__desc">каждый месяц</span>
               <div class="franchise-second-list-item-block_bg"></div>
             </div>
           </li>
-          <li class="franchise-second-list-item">
-            <p class="franchise-second-list-item__name">100 стендов</p>
-            <div class="franchise-second-list-item-block">
-              <span class="franchise-second-list-item-block__price">150 000</span><del><span>P</span></del>
-              <br>
-              <span class="franchise-second-list-item-block__desc">каждый месяц</span>
-              <div class="franchise-second-list-item-block_bg"></div>
-            </div>
-          </li>
-          <li class="franchise-second-list-item">
-            <p class="franchise-second-list-item__name">200 стендов</p>
-            <div class="franchise-second-list-item-block">
-              <span class="franchise-second-list-item-block__price">300 000</span><del><span>P</span></del>
-              <br>
-              <span class="franchise-second-list-item-block__desc">каждый месяц</span>
-              <div class="franchise-second-list-item-block_bg"></div>
-            </div>
-          </li>
-          <li class="franchise-second-list-item">
-            <p class="franchise-second-list-item__name">400 стендов</p>
-            <div class="franchise-second-list-item-block">
-              <span class="franchise-second-list-item-block__price">600 000</span><del><span>P</span></del>
-              <br>
-              <span class="franchise-second-list-item-block__desc">каждый месяц</span>
-              <div class="franchise-second-list-item-block_bg"></div>
-            </div>
-
-          </li>
+        {% endfor %}
         </ul>
       </div>
       <div class="clear"></div>
@@ -136,9 +96,10 @@
         </div>
         <div class="grid_12 text-center">
           <ul class="franchise-our-clients-list">
-          {% for i in '1111' %}
+          {% for item in client_list %}
             <li class="franchise-our-clients-list-item">
-              <img src="{{ STATIC_URL }}img/client{{ forloop.counter }}.jpg" alt="" class="franchise-our-clients-list-item__img">
+{#              <img src="{{ STATIC_URL }}img/client{{ forloop.counter }}.jpg" alt="" class="franchise-our-clients-list-item__img">#}
+              <img src="{{ item.img.url }}" alt="" class="franchise-our-clients-list-item__img">
             </li>
           {% endfor %}
           </ul>
@@ -153,32 +114,16 @@
       </div>
       <div class="grid_12">
         <ul class="franchise-third-list">
+        {% for item in block3 %}
           <li class="franchise-third-list-item">
             <div class="franchise-third-list-item__icon">
-              <img src="{{ STATIC_URL }}img/icon/lamp.png" alt="">
+              <img src="{{ item.icon.url }}" alt="">
             </div>
             <div class="franchise-third-list-item__text">
-              НОВЕЙШУЮ МОДЕЛЬ <br><span class="yellow">РАЗМЕЩЕНИЯ РЕКЛАМЫ В ЛИФТЕ</span>
+              {{ item.text|safe|linebreaksbr }}
             </div>
           </li>
-          <li class="franchise-third-list-item">
-            <div class="franchise-third-list-item__icon">
-              <img src="{{ STATIC_URL }}img/icon/servis.png" alt="">
-            </div>
-            <div class="franchise-third-list-item__text">
-              ГОТОВУЮ ТЕХНОЛОГИЮ РАЗМЕЩЕНИЯ РЕКЛАМЫ <br>В ЛИФТАХ <span class="yellow">БЕЗ ОПЛАТЫ АРЕНДЫ ЗА СТЕНД</span><br>
-              МЫ ПРЕВРАЩАЕМ АРЕНДУ В ДОХОД
-            </div>
-          </li>
-          <li class="franchise-third-list-item">
-            <div class="franchise-third-list-item__icon">
-              <img src="{{ STATIC_URL }}img/icon/money.png" alt="">
-            </div>
-            <div class="franchise-third-list-item__text">
-              НОВЫЕ СПОСОБЫ <span class="yellow">ЗАРАБОТКА <br> НА ДОПОЛНИТЕЛЬНЫХ УСЛУГАХ</span><br>
-              ДЛЯ ТСЖ И УПРАВЛЯЮЩИХ КОМПАНИЙ
-            </div>
-          </li>
+        {% endfor %}
         </ul>
       </div>
     </div>
@@ -194,54 +139,16 @@
       </div>
       <div class="grid_12">
         <ul class="franchise-four-list">
+        {% for item in block4 %}
           <li class="franchise-four-list-item">
             <div class="franchise-four-list-item__left">
-              Размещение на<br> корпоративном сайте
+              {{ item.text|safe|linebreaksbr }}
             </div>
             <div class="franchise-four-list-item__right">
               +
             </div>
           </li>
-          <li class="franchise-four-list-item">
-            <div class="franchise-four-list-item__left">
-              Обучение и внедрение<br> бизнес-процессов и стандартов
-            </div>
-            <div class="franchise-four-list-item__right">
-              +
-            </div>
-          </li>
-          <li class="franchise-four-list-item">
-            <div class="franchise-four-list-item__left">
-              Онлайн консультация и<br> поддержка
-            </div>
-            <div class="franchise-four-list-item__right">
-              +
-            </div>
-          </li>
-          <li class="franchise-four-list-item">
-            <div class="franchise-four-list-item__left">
-              Бесплатная разработка<br> макетов
-            </div>
-            <div class="franchise-four-list-item__right">
-              +
-            </div>
-          </li>
-          <li class="franchise-four-list-item">
-            <div class="franchise-four-list-item__left">
-              Размещение федеральных<br> клиентов
-            </div>
-            <div class="franchise-four-list-item__right">
-              +
-            </div>
-          </li>
-          <li class="franchise-four-list-item">
-            <div class="franchise-four-list-item__left">
-              Бизнес-бук<br> (эффективный инструмент развития)
-            </div>
-            <div class="franchise-four-list-item__right">
-              +
-            </div>
-          </li>
+        {% endfor %}
         </ul>
         <div class="franchise-four-price text-center">
           <div class="franchise-four-price__text">
@@ -257,46 +164,16 @@
       <div class="grid_12">
         <h2 class="franchise__title text-center">Дополнительные услуги</h2>
         <ul class="franchise-four-list">
+        {% for item in block5 %}
           <li class="franchise-four-list-item">
             <div class="franchise-four-list-item__left">
-              Система обучения и<br> подбора кадров
+              {{ item.text|safe|linebreaksbr }}
             </div>
             <div class="franchise-four-list-item__right">
-              Договорная
+              {{ item.price }}
             </div>
           </li>
-          <li class="franchise-four-list-item">
-            <div class="franchise-four-list-item__left">
-              Подбор персонала<br> (сопровождение 1-2 месяца)
-            </div>
-            <div class="franchise-four-list-item__right">
-              Договорная
-            </div>
-          </li>
-          <li class="franchise-four-list-item">
-            <div class="franchise-four-list-item__left">
-              Готовые рекламные<br> коснтрукции 100шт.
-            </div>
-            <div class="franchise-four-list-item__right">
-              Договорная
-            </div>
-          </li>
-          <li class="franchise-four-list-item">
-            <div class="franchise-four-list-item__left">
-              CRM и программа<br> учёта и контроля
-            </div>
-            <div class="franchise-four-list-item__right">
-              100 000р
-            </div>
-          </li>
-          <li class="franchise-four-list-item">
-            <div class="franchise-four-list-item__left">
-              Удалённый бухгалтер
-            </div>
-            <div class="franchise-four-list-item__right">
-              Договорная
-            </div>
-          </li>
+        {% endfor %}
         </ul>
         <div class="clear"></div>
       </div>
@@ -354,40 +231,16 @@
   <section class="franchise-six">
     <div class="container_12">
       <div class="grid_12 text-center">
-        <h2 class="franchise__title">НОВАЯ МОДЕЛЬ РАЗМЕЩЕНИЯ РЕКЛАМЫ В ЛИФТЕ!</h2>
+        <h2 class="franchise__title">ПРЕИМУЩЕСТВА</h2>
       </div>
       <div class="grid_8">
         <ul class="franchise-six-list">
+        {% for item in block6 %}
           <li class="franchise-six-list-item">
-            <span class="franchise-six-list-item__number">1</span>
-            <p class="franchise-six-list-item__text">Мы рассматриваем вас, как партнёров, поэтому вы можете<br>
-              сами приехать(и мы даже рекомендуем вам ) в г. Волгоград, <br>
-              где на примере компании "Арт-Лифт" вы сможете увидеть <br>
-              и "пощупать" модель уже работающего бизнеса.
-            </p>
+            <span class="franchise-six-list-item__number">{{ forloop.counter }}</span>
+            <p class="franchise-six-list-item__text">{{ item.text|safe|linebreaksbr }}</p>
           </li>
-          <li class="franchise-six-list-item">
-            <span class="franchise-six-list-item__number">2</span>
-            <p class="franchise-six-list-item__text">Мы размещаем на ваших рекламных носителях, <br>
-              наших федеральных клиентов: Сбербанк, SKODA, SUBWAY,<br>
-              Ростелеком, ЗАО "Тандер" Магнит, "ЭР-Телеком" холдинг,<br>
-              МАН сеть магазинов.
-            </p>
-          </li>
-          <li class="franchise-six-list-item">
-            <span class="franchise-six-list-item__number">3</span>
-            <p class="franchise-six-list-item__text">Ма оставляем за ваши выбор рекламных конструкций <br>
-              не навязывая вам наши стенды (хотя и можем помочь связав <br>
-              вас с производителем)
-            </p>
-          </li>
-          <li class="franchise-six-list-item">
-            <span class="franchise-six-list-item__number">4</span>
-            <p class="franchise-six-list-item__text">Онлайн поддержка и сопровождение будет производится <br>
-              директором по развитию и генеральным директором <br>
-              компании "Арт-Лифт"
-            </p>
-          </li>
+        {% endfor %}
         </ul>
       </div>
       <div class="grid_4">
@@ -472,7 +325,4 @@
   </div>
 {% endblock %}
 {% block bottom_js %}
-  <script>
-  console.log('hello');
-  </script>
 {% endblock %}
