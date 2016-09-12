@@ -228,4 +228,18 @@ $(function() {
       elem.addClass('hide');
     }
   });
+
+  $('.js-header-franchise-slider').flexslider({
+    animation: "fade",
+    slideshow: true,
+    animationSoeed: 200,
+    animationLoop: true,
+    pauseOnHover: true,
+    controlNav: false,
+    itemWidth: 610,
+    itemMargin: 3,
+    prevText: '',
+    nextText: ''
+  });
+
 });

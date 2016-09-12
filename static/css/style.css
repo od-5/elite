@@ -1865,6 +1865,7 @@ body {
   display: inline-block;
   padding: 20px;
   text-decoration: none;
+  width: 600px;
 }
 .header-franchise__link:hover {
   opacity: 0.8;

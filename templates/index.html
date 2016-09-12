@@ -44,11 +44,21 @@
       <div class="header-video">
         {{ SETUP.video|safe|default:'' }}
       </div>
-      <div class="header-franchise">
-        <a href="{% url 'franchise' %}" class="header-franchise__link"><span class="glyphicon glyphicon-hand-right yellow"></span>
-          Хотите открыть <span class="yellow">свой бизнес</span> и стать <span class="yellow">нашим партнёром?</span>
-          <span class="glyphicon glyphicon-hand-left yellow"></span>
-        </a>
+      <div class="header-franchise js-header-franchise-slider">
+        <ul class="slides">
+          <li>
+            <a href="{% url 'franchise' %}" class="header-franchise__link"><span class="glyphicon glyphicon-hand-right yellow"></span>
+              Хотите <span class="yellow">создать</span> или <span class="yellow">развивать свой бизнес?</span>
+              <span class="glyphicon glyphicon-hand-left yellow"></span>
+            </a>
+          </li>
+          <li>
+            <a href="{% url 'franchise' %}" class="header-franchise__link"><span class="glyphicon glyphicon-hand-right yellow"></span>
+              Стань нашим <span class="yellow">партнёром</span>
+              <span class="glyphicon glyphicon-hand-left yellow"></span>
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
     <div class="grid_4">
