@@ -19,6 +19,9 @@
 .header-franchise {
   text-align: center;
 }
+.header-franchise .flex-direction-nav {
+  display: none;
+}
 .header-franchise__link {
   margin: 40px auto 0;
   color: #fff;

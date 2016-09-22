@@ -237,9 +237,7 @@ $(function() {
     pauseOnHover: true,
     controlNav: false,
     itemWidth: 610,
-    itemMargin: 3,
-    prevText: '',
-    nextText: ''
+    itemMargin: 3
   });
 
 });
