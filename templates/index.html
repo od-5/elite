@@ -217,7 +217,7 @@
           {% for review in filereview_list%}
             <li class="slides__item">
               <a href="{{ review.image.url }}" rel="group" class="section-review-slider__item js-slide" title="{{ review.name|default:''}}">
-                <img src="{{ review.image_resize.url }}" alt="{{ review.name|default:''}}">
+                <img src="{{ review.image.url }}" alt="{{ review.name|default:''}}">
               </a>
             </li>
           {% endfor %}
@@ -233,7 +233,7 @@
               {% for review in textreview_list %}
               <li class="section-review-text-list__item">
                 <div class="section-review-text__avatar">
-                  <img src="{{ review.image_resize.url }}" alt="">
+                  <img src="{{ review.image.url }}" alt="">
                 </div>
                 <p class="section-review-text__content">
                   {{ review.text|default:'' }}
