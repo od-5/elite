@@ -17,7 +17,7 @@ YANDEX_MAPS_API_KEY = 'AO7kF1UBAAAA-akFCwIAR7_VYsSjwJ9g-dDEVHElLxuBQi8AAAAAAAAAA
 if socket.gethostname() == 'r420':
     DEBUG = True
 else:
-    DEBUG = False
+    DEBUG = True
 
 TEMPLATE_DEBUG = DEBUG
 
