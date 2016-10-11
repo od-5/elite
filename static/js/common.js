@@ -56,7 +56,7 @@ $(function() {
           success: function(data){
             if (data.success) {
               $('#js-form-bp-download').find('input').hide();
-              $('#js-form-bp-download').append('<a href="http://elitkadom.ru/static/art-lift.pdf" target="_blank" class="button">Скачать файл</a>');
+              $('#js-form-bp-download').append('<a href="http://elitkadom.ru' + data.file + '" target="_blank" class="button">Скачать файл</a>');
               $('#js-form-bp-download a').click(function(){
                 $.fancybox.close();
               });

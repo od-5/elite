@@ -1,6 +1,10 @@
 {% extends 'index.html' %}
+{% block setup_top_js %}
+  {{ setup.top_js|safe|default:'' }}
+{% endblock %}
 {% block top_js %}
 {% endblock %}
+{% block top_phone %}{{ setup.phone|default:'0-000-000-000-00' }}{% endblock %}
 {% block header_menu %}
   <li class="nav-list-item">
     <a href="{% url 'home' %}" class="nav-list-item__link">Главная страница</a>
@@ -14,10 +18,16 @@
 {% endblock %}
 {% block header_content %}
   <div class="container_12">
-    <div class="grid_5 text-center">
+    <div class="grid_6 text-center">
+      {% if setup.video %}
+        <div class="header-franchise-video">
+        {{ setup.video|safe|default:'' }}
+        </div>
+      {% else %}
       <img src="{{ STATIC_URL }}img/franch_1.png" alt="" class="franchise__img">
+      {% endif %}
     </div>
-    <div class="grid_7">
+    <div class="grid_6">
       <h1 class="franchise__title franchise__title_bb text-right">
         <span class="yellow">Высокодоходный</span> бизнес на рекламе в лифте
       </h1>
@@ -138,28 +148,52 @@
         </h2>
       </div>
       <div class="grid_12">
-        <ul class="franchise-four-list">
-        {% for item in block4 %}
-          <li class="franchise-four-list-item">
-            <div class="franchise-four-list-item__left">
-              {{ item.text|safe|linebreaksbr }}
-            </div>
-            <div class="franchise-four-list-item__right">
-              +
-            </div>
-          </li>
-        {% endfor %}
-        </ul>
-        <div class="franchise-four-price text-center">
-          <div class="franchise-four-price__text">
-            СТОИМОСТЬ ФРАНШИЗЫ
-            <div class="franchise-four-price__text_border"></div>
-          </div>
-          <div class="franchise-four-price__val">
-            100 000<del><span>P</span></del>
-            <div class="franchise-four-price__val_bg"></div>
-          </div>
-        </div>
+        <table class="franchise-four-table">
+          <tr class="franchise-four-table__tr">
+            <td class="franchise-four-table__td franchise-four-table__td_name"></td>
+            {% for complect in block41 %}
+              <td class="franchise-four-table__td franchise-four-table__td_value">{{ complect.name }}</td>
+            {% endfor %}
+          </tr>
+          {% for item in block4 %}
+          <tr class="franchise-four-table__tr">
+            <td class="franchise-four-table__td franchise-four-table__td_name">{{ item.text }}</td>
+            {% for complect in block41 %}
+              <td class="franchise-four-table__td franchise-four-table__td_value">
+                {% if item.id in complect.item_id_list %}+{% else %}-{% endif %}
+              </td>
+            {% endfor %}
+          </tr>
+          {% endfor %}
+          <tr class="franchise-four-table__tr">
+            <td class="franchise-four-table__td franchise-four-table__td_name"></td>
+            {% for complect in block41 %}
+              <td class="franchise-four-table__td franchise-four-table__td_value">{{ complect.cost }} руб</td>
+            {% endfor %}
+          </tr>
+        </table>
+{#        <ul class="franchise-four-list">#}
+{#        {% for item in block4 %}#}
+{#          <li class="franchise-four-list-item">#}
+{#            <div class="franchise-four-list-item__left">#}
+{#              {{ item.text|safe|linebreaksbr }}#}
+{#            </div>#}
+{#            <div class="franchise-four-list-item__right">#}
+{#              +#}
+{#            </div>#}
+{#          </li>#}
+{#        {% endfor %}#}
+{#        </ul>#}
+{#        <div class="franchise-four-price text-center">#}
+{#          <div class="franchise-four-price__text">#}
+{#            СТОИМОСТЬ ФРАНШИЗЫ#}
+{#            <div class="franchise-four-price__text_border"></div>#}
+{#          </div>#}
+{#          <div class="franchise-four-price__val">#}
+{#            100 000<del><span>P</span></del>#}
+{#            <div class="franchise-four-price__val_bg"></div>#}
+{#          </div>#}
+{#        </div>#}
       </div>
       <div class="grid_12">
         <h2 class="franchise__title text-center">Дополнительные услуги</h2>
@@ -249,8 +283,8 @@
                 <span class="glyphicon glyphicon-earphone"></span>
               </div>
               <div class="franchise-six-address-list-item__val">
-                <p>8 (4422) 243-200 <br>
-                8 800 775 18 45</p>
+                <p>{{ setup.phone1|default:'8 (4422) 243-200' }} <br>
+                {{ setup.phone|default:'8 800 775 18 45' }}</p>
               </div>
             </li>
             <li class="franchise-six-address-list-item">
@@ -258,8 +292,8 @@
                 <span class="glyphicon glyphicon-globe"></span>
               </div>
               <div class="franchise-six-address-list-item__val">
-                <p>Арт-лифт.рф <br>
-                Art-lift.ru</p>
+                <p>{{ setup.site|default:'Арт-лифт.рф' }} <br>
+                {{ setup.site1|default:'Art-lift.ru' }}</p>
               </div>
             </li>
             <li class="franchise-six-address-list-item">
@@ -267,7 +301,7 @@
                 <span class="glyphicon glyphicon-envelope"></span>
               </div>
               <div class="franchise-six-address-list-item__val">
-                <p>fr@art-lift.ru</p>
+                <p>{{ setup.email|default:'fr@art-lift.ru' }}</p>
               </div>
             </li>
             <li class="franchise-six-address-list-item">
@@ -275,9 +309,7 @@
                 <span class="glyphicon glyphicon-map-marker"></span>
               </div>
               <div class="franchise-six-address-list-item__val">
-                <p>Волгоград, <br>
-                ул. 7-я Гвардейская, <br>
-                4а, оф.312
+                <p>{{ setup.address|safe|linebreaksbr|default:'' }}
                 </p>
               </div>
             </li>
@@ -301,9 +333,9 @@
     </div>
     <div class="grid_3">
       <address class="footer-address">
-        {{ ADDRESS|default:'' }} <br><br>
-        email: <a href="mailto:{{ EMAIL|default:'test@example.com' }}" class="section-ticket__mail">{{ EMAIL|default:'test@example.com' }}</a> <br><br>
-        телефон: {{ PHONE|default:'0-000-000-000-00' }}
+        {{ setup.address|default:'' }} <br><br>
+        email: <a href="mailto:{{ setup.email|default:'test@example.com' }}" class="section-ticket__mail">{{ setup.email|default:'test@example.com' }}</a> <br><br>
+        телефон: {{ setup.phone|default:'0-000-000-000-00' }}
       </address>
     </div>
     <div class="clear"></div>
@@ -322,4 +354,7 @@
   </div>
 {% endblock %}
 {% block bottom_js %}
+{% endblock %}
+{% block setup_bottom_js %}
+    {{ setup.bottom_js|safe|default:'' }}
 {% endblock %}

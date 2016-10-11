@@ -22,6 +22,11 @@
 .header-franchise .flex-direction-nav {
   display: none;
 }
+.header-franchise-video iframe {
+  margin-top: 50px;
+  width: 100%;
+  height: 400px;
+}
 .header-franchise__link {
   margin: 40px auto 0;
   color: #fff;

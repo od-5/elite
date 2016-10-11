@@ -35,7 +35,7 @@ class SetupAdmin(admin.ModelAdmin):
     list_display = ('__unicode__', 'email')
 
     def has_add_permission(self, request):
-        if Setup.objects.count() > 1:
+        if Setup.objects.count() >= 1:
             return False
         else:
             return True

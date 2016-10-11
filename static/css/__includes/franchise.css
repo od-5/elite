@@ -6,7 +6,7 @@
 .franchise__title_bb {
   border-bottom: 1px solid #fff;
   margin: 50px 0;
-  font-size: 45px;
+  font-size: 38px;
 }
 .franchise__desc {
   color: #fff;
@@ -242,7 +242,35 @@
   top: -20px;
   right: -20px;
   border-bottom: 2px solid #fff;
-  border-right: 2px solid #fff;
+}
+.franchise-four-table {
+  font-size: 20px;
+  margin: auto;
+}
+.franchise-four-table__tr {
+  min-height: 80px;
+}
+.franchise-four-table__tr:last-child .franchise-four-table__td {
+  border-bottom: none !important;
+  font-weight: bold;
+}
+.franchise-four-table__td {
+  padding: 20px;
+}
+.franchise-four-table__td_name {
+  background-color: rgba(255, 255, 0, 0.5);
+  border-bottom: 2px solid #fff;
+  box-shadow: 0 0 0 #333, -20px 0 30px -20px #000 inset;
+}
+.franchise-four-table__td_value {
+  text-align: center;
+  color: #333;
+  background-color: #e4e4e5;
+  border-bottom: 2px solid #999;
+  border-right: 2px solid #999;
+}
+.franchise-four-table__td_value:last-child {
+  border-right: none;
 }
 .franchise-four-list {
   list-style: none;

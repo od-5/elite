@@ -6,7 +6,7 @@
     &_bb {
       border-bottom: 1px solid #fff;
       margin: 50px 0;
-      font-size: 45px;
+      font-size: 38px;
     }
   }
   &__desc {
@@ -246,7 +246,43 @@
         top: -20px;
         right: -20px;
         border-bottom: 2px solid #fff;
-        border-right: 2px solid #fff;
+      }
+    }
+    &-table {
+      font-size: 20px;
+      margin: auto;
+      &__tr {
+        min-height: 80px;
+        &:last-child {
+          .franchise {
+            &-four {
+              &-table {
+                &__td {
+                  border-bottom: none !important;
+                  font-weight: bold;
+                }
+              }
+            }
+          }
+        }
+      }
+      &__td {
+        padding: 20px;
+        &_name {
+          background-color: rgba(255, 255, 0, 0.5);
+          border-bottom: 2px solid #fff;
+          box-shadow: 0 0 0 #333, -20px 0 30px -20px #000 inset;
+        }
+        &_value {
+          text-align: center;
+          color: #333;
+          background-color: #e4e4e5;
+          border-bottom: 2px solid #999;
+          border-right: 2px solid #999;
+          &:last-child {
+            border-right: none;
+          }
+        }
       }
     }
     &-list {

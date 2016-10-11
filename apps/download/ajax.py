@@ -3,6 +3,7 @@ from annoying.decorators import ajax_request
 from django.conf import settings
 from django.core.mail import send_mail
 from django.views.decorators.csrf import csrf_exempt
+from apps.franchise.models import FranchiseSetup
 from core.models import Setup
 from .forms import MailTicketTicketForm
 
@@ -23,7 +24,7 @@ def bp_download(request):
                 # print 'valid'
                 message = u'email: %s' % r_email
                 try:
-                    email = Setup.objects.all()[0].email
+                    email = FranchiseSetup.objects.first().email
                 except:
                     email = 'noreply@example.com'
                 # print settings.EMAIL_HOST_USER
@@ -34,8 +35,12 @@ def bp_download(request):
                     settings.EMAIL_HOST_USER,
                     [email, ]
                 )
+        file = FranchiseSetup.objects.first().bp.url
+        if not file:
+            file = u'/static/art-lift.pdf'
         return {
-            'success': True
+            'success': True,
+            'file': file
         }
     else:
         return {
