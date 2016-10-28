@@ -14,3 +14,4 @@ pyexcel-xls==0.1.0
 pyexcel-xlsx==0.1.0
 pyexcel-io==0.1.0
 xlwt
+django-ckeditor==4.5.1

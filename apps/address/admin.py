@@ -1,3 +1,4 @@
+# coding=utf-8
 from django.contrib import admin
 from django import forms
 from apps.city.models import City
@@ -18,9 +19,18 @@ class AddressItemForm(forms.ModelForm):
         fields = '__all__'
 
 
+class AddressItemInline(admin.TabularInline):
+    model = AddressItem
+    fields = ('address', 'image', 'pic')
+    readonly_fields = ('pic', )
+
+
 class AddressAdmin(admin.ModelAdmin):
-    list_display = ('address', 'pic', )
+    list_display = ('address', 'pic', 'lift_count')
     list_filter = ('city', )
+    inlines = [
+        AddressItemInline
+    ]
 
     def get_queryset(self, request):
         qs = Address.objects.all()
@@ -57,4 +67,4 @@ class AddressItemAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Address, AddressAdmin)
-admin.site.register(AddressItem, AddressItemAdmin)
+# admin.site.register(AddressItem, AddressItemAdmin)

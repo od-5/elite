@@ -6,17 +6,17 @@ from suit_redactor.widgets import RedactorWidget
 __author__ = 'alexy'
 
 
-class ArticleForm(ModelForm):
-    class Meta:
-        widgets = {
-            'text': RedactorWidget(editor_options={'lang': 'ru'})
-        }
+# class ArticleForm(ModelForm):
+#     class Meta:
+#         widgets = {
+#             'text': RedactorWidget(editor_options={'lang': 'ru'})
+#         }
 
 
 class ArticleAdmin(admin.ModelAdmin):
     list_display = ('title', 'slug', 'created')
     prepopulated_fields = {"slug": ("title",)}
-    form = ArticleForm
+    # form = ArticleForm
     fieldsets = [
         (None, {'classes': ('full-width'),
                 'fields': ('title', 'text')}

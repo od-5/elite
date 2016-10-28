@@ -17,8 +17,19 @@ $(function() {
   });
 
   // Галлерея фотографий
-  $('.js-gallery').fancybox();
+  $('.js-gallery').fancybox({
+    helpers: {
+      overlay: {
+        locked: false
+      }
+    }
+  });
   $('.js-modal-bp-download-btn').fancybox({
+    helpers: {
+      overlay: {
+        locked: false
+      }
+    },
     afterClose: function (e) {
       $('.bp-download-form').trigger('reset');
       $('#js-form-bp-download').find('input').show();
@@ -27,11 +38,21 @@ $(function() {
   // Модальное окно открытия формы заявки для главной страницы
 
   $('.js-main-ticket-button').fancybox({
+    helpers: {
+      overlay: {
+        locked: false
+      }
+    },
     afterClose: function (e) {
       $('.js-main-ticket-form_modal').trigger('reset');
     }
   });
   $('.js-city-ticket-button').fancybox({
+    helpers: {
+      overlay: {
+        locked: false
+      }
+    },
     afterClose: function (e) {
       $('.js-city-ticket-form_modal').trigger('reset');
     }
@@ -206,7 +227,13 @@ $(function() {
     }
   });
 
-  $('.js-slide').fancybox();
+  $('.js-slide').fancybox({
+    helpers: {
+      overlay: {
+        locked: false
+      }
+    }
+  });
 
   $('.js-section-review-slider').flexslider({
     animation: "slide",

@@ -7,7 +7,6 @@ from imagekit.models import ImageSpecField
 from pilkit.processors import SmartResize
 from django.conf import settings
 
-
 __author__ = 'alexy'
 
 
@@ -40,8 +39,13 @@ class Address(models.Model):
 
     def pic(self):
         return '<img src="%s" width="170"/>' % self.image.url
+
+    def lift_count(self):
+        return self.addressitem_set.count()
+
     pic.short_description = u"Миниатюра"
     pic.allow_tags = True
+    lift_count.short_description = u"Количество фотографий"
 
 
 class AddressItem(models.Model):
@@ -71,7 +75,12 @@ class AddressItem(models.Model):
                 image.save(self.image.path, "PNG")
 
     def pic(self):
-        return '<img src="%s" width="170"/>' % self.image.url
+        return '<img src="%s" width="150"/>' % self.image.url
+
+    def address_pic(self):
+        return '<img src="%s" width="170"/>' % self.address.image.url
 
     pic.short_description = u"Миниатюра"
     pic.allow_tags = True
+    address_pic.short_description = u"Адрес"
+    address_pic.allow_tags = True
