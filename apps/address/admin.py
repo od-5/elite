@@ -28,6 +28,8 @@ class AddressItemInline(admin.TabularInline):
 class AddressAdmin(admin.ModelAdmin):
     list_display = ('address', 'pic', 'lift_count')
     list_filter = ('city', )
+    fields = ('city', 'address', 'image', 'pic')
+    readonly_fields = ('pic', )
     inlines = [
         AddressItemInline
     ]
