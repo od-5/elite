@@ -9,7 +9,7 @@
         <a href="{{ article.get_absolute_url }}" class="article-list-item__link">{{ article.title }}</a>
       </div>
       <div class="article-list-item__description">
-        {{ article.text|striptags|truncatewords:50 }}<br>
+        {{ article.text|safe|striptags|truncatewords:50 }}<br>
         <a href="{{ article.get_absolute_url }}" class="article-list-item__description__link">Читать полностью >></a>
       </div>
       <hr>
