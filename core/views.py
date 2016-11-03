@@ -22,12 +22,14 @@ def index(request, slug=None):
         address = Address.objects.filter(city=current_city)
         filrereview_qs = FileReview.objects.filter(city=current_city)
         textreview_qs = TextReview.objects.filter(city=current_city)
+        video_qs = Video.objects.filter(city=current_city)
     else:
         request.session['current_city'] = False
         address = Address.objects.filter(city__isnull=True)
         filrereview_qs = FileReview.objects.filter(city__isnull=True)
         textreview_qs = TextReview.objects.filter(city__isnull=True)
-    video_qs = Video.objects.all()
+        video_qs = Video.objects.filter(city__isnull=True)
+
     advantage_list = Advantage.objects.all()
     order_qs = Order.objects.all()
     if current_city:
