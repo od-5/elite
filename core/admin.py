@@ -21,6 +21,14 @@ class TicketAdmin(admin.ModelAdmin):
     date_hierarchy = 'created'
     form = TicketAdminForm
 
+    def get_queryset(self, request):
+        qs = Ticket.objects.all()
+        user = request.user
+        if user.is_superuser:
+            return qs
+        else:
+            return qs.filter(city__manager=user)
+
     def suit_row_attributes(self, obj, request):
         css_class = {
             1: 'success',
