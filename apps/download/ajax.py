@@ -26,7 +26,6 @@ def bp_download(request):
                 except:
                     email = 'noreply@example.com'
                 # print settings.EMAIL_HOST_USER
-                email = 'od-5@yandex.ru'
                 send_mail(
                     u'elitkadom.ru - оставлен email',
                     message,

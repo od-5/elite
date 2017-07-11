@@ -3,7 +3,7 @@
  */
 $(function() {
 
-  var current_url = '/'+location.href.split('/')[3]+'/'
+  var current_url = '/'+location.href.split('/')[3]+'/';
   $('.nav-list-item__link').each(function () {
     if($(this).attr('href') == current_url) $(this).addClass('nav-list-item__link_active');
   });
