@@ -16,7 +16,7 @@ class TicketAdminForm(ModelForm):
 
 
 class TicketAdmin(admin.ModelAdmin):
-    list_display = ('name', 'phone', 'city', 'created', 'status', 'comment')
+    list_display = ('name', 'phone', 'email', 'city', 'created', 'status', 'comment')
     list_filter = ['created', 'status', 'city']
     date_hierarchy = 'created'
     form = TicketAdminForm

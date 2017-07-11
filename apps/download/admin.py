@@ -5,7 +5,7 @@ __author__ = 'alexy'
 
 
 class MailTicketAdmin(admin.ModelAdmin):
-    list_display = ('email', 'created', )
+    list_display = ('email', 'phone', 'created', )
     date_hierarchy = 'created'
 
 

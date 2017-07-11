@@ -4,7 +4,8 @@
   {{ form.city }}
   {% endif %}
     {{ form.name|attr:'placeholder:Ваше имя'|add_class:'input' }}
-    {{ form.phone|attr:'placeholder:Ваш телефон или e-mail'|add_class:'input' }}
+    {{ form.phone|attr:'placeholder:Ваш телефон'|add_class:'input' }}
+    {{ form.email|attr:'placeholder:Ваш email'|add_class:'input' }}
     {{ form.comment|attr:'placeholder:Текст вопроса'|add_class:'input' }}
     <input type="submit" value="Отправить" class="button">
 </form>

@@ -7,13 +7,13 @@ __author__ = 'alexy'
 class MainTicketForm(ModelForm):
     class Meta:
         model = Ticket
-        fields = ('name', 'phone', 'comment')
+        fields = ('name', 'phone', 'email', 'comment')
 
 
 class CityTicketForm(ModelForm):
     class Meta:
         model = Ticket
-        fields = ('name', 'phone', 'comment', 'city')
+        fields = ('name', 'phone', 'email', 'comment', 'city')
         widgets = {
             'city': HiddenInput(),
         }

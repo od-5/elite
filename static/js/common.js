@@ -67,6 +67,9 @@ $(function() {
   //});
   $('#js-form-bp-download').validate({
     rules: {
+      phone: {
+        required: true
+      },
       email: {
         required: true,
         email: true
@@ -159,6 +162,10 @@ $(function() {
       },
       phone: {
         required: true
+      },
+      email: {
+        required: true,
+        email: true
       }
     },
     submitHandler: function(e) {
@@ -183,6 +190,10 @@ $(function() {
       },
       phone: {
         required: true
+      },
+      email: {
+        required: true,
+        email: true
       }
     },
     submitHandler: function(e) {
@@ -210,6 +221,10 @@ $(function() {
       },
       phone: {
         required: true
+      },
+      email: {
+        required: true,
+        email: true
       }
     },
     submitHandler: function(e) {

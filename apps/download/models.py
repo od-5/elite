@@ -12,6 +12,7 @@ class MailTicket(Common):
         verbose_name_plural = u'Оставленные e-mail'
         app_label = 'download'
 
+    phone = models.CharField(verbose_name=u'Телефон', max_length=100)
     email = models.EmailField(verbose_name=u'E-mail', max_length=100)
 
     def __unicode__(self):

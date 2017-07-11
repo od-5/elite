@@ -20,13 +20,13 @@ def index(request, slug=None):
     if current_city:
         request.session['current_city'] = current_city.id
         address = Address.objects.filter(city=current_city)
-        filrereview_qs = FileReview.objects.filter(city=current_city)
+        filerereview_qs = FileReview.objects.filter(city=current_city)
         textreview_qs = TextReview.objects.filter(city=current_city)
         video_qs = Video.objects.filter(city=current_city)
     else:
         request.session['current_city'] = False
         address = Address.objects.filter(city__isnull=True)
-        filrereview_qs = FileReview.objects.filter(city__isnull=True)
+        filerereview_qs = FileReview.objects.filter(city__isnull=True)
         textreview_qs = TextReview.objects.filter(city__isnull=True)
         video_qs = Video.objects.filter(city__isnull=True)
 
@@ -43,6 +43,6 @@ def index(request, slug=None):
         'advantage_list': advantage_list,
         'order_list': order_qs,
         'current_city': current_city,
-        'filereview_list': filrereview_qs,
+        'filereview_list': filerereview_qs,
         'textreview_list': textreview_qs
     })

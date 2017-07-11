@@ -342,9 +342,10 @@
   </div>
 </footer>
   <div id="bp-modal-download">
-    <p class="text-center">Оставьте ваш email что бы скачать Бизнес-План</p>
+    <p class="text-center">Оставьте ваш email и телефон что бы скачать Бизнес-План</p>
     <form action="{% url 'download' %}" id="js-form-bp-download" method="post" class="bp-download-form text-center">
        {% load widget_tweaks %}
+      <input type="text" name="phone" id="id_phone" class="input" placeholder="Ваш номер телефона">
       <input type="email" name="email" id="id_email" class="input" placeholder="Ваш e-mail">
 {#        {{ form.name|attr:'placeholder:Ваше имя'|add_class:'input' }}#}
 {#    {{ form.phone|attr:'placeholder:Ваш телефон или e-mail'|add_class:'input' }}#}

@@ -25,10 +25,11 @@ def ticket_form(request):
             ticket.status = 1
             ticket.save()
             if ticket.city:
-                message = u'Имя: %s\nТелефон: %s\nГород: %s\n' % (ticket.name, ticket.phone, ticket.city.name)
+                message = u'Имя: %s\nТелефон: %s\nEmail: %s\nГород: %s\n' % (
+                    ticket.name, ticket.phone, ticket.email, ticket.city.name)
                 email = ticket.city.email
             else:
-                message = u'Имя: %s\nТелефон: %s\n' % (ticket.name, ticket.phone)
+                message = u'Имя: %s\nТелефон: %s\nEmail: %s\n' % (ticket.name, ticket.phone, ticket.email)
                 email = Setup.objects.all()[0].email
             # print settings.EMAIL_HOST_USER
             if not email:
