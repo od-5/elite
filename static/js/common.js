@@ -7,7 +7,7 @@ $(function() {
   $('.nav-list-item__link').each(function () {
     if($(this).attr('href') == current_url) $(this).addClass('nav-list-item__link_active');
   });
-
+  $(".input[name='phone']").mask("+7 (999) 999-99-99");
   //$(document).on('click', 'a[href^=#]', function () {
   //    $('html, body').animate({ scrollTop:  $('a[name="'+this.hash.slice(1)+'"]').offset().top }, 300 );
   //    return false;

@@ -15,33 +15,31 @@ __author__ = 'alexy'
 @csrf_exempt
 def bp_download(request):
     if request.method == 'POST':
-        r_email = request.POST.get('email')
-        # print r_email
         if request.POST.get('email'):
             form = MailTicketTicketForm(data=request.POST)
             if form.is_valid():
                 form.save()
                 # print 'valid'
-                message = u'email: %s' % r_email
+                message = u'email: %s, телефон: %s' % (form.cleaned_data.get('email'), form.cleaned_data.get('phone'))
                 try:
                     email = FranchiseSetup.objects.first().email
                 except:
                     email = 'noreply@example.com'
                 # print settings.EMAIL_HOST_USER
-                # email = 'od-5@yandex.ru'
+                email = 'od-5@yandex.ru'
                 send_mail(
                     u'elitkadom.ru - оставлен email',
                     message,
                     settings.EMAIL_HOST_USER,
                     [email, ]
                 )
-        file = FranchiseSetup.objects.first().bp.url
-        if not file:
-            file = u'/static/art-lift.pdf'
-        return {
-            'success': True,
-            'file': file
-        }
+                file = FranchiseSetup.objects.first().bp.url
+                if not file:
+                    file = u'/static/art-lift.pdf'
+                return {
+                    'success': True,
+                    'file': file
+                }
     else:
         return {
             'error': True
