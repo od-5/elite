@@ -73,29 +73,30 @@
       </div>
     </div>
   </section>
-  <section class="franchise-second">
+  <section class="franchise-second" id="js-ticket-franchise">
     <div class="container_12">
       <div class="grid_12 text-center">
         <h2 class="franchise__title franchise-second__title">
           <span class="franchise-second__title_left"></span>
-          <span class="yellow">ДОХОДНОСТЬ</span> ТРЕТЬЕГО ЭТАПА
+          Оставить <span class="yellow">заявку</span>
           <span class="franchise-second__title_right"></span>
         </h2>
       </div>
       <div class="grid_12 text-center">
-        <ul class="franchise-second-list">
-        {% for item in block2 %}
-          <li class="franchise-second-list-item">
-            <p class="franchise-second-list-item__name">{{ item.stand|default:'' }} стендов</p>
-            <div class="franchise-second-list-item-block">
-              <span class="franchise-second-list-item-block__price">{{ item.price|default:'' }}</span><del><span>P</span></del>
-              <br>
-              <span class="franchise-second-list-item-block__desc">каждый месяц</span>
-              <div class="franchise-second-list-item-block_bg"></div>
-            </div>
-          </li>
-        {% endfor %}
-        </ul>
+        {% include '__includes/form_main.html'  with class='js-main-ticket-form' %}
+{#        <ul class="franchise-second-list">#}
+{#        {% for item in block2 %}#}
+{#          <li class="franchise-second-list-item">#}
+{#            <p class="franchise-second-list-item__name">{{ item.stand|default:'' }} стендов</p>#}
+{#            <div class="franchise-second-list-item-block">#}
+{#              <span class="franchise-second-list-item-block__price">{{ item.price|default:'' }}</span><del><span>P</span></del>#}
+{#              <br>#}
+{#              <span class="franchise-second-list-item-block__desc">каждый месяц</span>#}
+{#              <div class="franchise-second-list-item-block_bg"></div>#}
+{#            </div>#}
+{#          </li>#}
+{#        {% endfor %}#}
+{#        </ul>#}
       </div>
       <div class="clear"></div>
     </div>
@@ -223,8 +224,8 @@
           <div class="franchise-five-list-item">
             <img src="{{ STATIC_URL }}img/icon/phone_icon.png" alt="" class="franchise-five-list-item__icon">
             <p class="franchise-five-list-item__text">
-              ЗАКАЖИТЕ ЗВОНОК <br>
-              НА САЙТЕ <a href="http://арт-лифт.рф/" class="yellow" target="_blank">АРТ-ЛИФТ.РФ)</a>
+              ОСТАВЬТЕ  <br>
+              <a href="#js-ticket-franchise" class="yellow">ЗАЯВКУ</a>
             </p>
             <img src="{{ STATIC_URL }}img/arrow-1.png" alt="" class="arrow arrow-1">
           </div>

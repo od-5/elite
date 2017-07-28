@@ -1,5 +1,7 @@
 # coding=utf-8
 from django.views.generic import TemplateView
+
+from core.forms import MainTicketForm
 from .models import Block1, Block2, Client, Block3, Block4, Block5, Block6, FranchiseSetup, Block41
 
 __author__ = 'alexey'
@@ -28,6 +30,7 @@ class FranchiseView(TemplateView):
             'block5': block5,
             'block6': block6,
             'client_list': client_qs,
-            'setup': setup
+            'setup': setup,
+            'form': MainTicketForm()
         })
         return context
