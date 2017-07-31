@@ -39,6 +39,7 @@
 {#        <h1>This is menu!</h1>#}
 {#      </div>#}
       <div class="grid_4">
+      {% block city_select %}
         <div class="header-city-select">
           <div class="header-city-select__text js-select-city">
             <img src="{{ STATIC_URL }}img/location-icon.png" alt="">{{ current_city.name|default:'Город не выбран' }}
@@ -56,6 +57,7 @@
             </ul>
           </div>
         </div>
+      {% endblock %}
       </div>
       <div class="grid_8">
         <div class="header-phone text-right">
