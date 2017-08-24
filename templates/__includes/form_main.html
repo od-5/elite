@@ -3,6 +3,10 @@
     {{ form.name|attr:'placeholder:Ваше имя'|add_class:'input' }}
     {{ form.phone|attr:'placeholder:Ваш телефон'|add_class:'input' }}
     {{ form.email|attr:'placeholder:Ваш e-mail'|add_class:'input' }}
+  {% if franchise_form %}
+    {{ form.comment|add_class:'hide' }}
+  {% else %}
     {{ form.comment|attr:'placeholder:Текст вопроса'|add_class:'input' }}
+  {% endif %}
     <input type="submit" value="Отправить" class="button">
 </form>

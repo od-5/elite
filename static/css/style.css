@@ -2578,6 +2578,10 @@ body {
   margin-top: 0;
   margin-bottom: 50px;
 }
+.franchise__desc_title {
+  color: #fff;
+  font-size: 24px;
+}
 .franchise__img {
   width: 70%;
 }

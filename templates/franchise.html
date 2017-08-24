@@ -34,6 +34,8 @@
       <h1 class="franchise__title franchise__title_bb text-right">
         <span class="yellow">Высокодоходный</span> бизнес на рекламе в лифте
       </h1>
+
+      <p class="franchise__desc_title text-center">Прибыль с первого заказа <br><span class="yellow">без инвестиций в оборудование</span></p>
       <p class="franchise__desc text-center">Создайте свой бизнес <br><span class="yellow">на примере компании <br> "Арт-лифт"</span></p>
       <a href="#bp-modal-download" class="js-modal-bp-download-btn franchise__button">
         <img src="{{ STATIC_URL }}img/btn_left.png" alt="">Скачать бизнес-план<img src="{{ STATIC_URL }}img/btn_right.png" alt="">
@@ -81,12 +83,14 @@
       <div class="grid_12 text-center">
         <h2 class="franchise__title franchise-second__title">
           <span class="franchise-second__title_left"></span>
-          Оставить <span class="yellow">заявку</span>
+          Узнать <span class="yellow">условия</span>
           <span class="franchise-second__title_right"></span>
         </h2>
       </div>
       <div class="grid_12 text-center">
+      {% with franchise_form=True %}
         {% include '__includes/form_main.html'  with class='js-main-ticket-form' %}
+      {% endwith %}
 {#        <ul class="franchise-second-list">#}
 {#        {% for item in block2 %}#}
 {#          <li class="franchise-second-list-item">#}
