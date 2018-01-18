@@ -1,0 +1,40 @@
+#scrollup {
+  position: fixed;
+  opacity: 0.8;
+  padding: 15px 10px 10px;
+  background: #aaa;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  top: 10px;
+  left: 10px;
+  display: none;
+  cursor: pointer;
+  z-index: 99;
+}
+html,
+body {
+  min-height: 100%;
+  height: auto;
+}
+.hidden {
+  opacity: 0;
+}
+.hide {
+  display: none !important;
+}
+.visible {
+  opacity: 1;
+}
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+.text-justify {
+  text-align: justify;
+}

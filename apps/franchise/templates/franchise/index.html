@@ -1,0 +1,304 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}{% if current_city.title %}{{ current_city.title|default:'Название сайта' }}{% else %}{{ SETUP.title|default:'Название сайта' }}{% endif %}{% endblock %}</title>
+{% block meta %}
+  <meta name="description" content="{{ SETUP.meta_desc|default:'' }}">
+  <meta name="keywords" content="{{ SETUP.meta_key|default:'' }}">
+{% endblock %}
+  <script src="{% static 'js/jquery-1.11.2.min.js' %}"></script>
+{#  <script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>#}
+  <script src="{% static 'js/jquery.form.js' %}"></script>
+  <script src="{% static 'js/jquery.fancybox.pack.js' %}"></script>
+  <script src="{% static 'js/jquery.maskedinput.js' %}"></script>
+  <script src="{% static 'js/jquery.validate.js' %}"></script>
+  <script src="{% static 'js/jquery.flexslider-min.js' %}"></script>
+  <script src="{% static 'js/notify-combined.min.js' %}"></script>
+  <script src="{% static 'js/jquery.viewportchecker.js' %}"></script>
+  <script src="{% static 'js/scrollup.js' %}"></script>
+  <script src="{% static 'js/common.js?v=1' %}"></script>
+{#  {{ SETUP.top_js|safe|default:'' }}#}
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Ubuntu+Condensed" />
+  <link href="{% static 'css/franchise.css' %}" rel="stylesheet">
+{% block top_js %}
+{% endblock %}
+</head>
+<body>
+{#{% include '__includes/header.html' %}#}
+  <header class="header">
+    <a name="top"></a>
+    <div class="header-top">
+      <div class="container_12">
+        <div class="grid_5 text-right">
+          <a href="{% url 'home' %}" title="" class="header-logotype">
+            <img src="{% static 'img/franchise/logotype.png' %}" alt="Логотип">
+          </a>
+        </div>
+        <div class="grid_7">
+          <div class="header-phone">
+            Звоните по телефону: {{ setup.phone|default:'8 800 775 18 45' }}
+          </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="grid_5">
+          <img src="{% static 'img/franchise/lift.png' %}" alt="" class="header-lift">
+        </div>
+        <div class="grid_7">
+          <div class="header-nav">
+            <ul class="text-right">
+              <li><a href="{% url 'home' %}">Главная страница</a></li>
+              <li><a href="{% url 'article-list' %}">Список статей</a></li>
+              <li><a href="{% url 'faq-list' %}">Вопросы и ответы</a></li>
+            </ul>
+          </div>
+          <div class="header__title-block">
+            <h1 class="header__title text-right">
+              Доходный бизнес<br> на рекламе в лифте
+            </h1>
+            <p class="header__desc text-right">
+              От 50000р/мес без доп. инвестиций
+            </p>
+            <p class="header__desc_title text-right">
+              Создайте свой<br> на примере "АРТ-ЛИФТ"
+            </p>
+            <div class="header-video">
+              <iframe width="587" height="370" src="https://www.youtube.com/embed/kKhmnEmdjPo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+            <div class="text-center">
+              <a href="#bp-modal-download" class="js-modal-bp-download-btn bp__button">
+                Скачать бизнес-план
+              </a>
+            </div>
+          </div>
+
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+  </header>
+
+  <section class="franchise-first">
+    <div class="container_12">
+      <div class="franchise-first-container">
+        <div class="grid_7">
+          <h2 class="franchise__title franchise__title_blue">НОВАЯ МОДЕЛЬ РАЗМЕЩЕНИЯ РЕКЛАМЫ В ЛИФТЕ!</h2>
+        </div>
+        <div class="clearfix"></div>
+        <div class="grid_7">
+          <p class="franchise-first__text text-center">
+            ЗАЩИТА ПОВЕРХНОСТИ ЛИФТА <br> ОТ РАЗЛИЧНЫХ ПОВРЕЖДЕНИЙ, <br>
+            КОТОРАЯ ПОЛНОСТЬЮ МЕНЯЕТ <br>
+            ЕГО ОБЛИК
+          </p>
+          <ul class="franchise-first-list">
+          {% for item in block1 %}
+            <li class="franchise-first-list-item">
+              <p class="franchise-first-list-item__text">{{ item.text|safe|linebreaksbr }}</p>
+            </li>
+          {% endfor %}
+          </ul>
+        </div>
+        <div class="clearfix"></div>
+        <div class="grid_12 text-center">
+          <p class="franchise-first__subtext text-center">
+            С нами это возможно!
+          </p>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="franchise-second">
+    <div class="container_12">
+      <div class="grid_12">
+        <h2 class="franchise__title franchise-second__title franchise__title_white">КУПИВ НАШУ ТЕХНОЛОГИЮ ВЫ ПОЛУЧИТЕ</h2>
+      </div>
+      <div class="clearfix"></div>
+      <div class="container_12 franchise-second-block">
+        <div class="grid_7">
+          <ul class="franchise-second-list">
+          {% for item in block3 %}
+            <li class="franchise-second-list-item">
+              <p class="franchise-second-list-item__text">
+                {{ item.text|safe|linebreaksbr }}
+              </p>
+            </li>
+          {% endfor %}
+          </ul>
+        </div>
+        <div class="clearfix"></div>
+        <div class="franchise-second-img">
+          <img src="{% static 'img/franchise/franchise_second_img.png' %}" alt="" >
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="franchise-three">
+    <div class="container_12">
+      <div class="grid_12 text-center">
+        <h2 class="franchise__title franchise__title_blue franchise-three__title">
+          СТОИМОСТЬ УСЛУГИ
+        </h2>
+      </div>
+      <div class="grid_12">
+        <table class="franchise-three-table">
+          <tr class="franchise-three-table__tr">
+            <td class="franchise-three-table__td franchise-three-table__td_name"></td>
+            {% for complect in block41 %}
+              <td class="franchise-three-table__td franchise-three-table__td_value">{{ complect.name }}</td>
+            {% endfor %}
+          </tr>
+          {% for item in block4 %}
+          <tr class="franchise-three-table__tr">
+            <td class="franchise-three-table__td franchise-three-table__td_name">{{ item.text }}</td>
+            {% for complect in block41 %}
+              <td class="franchise-three-table__td franchise-three-table__td_value">
+                {% if item.id in complect.item_id_list %}+{% else %}-{% endif %}
+              </td>
+            {% endfor %}
+          </tr>
+          {% endfor %}
+          <tr class="franchise-three-table__tr">
+            <td class="franchise-three-table__td franchise-three-table__td_name"></td>
+            {% for complect in block41 %}
+              <td class="franchise-three-table__td franchise-three-table__td_value">{{ complect.cost }} <del><span>P</span></del></td>
+            {% endfor %}
+          </tr>
+        </table>
+      </div>
+      <div class="grid_12">
+        <h2 class="franchise__title franchise__title_blue franchise-three__title text-center">Дополнительные услуги</h2>
+        <div class="franchise-three-additional">
+          <ul class="franchise-three-list">
+          {% for item in block5 %}
+            <li class="franchise-three-list-item">
+              <div class="franchise-three-list-item__left">
+                {{ item.text|safe|linebreaksbr }}
+              </div>
+              <div class="franchise-three-list-item__right">
+                {{ item.price }}
+              </div>
+            </li>
+          {% endfor %}
+          </ul>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="franchise-four">
+    <div class="container_12">
+      <div class="grid_12 text-center">
+        <h2 class="franchise__title franchise__title_blue">С ЧЕГО НАЧАТЬ СОТРУДНИЧЕСТВО С НАМИ?</h2>
+      </div>
+      <div class="franchise-four-list text-center">
+        <div class="grid_3">
+          <div class="franchise-four-list-item">
+            <div class="franchise-four-list-item__icon">
+              <img src="{% static 'img/franchise/ticket.png' %}" alt="">
+            </div>
+            <p class="franchise-four-list-item__text">
+              <span class="blue">ОСТАВЬТЕ</span> <br>ЗАЯВКУ
+            </p>
+          </div>
+        </div>
+        <div class="grid_3">
+          <div class="franchise-four-list-item">
+            <div class="franchise-four-list-item__icon">
+              <img src="{% static 'img/franchise/consult.png' %}" alt="">
+            </div>
+            <p class="franchise-four-list-item__text">
+              МЫ <span class="blue">БЕСПЛАТНО</span><br> <span class="blue">ПРОКОНСУЛЬТИРУЕМ</span> <br> ВАС
+            </p>
+          </div>
+        </div>
+        <div class="grid_3">
+          <div class="franchise-four-list-item">
+            <div class="franchise-four-list-item__icon">
+              <img src="{% static 'img/franchise/dogovor.png' %}" alt="">
+            </div>
+            <p class="franchise-four-list-item__text blue">
+              ЗАКЛЮЧАЕМ<br> ДОГОВОР
+            </p>
+          </div>
+        </div>
+        <div class="grid_3">
+          <div class="franchise-four-list-item">
+            <div class="franchise-four-list-item__icon">
+              <img src="{% static 'img/franchise/like.png' %}" alt="">
+            </div>
+            <p class="franchise-four-list-item__text blue">
+              ЗАПУСКАЕМ<br> ПРОЕКТ!
+            </p>
+          </div>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="franchise-five">
+    <div class="container_12">
+      <div class="grid_8">
+        <h2 class="franchise__title franchise__title_blue franchise-five__title text-center">ПРЕИМУЩЕСТВА</h2>
+        <ul class="franchise-five-list">
+        {% for item in block6 %}
+          <li class="franchise-five-list-item">
+            {{ item.text|safe|linebreaksbr }}
+          </li>
+        {% endfor %}
+        </ul>
+      </div>
+      <div class="grid_4">
+        <address class="franchise-five-address">
+          <p class="franchise__title franchise__title_white franchise-five__title">Контакты</p>
+          <ul class="franchise-five-address-list">
+            <li class="franchise-five-address-list-item">
+              {{ setup.phone1|default:'8 (4422) 243-200' }} <br>
+              {{ setup.phone|default:'8 800 775 18 45' }}
+            </li>
+            <li class="franchise-five-address-list-item">
+              {{ setup.site|default:'Арт-лифт.рф' }} <br>
+              {{ setup.site1|default:'Art-lift.ru' }}
+            </li>
+            <li class="franchise-five-address-list-item">
+              {{ setup.email|default:'fr@art-lift.ru' }}
+            </li>
+            <li class="franchise-five-address-list-item">
+              {{ setup.address|safe|linebreaksbr|default:'' }}
+            </li>
+          </ul>
+        </address>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+  </section>
+
+
+
+<div id="bp-modal-download">
+  <p class="text-center">Чтобы скачать Бизнес-План<br> оставьте ваш email и телефон </p>
+  <form action="{% url 'download' %}" id="js-form-bp-download" method="post" class="bp-download-form text-center">
+     {% load widget_tweaks %}
+    <div>
+      <input type="text" name="phone" id="id_phone" class="input" placeholder="Ваш номер телефона">
+    </div>
+    <div>
+      <input type="email" name="email" id="id_email" class="input" placeholder="Ваш e-mail">
+    </div>
+    <div>
+      <input type="submit" value="Отправить" class="button">
+    </div>
+  </form>
+</div>
+
+<div id="scrollup"><img alt="Прокрутить вверх" src="{% static 'img/up.png' %}"></div>
+{#  {{ SETUP.bottom_js|safe|default:'' }}#}
+</body>
+</html>

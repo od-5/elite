@@ -8,7 +8,7 @@ __author__ = 'alexey'
 
 
 class FranchiseView(TemplateView):
-    template_name = 'franchise.html'
+    template_name = 'franchise/index.html'
 
     def get_context_data(self, **kwargs):
         context = super(FranchiseView, self).get_context_data()
