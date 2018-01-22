@@ -40,5 +40,33 @@ $(function(){
       });
     }
   });
+  // Форма отправки заявки с главной страницы
+  $( ".js-main-ticket-form" ).validate({
+    rules: {
+      name: {
+        required: true
+      },
+      phone: {
+        required: true
+      },
+      email: {
+        required: true,
+        email: true
+      }
+    },
+    submitHandler: function(e) {
+      $('.js-main-ticket-form').ajaxSubmit({
+          success: function(data){
+            $.fancybox.close();
+            if (data.success) {
+              $.notify('Ваша заявка принята!', 'success');
+            } else {
+              $.notify('Что то пошло не так', 'error');
+            }
+            $('.js-main-ticket-form').trigger('reset')
+          }
+      });
+    }
+  });
 
 });

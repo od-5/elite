@@ -447,7 +447,7 @@ th {
   email: adrian [at] radianstudio [dot] com
 */
 body {
-  min-width: 1200px;
+  min-width: 960px;
 }
 .clearboth {
   clear: both;
@@ -463,7 +463,7 @@ body {
 .container_12 {
   margin-left: auto;
   margin-right: auto;
-  width: 1200px;
+  width: 960px;
   zoom: 1;
 }
 .container_12:before,
@@ -485,243 +485,243 @@ body {
   float: left;
   margin-left: 10px;
   margin-right: 10px;
-  width: 80px;
+  width: 60px;
 }
 .container_12 .grid_2 {
   display: inline;
   float: left;
   margin-left: 10px;
   margin-right: 10px;
-  width: 180px;
+  width: 140px;
 }
 .container_12 .grid_3 {
   display: inline;
   float: left;
   margin-left: 10px;
   margin-right: 10px;
-  width: 280px;
+  width: 220px;
 }
 .container_12 .grid_4 {
   display: inline;
   float: left;
   margin-left: 10px;
   margin-right: 10px;
-  width: 380px;
+  width: 300px;
 }
 .container_12 .grid_5 {
   display: inline;
   float: left;
   margin-left: 10px;
   margin-right: 10px;
-  width: 480px;
+  width: 380px;
 }
 .container_12 .grid_6 {
   display: inline;
   float: left;
   margin-left: 10px;
   margin-right: 10px;
-  width: 580px;
+  width: 460px;
 }
 .container_12 .grid_7 {
   display: inline;
   float: left;
   margin-left: 10px;
   margin-right: 10px;
-  width: 680px;
+  width: 540px;
 }
 .container_12 .grid_8 {
   display: inline;
   float: left;
   margin-left: 10px;
   margin-right: 10px;
-  width: 780px;
+  width: 620px;
 }
 .container_12 .grid_9 {
   display: inline;
   float: left;
   margin-left: 10px;
   margin-right: 10px;
-  width: 880px;
+  width: 700px;
 }
 .container_12 .grid_10 {
   display: inline;
   float: left;
   margin-left: 10px;
   margin-right: 10px;
-  width: 980px;
+  width: 780px;
 }
 .container_12 .grid_11 {
   display: inline;
   float: left;
   margin-left: 10px;
   margin-right: 10px;
-  width: 1080px;
+  width: 860px;
 }
 .container_12 .grid_12 {
   display: inline;
   float: left;
   margin-left: 10px;
   margin-right: 10px;
-  width: 1180px;
+  width: 940px;
 }
 .container_12 .prefix_1 {
-  padding-left: 100px;
+  padding-left: 80px;
 }
 .container_12 .prefix_2 {
-  padding-left: 200px;
+  padding-left: 160px;
 }
 .container_12 .prefix_3 {
-  padding-left: 300px;
+  padding-left: 240px;
 }
 .container_12 .prefix_4 {
-  padding-left: 400px;
+  padding-left: 320px;
 }
 .container_12 .prefix_5 {
-  padding-left: 500px;
+  padding-left: 400px;
 }
 .container_12 .prefix_6 {
-  padding-left: 600px;
+  padding-left: 480px;
 }
 .container_12 .prefix_7 {
-  padding-left: 700px;
+  padding-left: 560px;
 }
 .container_12 .prefix_8 {
-  padding-left: 800px;
+  padding-left: 640px;
 }
 .container_12 .prefix_9 {
-  padding-left: 900px;
+  padding-left: 720px;
 }
 .container_12 .prefix_10 {
-  padding-left: 1000px;
+  padding-left: 800px;
 }
 .container_12 .prefix_11 {
-  padding-left: 1100px;
+  padding-left: 880px;
 }
 .container_12 .suffix_1 {
-  padding-right: 100px;
+  padding-right: 80px;
 }
 .container_12 .suffix_2 {
-  padding-right: 200px;
+  padding-right: 160px;
 }
 .container_12 .suffix_3 {
-  padding-right: 300px;
+  padding-right: 240px;
 }
 .container_12 .suffix_4 {
-  padding-right: 400px;
+  padding-right: 320px;
 }
 .container_12 .suffix_5 {
-  padding-right: 500px;
+  padding-right: 400px;
 }
 .container_12 .suffix_6 {
-  padding-right: 600px;
+  padding-right: 480px;
 }
 .container_12 .suffix_7 {
-  padding-right: 700px;
+  padding-right: 560px;
 }
 .container_12 .suffix_8 {
-  padding-right: 800px;
+  padding-right: 640px;
 }
 .container_12 .suffix_9 {
-  padding-right: 900px;
+  padding-right: 720px;
 }
 .container_12 .suffix_10 {
-  padding-right: 1000px;
+  padding-right: 800px;
 }
 .container_12 .suffix_11 {
-  padding-right: 1100px;
+  padding-right: 880px;
 }
 .container_12 .push_1 {
   position: relative;
-  left: 100px;
+  left: 80px;
 }
 .container_12 .push_2 {
   position: relative;
-  left: 200px;
+  left: 160px;
 }
 .container_12 .push_3 {
   position: relative;
-  left: 300px;
+  left: 240px;
 }
 .container_12 .push_4 {
   position: relative;
-  left: 400px;
+  left: 320px;
 }
 .container_12 .push_5 {
   position: relative;
-  left: 500px;
+  left: 400px;
 }
 .container_12 .push_6 {
   position: relative;
-  left: 600px;
+  left: 480px;
 }
 .container_12 .push_7 {
   position: relative;
-  left: 700px;
+  left: 560px;
 }
 .container_12 .push_8 {
   position: relative;
-  left: 800px;
+  left: 640px;
 }
 .container_12 .push_9 {
   position: relative;
-  left: 900px;
+  left: 720px;
 }
 .container_12 .push_10 {
   position: relative;
-  left: 1000px;
+  left: 800px;
 }
 .container_12 .push_11 {
   position: relative;
-  left: 1100px;
+  left: 880px;
 }
 .container_12 .pull_1 {
   position: relative;
-  left: -100px;
+  left: -80px;
 }
 .container_12 .pull_2 {
   position: relative;
-  left: -200px;
+  left: -160px;
 }
 .container_12 .pull_3 {
   position: relative;
-  left: -300px;
+  left: -240px;
 }
 .container_12 .pull_4 {
   position: relative;
-  left: -400px;
+  left: -320px;
 }
 .container_12 .pull_5 {
   position: relative;
-  left: -500px;
+  left: -400px;
 }
 .container_12 .pull_6 {
   position: relative;
-  left: -600px;
+  left: -480px;
 }
 .container_12 .pull_7 {
   position: relative;
-  left: -700px;
+  left: -560px;
 }
 .container_12 .pull_8 {
   position: relative;
-  left: -800px;
+  left: -640px;
 }
 .container_12 .pull_9 {
   position: relative;
-  left: -900px;
+  left: -720px;
 }
 .container_12 .pull_10 {
   position: relative;
-  left: -1000px;
+  left: -800px;
 }
 .container_12 .pull_11 {
   position: relative;
-  left: -1100px;
+  left: -880px;
 }
 .container_16 {
   margin-left: auto;
   margin-right: auto;
-  width: 1200px;
+  width: 960px;
   zoom: 1;
 }
 .container_16:before,
@@ -743,238 +743,238 @@ body {
   float: left;
   margin-left: 10px;
   margin-right: 10px;
-  width: 55px;
+  width: 40px;
 }
 .container_16 .grid_2 {
   display: inline;
   float: left;
   margin-left: 10px;
   margin-right: 10px;
-  width: 130px;
+  width: 100px;
 }
 .container_16 .grid_3 {
   display: inline;
   float: left;
   margin-left: 10px;
   margin-right: 10px;
-  width: 205px;
+  width: 160px;
 }
 .container_16 .grid_4 {
   display: inline;
   float: left;
   margin-left: 10px;
   margin-right: 10px;
-  width: 280px;
+  width: 220px;
 }
 .container_16 .grid_5 {
   display: inline;
   float: left;
   margin-left: 10px;
   margin-right: 10px;
-  width: 355px;
+  width: 280px;
 }
 .container_16 .grid_6 {
   display: inline;
   float: left;
   margin-left: 10px;
   margin-right: 10px;
-  width: 430px;
+  width: 340px;
 }
 .container_16 .grid_7 {
   display: inline;
   float: left;
   margin-left: 10px;
   margin-right: 10px;
-  width: 505px;
+  width: 400px;
 }
 .container_16 .grid_8 {
   display: inline;
   float: left;
   margin-left: 10px;
   margin-right: 10px;
-  width: 580px;
+  width: 460px;
 }
 .container_16 .grid_9 {
   display: inline;
   float: left;
   margin-left: 10px;
   margin-right: 10px;
-  width: 655px;
+  width: 520px;
 }
 .container_16 .grid_10 {
   display: inline;
   float: left;
   margin-left: 10px;
   margin-right: 10px;
-  width: 730px;
+  width: 580px;
 }
 .container_16 .grid_11 {
   display: inline;
   float: left;
   margin-left: 10px;
   margin-right: 10px;
-  width: 805px;
+  width: 640px;
 }
 .container_16 .grid_12 {
   display: inline;
   float: left;
   margin-left: 10px;
   margin-right: 10px;
-  width: 880px;
+  width: 700px;
 }
 .container_16 .prefix_1 {
-  padding-left: 75px;
+  padding-left: 60px;
 }
 .container_16 .prefix_2 {
-  padding-left: 150px;
+  padding-left: 120px;
 }
 .container_16 .prefix_3 {
-  padding-left: 225px;
+  padding-left: 180px;
 }
 .container_16 .prefix_4 {
-  padding-left: 300px;
+  padding-left: 240px;
 }
 .container_16 .prefix_5 {
-  padding-left: 375px;
+  padding-left: 300px;
 }
 .container_16 .prefix_6 {
-  padding-left: 450px;
+  padding-left: 360px;
 }
 .container_16 .prefix_7 {
-  padding-left: 525px;
+  padding-left: 420px;
 }
 .container_16 .prefix_8 {
-  padding-left: 600px;
+  padding-left: 480px;
 }
 .container_16 .prefix_9 {
-  padding-left: 675px;
+  padding-left: 540px;
 }
 .container_16 .prefix_10 {
-  padding-left: 750px;
+  padding-left: 600px;
 }
 .container_16 .prefix_11 {
-  padding-left: 825px;
+  padding-left: 660px;
 }
 .container_16 .suffix_1 {
-  padding-right: 75px;
+  padding-right: 60px;
 }
 .container_16 .suffix_2 {
-  padding-right: 150px;
+  padding-right: 120px;
 }
 .container_16 .suffix_3 {
-  padding-right: 225px;
+  padding-right: 180px;
 }
 .container_16 .suffix_4 {
-  padding-right: 300px;
+  padding-right: 240px;
 }
 .container_16 .suffix_5 {
-  padding-right: 375px;
+  padding-right: 300px;
 }
 .container_16 .suffix_6 {
-  padding-right: 450px;
+  padding-right: 360px;
 }
 .container_16 .suffix_7 {
-  padding-right: 525px;
+  padding-right: 420px;
 }
 .container_16 .suffix_8 {
-  padding-right: 600px;
+  padding-right: 480px;
 }
 .container_16 .suffix_9 {
-  padding-right: 675px;
+  padding-right: 540px;
 }
 .container_16 .suffix_10 {
-  padding-right: 750px;
+  padding-right: 600px;
 }
 .container_16 .suffix_11 {
-  padding-right: 825px;
+  padding-right: 660px;
 }
 .container_16 .push_1 {
   position: relative;
-  left: 75px;
+  left: 60px;
 }
 .container_16 .push_2 {
   position: relative;
-  left: 150px;
+  left: 120px;
 }
 .container_16 .push_3 {
   position: relative;
-  left: 225px;
+  left: 180px;
 }
 .container_16 .push_4 {
   position: relative;
-  left: 300px;
+  left: 240px;
 }
 .container_16 .push_5 {
   position: relative;
-  left: 375px;
+  left: 300px;
 }
 .container_16 .push_6 {
   position: relative;
-  left: 450px;
+  left: 360px;
 }
 .container_16 .push_7 {
   position: relative;
-  left: 525px;
+  left: 420px;
 }
 .container_16 .push_8 {
   position: relative;
-  left: 600px;
+  left: 480px;
 }
 .container_16 .push_9 {
   position: relative;
-  left: 675px;
+  left: 540px;
 }
 .container_16 .push_10 {
   position: relative;
-  left: 750px;
+  left: 600px;
 }
 .container_16 .push_11 {
   position: relative;
-  left: 825px;
+  left: 660px;
 }
 .container_16 .pull_1 {
   position: relative;
-  left: -75px;
+  left: -60px;
 }
 .container_16 .pull_2 {
   position: relative;
-  left: -150px;
+  left: -120px;
 }
 .container_16 .pull_3 {
   position: relative;
-  left: -225px;
+  left: -180px;
 }
 .container_16 .pull_4 {
   position: relative;
-  left: -300px;
+  left: -240px;
 }
 .container_16 .pull_5 {
   position: relative;
-  left: -375px;
+  left: -300px;
 }
 .container_16 .pull_6 {
   position: relative;
-  left: -450px;
+  left: -360px;
 }
 .container_16 .pull_7 {
   position: relative;
-  left: -525px;
+  left: -420px;
 }
 .container_16 .pull_8 {
   position: relative;
-  left: -600px;
+  left: -480px;
 }
 .container_16 .pull_9 {
   position: relative;
-  left: -675px;
+  left: -540px;
 }
 .container_16 .pull_10 {
   position: relative;
-  left: -750px;
+  left: -600px;
 }
 .container_16 .pull_11 {
   position: relative;
-  left: -825px;
+  left: -660px;
 }
 /* Grid >> Children (Alpha ~ First, Omega ~ Last) */
 .alpha {
@@ -1680,25 +1680,19 @@ body {
 }
 .header-phone {
   display: inline-block;
-  font-size: 25px;
+  font-size: 18px;
   text-transform: uppercase;
   color: #fff;
   font-weight: bold;
-  padding: 0 20px;
-  margin-top: 45px;
+  padding: 0 55px;
+  margin-top: 67px;
   position: relative;
-  line-height: 93px;
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#336699+0,3399ff+100,7db9e8+100 */
+  line-height: 50px;
   background: #336699;
-  /* Old browsers */
   background: -moz-linear-gradient(left, #336699 0%, #3399ff 100%, #7db9e8 100%);
-  /* FF3.6-15 */
   background: -webkit-linear-gradient(left, #336699 0%, #3399ff 100%, #7db9e8 100%);
-  /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(to right, #336699 0%, #3399ff 100%, #7db9e8 100%);
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#336699', endColorstr='#7db9e8', GradientType=1);
-  /* IE6-9 */
 }
 .header-phone:after {
   position: absolute;
@@ -1706,14 +1700,11 @@ body {
   content: '';
   width: 0;
   height: 0;
-  border-top: 47px solid transparent;
-  border-left: 65px solid #3399ff;
-  border-bottom: 46px solid transparent;
+  border-top: 24px solid transparent;
+  border-right: 25.5px solid #336699;
+  border-bottom: 26.5px solid transparent;
   top: 0;
-  right: -65px;
-}
-.header-nav {
-  margin-right: 55px;
+  left: -25px;
 }
 .header-nav ul {
   list-style: none;
@@ -1727,16 +1718,13 @@ body {
 }
 .header-nav ul li a {
   text-transform: uppercase;
-  font-size: 18px;
+  font-size: 14px;
   color: #003366;
   font-weight: bold;
   text-decoration: none;
 }
 .header-lift {
-  width: 400px;
-  float: right;
-  margin-right: 80px;
-  margin-top: -50px;
+  width: 300px;
 }
 .header__title,
 .header__desc_title {
@@ -1745,33 +1733,29 @@ body {
   color: #003366;
 }
 .header__title {
-  font-size: 53px;
+  font-size: 40px;
   margin-bottom: 10px;
 }
-.header__title-block {
-  margin-right: 55px;
-}
 .header__desc {
-  font-size: 21px;
+  font-size: 18px;
   margin: 0;
 }
 .header__desc_title {
-  font-size: 32px;
+  font-size: 24px;
   margin: 10px 0 40px;
 }
 .header-video iframe {
-  float: right;
   margin-bottom: 35px;
 }
 .bp__button {
   display: inline-block;
   text-decoration: none;
-  font-size: 30px;
+  font-size: 24px;
   font-weight: bold;
   color: #fff;
-  line-height: 66px;
-  height: 66px;
-  padding: 0 22px;
+  line-height: 55px;
+  height: 55px;
+  padding: 0 20px;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#3d737b+0,60a9d2+54,3d737b+100 */
   background: #3d737b;
   /* Old browsers */
@@ -1824,7 +1808,7 @@ a.button {
   color: #36a7e9;
 }
 .franchise__title {
-  font-size: 40px;
+  font-size: 32px;
   font-weight: bold;
   margin: 60px 0;
 }
@@ -1834,13 +1818,54 @@ a.button {
 .franchise__title_white {
   color: #fff;
 }
+.franchise-ticket {
+  background: url('../img/franchise/franchise-ticket__bg.jpg') no-repeat 50% 0;
+  background-size: cover;
+  padding-bottom: 50px;
+}
+.franchise-ticket form .input,
+.franchise-ticket form .button {
+  display: block;
+  margin: 20px auto;
+  box-shadow: -5px 5px 0 rgba(153, 153, 153, 0.61);
+}
+.franchise-clients {
+  background-color: #fff;
+  padding: 40px 0;
+  -webkit-box-shadow: 0 -10px 100px #fff;
+  -moz-box-shadow: 0 -10px 100px #fff;
+  box-shadow: 0 -10px 100px #fff;
+}
+.franchise-clients__title {
+  margin-top: 0;
+}
+.franchise-clients-list {
+  list-style: none;
+  text-align: center;
+  width: 900px;
+  margin: auto;
+}
+.franchise-clients-list-item {
+  display: inline-block;
+  width: 290px;
+  background: url('../img/franchise/franchise-client__bg.png') no-repeat 50% 0;
+  background-size: 100%;
+  height: 305px;
+  line-height: 305px;
+}
+.franchise-clients-list-item__img {
+  height: 190px;
+  vertical-align: middle;
+  line-height: 290px;
+  border: 2px solid #138eab;
+}
 .franchise-first {
   background: url('../img/franchise/franchise_first_bg.png') no-repeat 50% 0;
   background-size: cover;
 }
 .franchise-first__text {
   margin: 0 0 30px;
-  font-size: 35px;
+  font-size: 20px;
   font-weight: bold;
   color: #122140;
 }
@@ -1872,7 +1897,7 @@ a.button {
   background-size: 100%;
 }
 .franchise-first-list-item__text {
-  font-size: 24px;
+  font-size: 18px;
   margin-bottom: 50px;
 }
 .franchise-second {
@@ -1880,7 +1905,7 @@ a.button {
   padding-bottom: 60px;
 }
 .franchise-second__title {
-  font-size: 30px;
+  font-size: 28px;
   margin: 30px 0;
 }
 .franchise-second-block {
@@ -1907,15 +1932,15 @@ a.button {
   background-size: 100%;
 }
 .franchise-second-list-item__text {
-  font-size: 24px;
+  font-size: 18px;
   margin-bottom: 50px;
   padding-left: 80px;
 }
 .franchise-second-img {
   position: absolute;
-  top: -65px;
+  top: -30px;
   right: 0;
-  width: 435px;
+  width: 326px;
 }
 .franchise-three {
   padding: 40px 0 80px;
@@ -1927,7 +1952,7 @@ a.button {
   margin: 40px 0;
 }
 .franchise-three-table {
-  font-size: 20px;
+  font-size: 16px;
   width: 100%;
 }
 .franchise-three-table__tr:nth-child(even) {
@@ -1937,8 +1962,9 @@ a.button {
   background: none;
 }
 .franchise-three-table__tr:last-child .franchise-three-table__td {
-  font-size: 30px;
+  font-size: 22px;
   font-weight: bold;
+  min-width: 120px;
 }
 .franchise-three-table__td {
   padding: 20px 0;
@@ -1968,8 +1994,8 @@ a.button {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#006d95', endColorstr='#00adf7', GradientType=1);
   /* IE6-9 */
   list-style: none;
-  font-size: 20px;
-  width: 610px;
+  font-size: 16px;
+  width: 500px;
   margin: auto;
   padding-bottom: 20px;
   color: #fff;
@@ -2008,7 +2034,7 @@ a.button {
   background-color: #fff;
   background: url('../img/franchise/franchise-five__bg.jpg') no-repeat fixed 50% 0;
   background-size: cover;
-  font-size: 20px;
+  font-size: 16px;
   line-height: 1.5em;
 }
 .franchise-five__title {

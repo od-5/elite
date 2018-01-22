@@ -31,12 +31,12 @@
     <a name="top"></a>
     <div class="header-top">
       <div class="container_12">
-        <div class="grid_5 text-right">
+        <div class="grid_5 text-center">
           <a href="{% url 'home' %}" title="" class="header-logotype">
             <img src="{% static 'img/franchise/logotype.png' %}" alt="Логотип">
           </a>
         </div>
-        <div class="grid_7">
+        <div class="grid_7 text-right">
           <div class="header-phone">
             Звоните по телефону: {{ setup.phone|default:'8 800 775 18 45' }}
           </div>
@@ -64,7 +64,7 @@
               Создайте свой<br> на примере "АРТ-ЛИФТ"
             </p>
             <div class="header-video">
-              <iframe width="587" height="370" src="https://www.youtube.com/embed/kKhmnEmdjPo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+              <iframe width="500" height="300" src="https://www.youtube.com/embed/kKhmnEmdjPo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             </div>
             <div class="text-center">
               <a href="#bp-modal-download" class="js-modal-bp-download-btn bp__button">
@@ -108,6 +108,36 @@
         </div>
         <div class="clearfix"></div>
       </div>
+    </div>
+  </section>
+
+  <section class="franchise-ticket">
+    <div class="container_12">
+      <div class="grid_12">
+        <h2 class="franchise__title franchise__title_blue text-center">УЗНАТЬ УСЛОВИЯ</h2>
+        {% with franchise_form=True %}
+          {% include '__includes/form_main.html'  with class='js-main-ticket-form' %}
+        {% endwith %}
+      </div>
+      <div class="clearfix"></div>
+    </div>
+  </section>
+
+  <section class="franchise-clients">
+    <div class="container_12">
+      <div class="grid_12">
+        <h2 class="franchise__title franchise__title_blue franchise-clients__title text-center">НАШИ КЛИЕНТЫ</h2>
+        <ul class="franchise-clients-list">
+        {% for item in client_list %}
+          <li class="franchise-clients-list-item">
+{#              <img src="{{ STATIC_URL }}img/client{{ forloop.counter }}.jpg" alt="" class="franchise-our-clients-list-item__img">#}
+            <img src="{{ item.img.url }}" alt="" class="franchise-clients-list-item__img">
+          </li>
+        {% endfor %}
+        </ul>
+        <div class="clearfix"></div>
+      </div>
+      <div class="clearfix"></div>
     </div>
   </section>
 
