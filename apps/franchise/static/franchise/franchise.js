@@ -69,4 +69,13 @@ $(function(){
     }
   });
 
+  // Галлерея фотографий
+  $('.js-gallery').fancybox({
+    helpers: {
+      overlay: {
+        locked: false
+      }
+    }
+  });
+
 });

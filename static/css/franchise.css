@@ -1665,6 +1665,14 @@ body {
 .glyphicon-tree-deciduous:before {
   content: "\e200";
 }
+a,
+.button,
+.animate {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
 .header {
   background: url('../img/franchise/header__bg.jpg') no-repeat 50% 0;
   background-size: cover;
@@ -1674,6 +1682,9 @@ body {
   margin-right: 30px;
   display: inline-block;
   width: 200px;
+}
+.header-logotype:hover {
+  opacity: 0.8;
 }
 .header-logotype img {
   width: 100%;
@@ -1723,6 +1734,9 @@ body {
   font-weight: bold;
   text-decoration: none;
 }
+.header-nav ul li a:hover {
+  color: #138eab;
+}
 .header-lift {
   width: 300px;
 }
@@ -1767,6 +1781,11 @@ body {
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#3d737b', endColorstr='#3d737b', GradientType=1);
   /* IE6-9 fallback on horizontal gradient */
+}
+.bp__button:hover {
+  box-shadow: 0 0 10px #333;
+  border-radius: 10px;
+  color: #F1ECA8;
 }
 #bp-modal-download {
   display: none;
@@ -1829,6 +1848,9 @@ a.button {
   margin: 20px auto;
   box-shadow: -5px 5px 0 rgba(153, 153, 153, 0.61);
 }
+.franchise-ticket form .button:hover {
+  box-shadow: -5px 5px 0 #333;
+}
 .franchise-clients {
   background-color: #fff;
   padding: 40px 0;
@@ -1858,6 +1880,10 @@ a.button {
   vertical-align: middle;
   line-height: 290px;
   border: 2px solid #138eab;
+}
+.franchise-clients-list-item__img:hover {
+  height: 210px;
+  border-width: 5px;
 }
 .franchise-first {
   background: url('../img/franchise/franchise_first_bg.png') no-repeat 50% 0;
@@ -2028,6 +2054,16 @@ a.button {
   text-transform: uppercase;
   font-size: 20px;
   line-height: 1.5em;
+  color: #999;
+}
+.franchise-four-list-item__text:hover {
+  color: #666;
+}
+.franchise-four-list-item__text a {
+  text-decoration: none;
+}
+.franchise-four-list-item__text a:hover {
+  color: #336699;
 }
 .franchise-five {
   padding-bottom: 80px;
@@ -2075,4 +2111,12 @@ a.button {
   padding-bottom: 30px;
   color: #fff;
   font-weight: bold;
+}
+.franchise-five-address-list-item a {
+  color: inherit;
+  text-decoration: underline;
+}
+.franchise-five-address-list-item a:hover {
+  color: #f1f1f1;
+  text-decoration: none;
 }

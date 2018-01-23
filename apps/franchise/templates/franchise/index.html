@@ -67,7 +67,7 @@
               <iframe width="500" height="300" src="https://www.youtube.com/embed/11GRVbBYsK4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             </div>
             <div class="text-center">
-              <a href="#bp-modal-download" class="js-modal-bp-download-btn bp__button">
+              <a href="#bp-modal-download" class="js-modal-bp-download-btn bp__button animate">
                 Скачать бизнес-план
               </a>
             </div>
@@ -111,7 +111,7 @@
     </div>
   </section>
 
-  <section class="franchise-ticket">
+  <section class="franchise-ticket" id="js-ticket-franchise">
     <div class="container_12">
       <div class="grid_12">
         <h2 class="franchise__title franchise__title_blue text-center">УЗНАТЬ УСЛОВИЯ</h2>
@@ -131,7 +131,10 @@
         {% for item in client_list %}
           <li class="franchise-clients-list-item">
 {#              <img src="{{ STATIC_URL }}img/client{{ forloop.counter }}.jpg" alt="" class="franchise-our-clients-list-item__img">#}
-            <img src="{{ item.img.url }}" alt="" class="franchise-clients-list-item__img">
+            <a href="{{ item.img.url }}" class="js-gallery" rel="clients">
+              <img src="{{ item.img.url }}" alt="" class="franchise-clients-list-item__img animate">
+            </a>
+
           </li>
         {% endfor %}
         </ul>
@@ -233,8 +236,9 @@
             <div class="franchise-four-list-item__icon">
               <img src="{% static 'img/franchise/ticket.png' %}" alt="">
             </div>
-            <p class="franchise-four-list-item__text">
-              <span class="blue">ОСТАВЬТЕ</span> <br>ЗАЯВКУ
+            <p class="franchise-four-list-item__text animate">
+{#              <span class="blue">ОСТАВЬТЕ</span> <br>ЗАЯВКУ#}
+              <a href="#js-ticket-franchise" class="blue"> ОСТАВЬТЕ <br>ЗАЯВКУ</a>
             </p>
           </div>
         </div>
@@ -243,8 +247,8 @@
             <div class="franchise-four-list-item__icon">
               <img src="{% static 'img/franchise/consult.png' %}" alt="">
             </div>
-            <p class="franchise-four-list-item__text">
-              МЫ <span class="blue">БЕСПЛАТНО</span><br> <span class="blue">ПРОКОНСУЛЬТИРУЕМ</span> <br> ВАС
+            <p class="franchise-four-list-item__text animate">
+              МЫ <span class="">БЕСПЛАТНО</span><br> <span class="">ПРОКОНСУЛЬТИРУЕМ</span> <br> ВАС
             </p>
           </div>
         </div>
@@ -253,7 +257,7 @@
             <div class="franchise-four-list-item__icon">
               <img src="{% static 'img/franchise/dogovor.png' %}" alt="">
             </div>
-            <p class="franchise-four-list-item__text blue">
+            <p class="franchise-four-list-item__text animate">
               ЗАКЛЮЧАЕМ<br> ДОГОВОР
             </p>
           </div>
@@ -263,7 +267,7 @@
             <div class="franchise-four-list-item__icon">
               <img src="{% static 'img/franchise/like.png' %}" alt="">
             </div>
-            <p class="franchise-four-list-item__text blue">
+            <p class="franchise-four-list-item__text animate">
               ЗАПУСКАЕМ<br> ПРОЕКТ!
             </p>
           </div>
@@ -294,8 +298,8 @@
               {{ setup.phone|default:'8 800 775 18 45' }}
             </li>
             <li class="franchise-five-address-list-item">
-              {{ setup.site|default:'Арт-лифт.рф' }} <br>
-              {{ setup.site1|default:'Art-lift.ru' }}
+              <a href="{{ setup.site|default:'Арт-лифт.рф' }}">{{ setup.site|default:'Арт-лифт.рф' }}</a> <br>
+              <a href="{{ setup.site1|default:'Art-lift.ru' }}">{{ setup.site1|default:'Art-lift.ru' }}</a>
             </li>
             <li class="franchise-five-address-list-item">
               {{ setup.email|default:'fr@art-lift.ru' }}
