@@ -27,33 +27,12 @@ a, .button, .animate {
     }
   }
   &-phone {
-    display: inline-block;
-    font-size: 18px;
+    font-size: 40px;
     text-transform: uppercase;
-    color: #fff;
+    color: #333;
     font-weight: bold;
-    padding: 0 55px;
     margin-top: 67px;
-    position: relative;
     line-height: 50px;
-    background: #336699;
-    background: -moz-linear-gradient(left, #336699 0%, #3399ff 100%, #7db9e8 100%);
-    background: -webkit-linear-gradient(left, #336699 0%, #3399ff 100%, #7db9e8 100%);
-    background: linear-gradient(to right, #336699 0%, #3399ff 100%, #7db9e8 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#336699', endColorstr='#7db9e8', GradientType=1);
-
-    &:after {
-      position: absolute;
-      display: block;
-      content: '';
-      width: 0;
-      height: 0;
-      border-top: 24px solid transparent;
-      border-right: 25.5px solid #336699;
-      border-bottom: 26.5px solid transparent;
-      top: 0;
-      left: -25px;
-    }
   }
   &-nav {
     ul {
@@ -94,16 +73,18 @@ a, .button, .animate {
     margin-bottom: 10px;
   }
   &__desc {
-    font-size: 18px;
+    font-size: 21px;
+    color: red;
     margin: 0;
     &_title {
-      font-size: 24px;
+      font-size: 18px;
       margin: 10px 0 40px;
     }
   }
   &-video {
     iframe {
       margin-bottom: 35px;
+      width: 100%;
     }
   }
 }
@@ -162,6 +143,9 @@ a.button {
 .blue {
   color: #36a7e9;
 }
+.red {
+  color: red;
+}
 .franchise {
   &__title {
     font-size: 32px;
@@ -187,6 +171,27 @@ a.button {
       .button {
         &:hover {
           box-shadow: -5px 5px 0 #333;
+        }
+      }
+    }
+  }
+  &-calc {
+    background-color: rgba(255, 255, 255, 0.72);
+    //background: url(../img/franchise/franchise-ticket__bg.jpg) no-repeat 50% 0;
+    //background-size: cover;
+    padding-bottom: 40px;
+    margin: 20px 0;
+    .calc {
+      &-line {
+        padding: 10px 0;
+        label {
+          color: #333;
+          font-size: 16px;
+        }
+        input {
+          height: 50px;
+          padding: 0 10px;
+          text-align: center;
         }
       }
     }
@@ -397,6 +402,7 @@ a.button {
     }
     &-list {
       &-item {
+        text-decoration: none;
         &__icon {
           img {
             width: 100%;
@@ -406,7 +412,6 @@ a.button {
           text-transform: uppercase;
           font-size: 20px;
           line-height: 1.5em;
-          color: #999;
           &:hover {
             color: #666;
           }
@@ -458,6 +463,9 @@ a.button {
           padding-bottom: 30px;
           color: #fff;
           font-weight: bold;
+          &:first-child {
+            font-size: 22px;
+          }
           a {
             color: inherit;
             text-decoration: underline;

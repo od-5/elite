@@ -1690,32 +1690,12 @@ a,
   width: 100%;
 }
 .header-phone {
-  display: inline-block;
-  font-size: 18px;
+  font-size: 40px;
   text-transform: uppercase;
-  color: #fff;
+  color: #333;
   font-weight: bold;
-  padding: 0 55px;
   margin-top: 67px;
-  position: relative;
   line-height: 50px;
-  background: #336699;
-  background: -moz-linear-gradient(left, #336699 0%, #3399ff 100%, #7db9e8 100%);
-  background: -webkit-linear-gradient(left, #336699 0%, #3399ff 100%, #7db9e8 100%);
-  background: linear-gradient(to right, #336699 0%, #3399ff 100%, #7db9e8 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#336699', endColorstr='#7db9e8', GradientType=1);
-}
-.header-phone:after {
-  position: absolute;
-  display: block;
-  content: '';
-  width: 0;
-  height: 0;
-  border-top: 24px solid transparent;
-  border-right: 25.5px solid #336699;
-  border-bottom: 26.5px solid transparent;
-  top: 0;
-  left: -25px;
 }
 .header-nav ul {
   list-style: none;
@@ -1751,15 +1731,17 @@ a,
   margin-bottom: 10px;
 }
 .header__desc {
-  font-size: 18px;
+  font-size: 21px;
+  color: red;
   margin: 0;
 }
 .header__desc_title {
-  font-size: 24px;
+  font-size: 18px;
   margin: 10px 0 40px;
 }
 .header-video iframe {
   margin-bottom: 35px;
+  width: 100%;
 }
 .bp__button {
   display: inline-block;
@@ -1826,6 +1808,9 @@ a.button {
 .blue {
   color: #36a7e9;
 }
+.red {
+  color: red;
+}
 .franchise__title {
   font-size: 32px;
   font-weight: bold;
@@ -1850,6 +1835,23 @@ a.button {
 }
 .franchise-ticket form .button:hover {
   box-shadow: -5px 5px 0 #333;
+}
+.franchise-calc {
+  background-color: rgba(255, 255, 255, 0.72);
+  padding-bottom: 40px;
+  margin: 20px 0;
+}
+.franchise-calc .calc-line {
+  padding: 10px 0;
+}
+.franchise-calc .calc-line label {
+  color: #333;
+  font-size: 16px;
+}
+.franchise-calc .calc-line input {
+  height: 50px;
+  padding: 0 10px;
+  text-align: center;
 }
 .franchise-clients {
   background-color: #fff;
@@ -2047,6 +2049,9 @@ a.button {
 .franchise-four__title {
   margin: 40px 0;
 }
+.franchise-four-list-item {
+  text-decoration: none;
+}
 .franchise-four-list-item__icon img {
   width: 100%;
 }
@@ -2054,7 +2059,6 @@ a.button {
   text-transform: uppercase;
   font-size: 20px;
   line-height: 1.5em;
-  color: #999;
 }
 .franchise-four-list-item__text:hover {
   color: #666;
@@ -2111,6 +2115,9 @@ a.button {
   padding-bottom: 30px;
   color: #fff;
   font-weight: bold;
+}
+.franchise-five-address-list-item:first-child {
+  font-size: 22px;
 }
 .franchise-five-address-list-item a {
   color: inherit;

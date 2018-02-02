@@ -77,5 +77,16 @@ $(function(){
       }
     }
   });
+  var calculator = $('.franchise-calc');
+  calculator.find('button').click(function(){
+    var ammount = 5000;
+    var max_ammount = 2500;
+    var lift = calculator.find('#lift_count');
+    var price = calculator.find('#price');
+    var dohod = calculator.find('#dohod');
+    price.val($(this).val() * ammount);
+    dohod.val($(this).val() * ammount);
+    console.log($(this).val() * ammount);
+  });
 
 });

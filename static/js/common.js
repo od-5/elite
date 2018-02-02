@@ -282,4 +282,18 @@ $(function() {
     itemMargin: 3
   });
 
+  var calculator = $('.franchise-calc');
+  calculator.find('button').click(function(){
+    var ammount = 5000;
+    var lift = calculator.find('#lift_count');
+    var price = calculator.find('#price');
+    var dohod = calculator.find('#dohod');
+    var lift_val = lift.val();
+    if (lift_val > 10) {
+      ammount = 2500
+    }
+    price.val(lift.val() * ammount);
+    dohod.val(lift.val() * ammount);
+  });
+
 });

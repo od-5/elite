@@ -18,10 +18,10 @@
   <script src="{% static 'js/notify-combined.min.js' %}"></script>
   <script src="{% static 'js/jquery.viewportchecker.js' %}"></script>
   <script src="{% static 'js/scrollup.js' %}"></script>
-  <script src="{% static 'js/common.js?v=1' %}"></script>
+  <script src="{% static 'js/common.js' %}?v=3"></script>
 {#  {{ SETUP.top_js|safe|default:'' }}#}
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Ubuntu+Condensed" />
-  <link href="{% static 'css/franchise.css' %}" rel="stylesheet">
+  <link href="{% static 'css/franchise.css' %}?v=3" rel="stylesheet">
 {% block top_js %}
 {% endblock %}
 </head>
@@ -31,14 +31,14 @@
     <a name="top"></a>
     <div class="header-top">
       <div class="container_12">
-        <div class="grid_5 text-center">
+        <div class="grid_5">
           <a href="{% url 'home' %}" title="" class="header-logotype">
             <img src="{% static 'img/franchise/logotype.png' %}" alt="Логотип">
           </a>
         </div>
         <div class="grid_7 text-right">
           <div class="header-phone">
-            Звоните по телефону: {{ setup.phone|default:'8 800 775 18 45' }}
+            {{ setup.phone|default:'8 800 775 18 45' }}
           </div>
         </div>
         <div class="clearfix"></div>
@@ -47,21 +47,22 @@
         </div>
         <div class="grid_7">
           <div class="header-nav">
-            <ul class="text-right">
+            <ul class="text-center">
               <li><a href="{% url 'home' %}">Главная страница</a></li>
-              <li><a href="{% url 'article-list' %}">Список статей</a></li>
-              <li><a href="{% url 'faq-list' %}">Вопросы и ответы</a></li>
+              <li><a href="#js-ticket-franchise">Преимущества</a></li>
+              <li><a href="#js-ticket-clients">Примеры</a></li>
+              <li><a href="#js-ticket-franchise">Контакты</a></li>
             </ul>
           </div>
           <div class="header__title-block">
-            <h1 class="header__title text-right">
-              Доходный бизнес<br> на рекламе в лифте
+            <h1 class="header__title text-center">
+                <span class="red">Полезный</span> бизнес<br> на рекламе <br> в лифтах новостроек!
             </h1>
-            <p class="header__desc text-right">
-              От 50000р/мес без доп. инвестиций
+            <p class="header__desc text-center">
+              Зарабатывай от 50000р с одного жилого комплекса
             </p>
-            <p class="header__desc_title text-right">
-              Создайте свой<br> на примере "АРТ-ЛИФТ"
+            <p class="header__desc_title text-center">
+              Увеличь доход<br> на примере компании <br> "АРТ-ЛИФТ"
             </p>
             <div class="header-video">
               <iframe width="500" height="300" src="https://www.youtube.com/embed/11GRVbBYsK4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
@@ -75,9 +76,32 @@
 
         </div>
         <div class="clearfix"></div>
+          <div class="franchise-calc">
+            <div class="grid_6 text-right calc-line">
+                <label for="lift_count">Ввести количество лифтов</label> <input type="number" value="10" name="lift_count" id="lift_count">
+            </div>
+            <div class="grid_6 text-right calc-line">
+                <label for="dohod">Ваш доход</label> <input type="number" name="dohod" value="50000" id="dohod" readonly>
+            </div>
+            <div class="grid_12 text-right calc-line">
+                <label for="price">Стоимость франшизы</label> <input type="number" name="price" value="50000" id="price" readonly>
+            </div>
+            <div class="grid_6 text-right calc-line">
+                <label for="investition">Первоначальные инвестиции</label> <input type="number" value="0" name="investition" id="investition" readonly>
+            </div>
+            <div class="grid_6 text-right calc-line">
+                <label for="vznos">Паушальный взнос</label> <input type="number" value="0" name="vznos" id="vznos" readonly>
+            </div>
+            <div class="grid_12 text-center">
+                <button class="button">Рассчитать</button>
+            </div>
+            <div class="clearfix"></div>
+          </div>
       </div>
     </div>
   </header>
+
+
 
   <section class="franchise-first">
     <div class="container_12">
@@ -123,7 +147,7 @@
     </div>
   </section>
 
-  <section class="franchise-clients">
+  <section class="franchise-clients" id="js-franchise-clients">
     <div class="container_12">
       <div class="grid_12">
         <h2 class="franchise__title franchise__title_blue franchise-clients__title text-center">НАШИ КЛИЕНТЫ</h2>
@@ -232,52 +256,51 @@
       </div>
       <div class="franchise-four-list text-center">
         <div class="grid_3">
-          <div class="franchise-four-list-item">
+          <a href="#js-ticket-franchise" class="franchise-four-list-item blue">
             <div class="franchise-four-list-item__icon">
               <img src="{% static 'img/franchise/ticket.png' %}" alt="">
             </div>
             <p class="franchise-four-list-item__text animate">
-{#              <span class="blue">ОСТАВЬТЕ</span> <br>ЗАЯВКУ#}
-              <a href="#js-ticket-franchise" class="blue"> ОСТАВЬТЕ <br>ЗАЯВКУ</a>
+                ОСТАВЬТЕ <br>ЗАЯВКУ
             </p>
-          </div>
+          </a>
         </div>
         <div class="grid_3">
-          <div class="franchise-four-list-item">
+          <a href="#js-ticket-franchise" class="franchise-four-list-item blue">
             <div class="franchise-four-list-item__icon">
               <img src="{% static 'img/franchise/consult.png' %}" alt="">
             </div>
             <p class="franchise-four-list-item__text animate">
               МЫ <span class="">БЕСПЛАТНО</span><br> <span class="">ПРОКОНСУЛЬТИРУЕМ</span> <br> ВАС
             </p>
-          </div>
+          </a>
         </div>
         <div class="grid_3">
-          <div class="franchise-four-list-item">
+          <a href="#js-ticket-franchise" class="franchise-four-list-item blue">
             <div class="franchise-four-list-item__icon">
               <img src="{% static 'img/franchise/dogovor.png' %}" alt="">
             </div>
             <p class="franchise-four-list-item__text animate">
               ЗАКЛЮЧАЕМ<br> ДОГОВОР
             </p>
-          </div>
+          </a>
         </div>
         <div class="grid_3">
-          <div class="franchise-four-list-item">
+          <a href="#js-ticket-franchise" class="franchise-four-list-item blue">
             <div class="franchise-four-list-item__icon">
               <img src="{% static 'img/franchise/like.png' %}" alt="">
             </div>
             <p class="franchise-four-list-item__text animate">
               ЗАПУСКАЕМ<br> ПРОЕКТ!
             </p>
-          </div>
+          </a>
         </div>
         <div class="clear"></div>
       </div>
     </div>
   </section>
 
-  <section class="franchise-five">
+  <section class="franchise-five" id="js-franchise-five">
     <div class="container_12">
       <div class="grid_8">
         <h2 class="franchise__title franchise__title_blue franchise-five__title text-center">ПРЕИМУЩЕСТВА</h2>

@@ -14,7 +14,7 @@ SECRET_KEY = '_tpd9(a+n4i20i$5j6$cw^%09q=i6_r1e-j8ur-e@uw91#g@hd'
 YANDEX_MAPS_API_KEY = 'AO7kF1UBAAAA-akFCwIAR7_VYsSjwJ9g-dDEVHElLxuBQi8AAAAAAAAAAAAQMK4N7NYtvg4ALgMZ8-GRO_cQqQ=='
 # SECURITY WARNING: don't run with debug turned on in production!
 
-if socket.gethostname() == 'r420':
+if socket.gethostname() == 'zen':
     DEBUG = True
 else:
     DEBUG = True
@@ -89,15 +89,11 @@ ROOT_URLCONF = 'landing.urls'
 
 WSGI_APPLICATION = 'landing.wsgi.application'
 
-if socket.gethostname() == 'r420':
+if socket.gethostname() == 'zen':
     DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.mysql',
-             'NAME': 'elitkadoru',
-             'USER': 'elitkadoru',
-             'PASSWORD': '1111',
-             'HOST': 'localhost',
-             'PORT': '',
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         }
     }
 else:
