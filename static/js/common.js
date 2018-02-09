@@ -285,15 +285,28 @@ $(function() {
   var calculator = $('.franchise-calc');
   calculator.find('button').click(function(){
     var ammount = 5000;
+    // var lift_add;
     var lift = calculator.find('#lift_count');
     var price = calculator.find('#price');
     var dohod = calculator.find('#dohod');
     var lift_val = lift.val();
-    if (lift_val > 10) {
-      ammount = 2500
-    }
-    price.val(lift.val() * ammount);
-    dohod.val(lift.val() * ammount);
+    // if (lift_val > 10) {
+    //   lift_add = lift_val - 10;
+    //   price.val(50000 + lift_add*2500);
+    // } else {
+    //   price.val(50000);
+    // }
+    dohod.val(lift_val * ammount);
+    price.val((lift_val * ammount)/2);
   });
+
+
+  var max_col_height = 0; // максимальная высота, первоначально 0
+	$('.column').each(function(){ // цикл "для каждой из колонок"
+		if ($(this).height() > max_col_height) { // если высота колонки больше значения максимальной высоты,
+			max_col_height = $(this).height(); // то она сама становится новой максимальной высотой
+		}
+	});
+	$('.column').height(max_col_height);
 
 });

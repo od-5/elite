@@ -18,10 +18,10 @@
   <script src="{% static 'js/notify-combined.min.js' %}"></script>
   <script src="{% static 'js/jquery.viewportchecker.js' %}"></script>
   <script src="{% static 'js/scrollup.js' %}"></script>
-  <script src="{% static 'js/common.js' %}?v=3"></script>
+  <script src="{% static 'js/common.js' %}?v=5"></script>
 {#  {{ SETUP.top_js|safe|default:'' }}#}
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Ubuntu+Condensed" />
-  <link href="{% static 'css/franchise.css' %}?v=3" rel="stylesheet">
+  <link href="{% static 'css/franchise.css' %}?v=4" rel="stylesheet">
 {% block top_js %}
 {% endblock %}
 </head>
@@ -31,32 +31,33 @@
     <a name="top"></a>
     <div class="header-top">
       <div class="container_12">
-        <div class="grid_5">
+        <div class="grid_3">
           <a href="{% url 'home' %}" title="" class="header-logotype">
             <img src="{% static 'img/franchise/logotype.png' %}" alt="Логотип">
           </a>
         </div>
-        <div class="grid_7 text-right">
-          <div class="header-phone">
-            {{ setup.phone|default:'8 800 775 18 45' }}
+        <div class="grid_6 text-center">
+
+          <div class="header-nav">
+            <ul>
+              <li><a href="#js-ticket-franchise">Преимущества</a></li>
+              <li><a href="#js-franchise-three">Стоимость</a></li>
+              <li><a href="#js-franchise-clients">Примеры</a></li>
+              <li><a href="#js-ticket-franchise">Контакты</a></li>
+            </ul>
           </div>
+        </div>
+        <div class="grid_3">
+          <div class="header-phone text-right">{{ setup.phone|default:'8 800 775 18 45' }}</div>
         </div>
         <div class="clearfix"></div>
         <div class="grid_5">
           <img src="{% static 'img/franchise/lift.png' %}" alt="" class="header-lift">
         </div>
         <div class="grid_7">
-          <div class="header-nav">
-            <ul class="text-center">
-              <li><a href="{% url 'home' %}">Главная страница</a></li>
-              <li><a href="#js-ticket-franchise">Преимущества</a></li>
-              <li><a href="#js-ticket-clients">Примеры</a></li>
-              <li><a href="#js-ticket-franchise">Контакты</a></li>
-            </ul>
-          </div>
           <div class="header__title-block">
             <h1 class="header__title text-center">
-                <span class="red">Полезный</span> бизнес<br> на рекламе <br> в лифтах новостроек!
+                <span class="red">Яркий</span> бизнес<br> на рекламе <br> в лифтах новостроек!
             </h1>
             <p class="header__desc text-center">
               Зарабатывай от 50000р с одного жилого комплекса
@@ -65,7 +66,7 @@
               Увеличь доход<br> на примере компании <br> "АРТ-ЛИФТ"
             </p>
             <div class="header-video">
-              <iframe width="500" height="300" src="https://www.youtube.com/embed/11GRVbBYsK4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+              <iframe width="400" height="200" src="https://www.youtube.com/embed/11GRVbBYsK4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             </div>
             <div class="text-center">
               <a href="#bp-modal-download" class="js-modal-bp-download-btn bp__button animate">
@@ -84,7 +85,7 @@
                 <label for="dohod">Ваш доход</label> <input type="number" name="dohod" value="50000" id="dohod" readonly>
             </div>
             <div class="grid_12 text-right calc-line">
-                <label for="price">Стоимость франшизы</label> <input type="number" name="price" value="50000" id="price" readonly>
+                <label for="price">Стоимость франшизы</label> <input type="number" name="price" value="25000" id="price" readonly>
             </div>
             <div class="grid_6 text-right calc-line">
                 <label for="investition">Первоначальные инвестиции</label> <input type="number" value="0" name="investition" id="investition" readonly>
@@ -195,7 +196,7 @@
     </div>
   </section>
 
-  <section class="franchise-three">
+  <section class="franchise-three" id="js-franchise-three">
     <div class="container_12">
       <div class="grid_12 text-center">
         <h2 class="franchise__title franchise__title_blue franchise-three__title">
@@ -302,7 +303,7 @@
 
   <section class="franchise-five" id="js-franchise-five">
     <div class="container_12">
-      <div class="grid_8">
+      <div class="grid_8 column">
         <h2 class="franchise__title franchise__title_blue franchise-five__title text-center">ПРЕИМУЩЕСТВА</h2>
         <ul class="franchise-five-list">
         {% for item in block6 %}
@@ -312,7 +313,7 @@
         {% endfor %}
         </ul>
       </div>
-      <div class="grid_4">
+      <div class="grid_4 column">
         <address class="franchise-five-address">
           <p class="franchise__title franchise__title_white franchise-five__title">Контакты</p>
           <ul class="franchise-five-address-list">
